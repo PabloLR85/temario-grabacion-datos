@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Temario de grabación de datos: organización del puesto de trabajo y actuación profesional (unidades 1 y 2), con ilustraciones, ejercicios y glosario.">
+<title>Grabación de Datos UD1–UD2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: teclas de función F1-F5 como navegación de unidades; cada unidad = teoría en acordeón + ejercicios interactivos + actividades de aula */
+:root{
+  --bg:#EEF2F4; --surface:#FFFFFF; --ink:#15202A; --muted:#566573; --line:#D3DCE2;
+  --key:#E6ECF0; --key-edge:#B9C6CF; --accent:#0E6A70; --accent-soft:#D5ECEC; --signal:#B86E00;
+  --ok:#1E7A3C; --ok-soft:#DDF1E3; --warn:#9A6200; --warn-soft:#FBEFD6; --bad:#B3261E; --bad-soft:#F9DEDC;
+  --f-index:#CFE3F7; --f-middle:#D9EED3; --f-ring:#F6E3C6; --f-pinky:#F0D6E4; --f-thumb:#E2DCF4;
+  --display:"Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", Roboto, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E151B; --surface:#16212A; --ink:#E4EBEF; --muted:#94A4B1; --line:#283641;
+  --key:#1E2B35; --key-edge:#0A1015; --accent:#55B8BD; --accent-soft:#163A3D; --signal:#F0B04A;
+  --ok:#6FD08F; --ok-soft:#173826; --warn:#F2BE5C; --warn-soft:#3A2D12; --bad:#F2867D; --bad-soft:#40201E;
+  --f-index:#1E3550; --f-middle:#22402A; --f-ring:#47361C; --f-pinky:#45283A; --f-thumb:#332B4E;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E151B; --surface:#16212A; --ink:#E4EBEF; --muted:#94A4B1; --line:#283641;
+  --key:#1E2B35; --key-edge:#0A1015; --accent:#55B8BD; --accent-soft:#163A3D; --signal:#F0B04A;
+  --ok:#6FD08F; --ok-soft:#173826; --warn:#F2BE5C; --warn-soft:#3A2D12; --bad:#F2867D; --bad-soft:#40201E;
+  --f-index:#1E3550; --f-middle:#22402A; --f-ring:#47361C; --f-pinky:#45283A; --f-thumb:#332B4E;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+
+/* Cabecera */
+header.top{padding-block:40px 28px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.top h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:700;letter-spacing:-.02em;margin-top:10px}
+.top h1 .cursor{display:inline-block;width:.5em;height:.12em;background:var(--accent);margin-left:.1em;vertical-align:baseline;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lede{max-width:62ch;color:var(--muted);margin-top:14px;font-size:1.05rem}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-family:var(--mono);font-size:13px}
+.facts span b{color:var(--ink);font-weight:600}
+.facts span{color:var(--muted)}
+.progress-global{margin-top:24px;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.bar{flex:1;max-width:340px;height:8px;background:var(--key);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+
+/* Teclas */
+.kbd{display:inline-flex;align-items:center;justify-content:center;min-width:2em;padding:.1em .45em;font-family:var(--mono);font-size:.85em;background:var(--key);border:1px solid var(--key-edge);border-bottom-width:3px;border-radius:6px;line-height:1.4;white-space:nowrap}
+
+/* Navegación de unidades */
+nav.units{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav.units .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:12px;scrollbar-width:none}
+nav.units a{flex:0 0 auto;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);padding:8px 12px 8px 8px;border-radius:10px;border:1px solid transparent}
+nav.units a .fk{display:inline-flex;align-items:center;justify-content:center;width:38px;height:34px;font-family:var(--mono);font-weight:600;font-size:13px;background:var(--key);border:1px solid var(--key-edge);border-bottom-width:4px;border-radius:7px;transition:transform .08s}
+nav.units a .lbl{display:flex;flex-direction:column;line-height:1.2}
+nav.units a .lbl small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+nav.units a .lbl span{font-size:14px;font-weight:700;font-family:var(--display)}
+nav.units a[aria-current="page"]{background:var(--surface);border-color:var(--line)}
+nav.units a[aria-current="page"] .fk{background:var(--accent);color:var(--surface);border-color:var(--accent);transform:translateY(2px);border-bottom-width:2px}
+
+/* Unidad */
+main{padding-block:32px 64px}
+.unit-head{display:grid;gap:14px;margin-bottom:28px}
+.unit-head h2{font-size:clamp(1.6rem,4.2vw,2.4rem);letter-spacing:-.015em;max-width:24ch}
+.unit-head .obj{max-width:66ch;color:var(--muted)}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:12px;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.block-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.block-title h3{font-size:1.25rem}
+.block-title span{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Acordeón de epígrafes */
+.sec{border-bottom:1px solid var(--line)}
+.sec summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;padding:14px 0}
+.sec summary::-webkit-details-marker{display:none}
+.sec .num{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;min-width:3.2em}
+.sec .st{font-weight:700;font-size:1.02rem}
+.sec .pg{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.sec .seen-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line);margin-right:8px;vertical-align:middle}
+.sec.is-seen .seen-dot{background:var(--ok)}
+.sec .content{padding:0 0 22px calc(3.2em + 14px);display:grid;gap:12px;max-width:calc(68ch + 3.2em)}
+.sec .content ul{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.sec .content h4{font-size:.95rem;margin-top:6px}
+.note{font-size:.92rem;padding:10px 14px;border-left:3px solid var(--signal);background:var(--surface);border-radius:0 8px 8px 0}
+.seen-toggle{justify-self:start;display:inline-flex;gap:8px;align-items:center;font-size:.9rem;color:var(--muted);cursor:pointer}
+.seen-toggle input{accent-color:var(--ok);width:18px;height:18px}
+@media (max-width:560px){.sec .content{padding-left:0}.sec summary{grid-template-columns:auto 1fr}.sec .pg{grid-column:2}}
+
+/* Ejercicios */
+.ex{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;display:grid;gap:16px}
+.ex-head{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.ex-head .type{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:5px;background:var(--key);border:1px solid var(--key-edge)}
+.ex-head h4{font-size:1.1rem;flex:1 1 220px}
+.ex .inst{color:var(--muted);max-width:66ch}
+.btn{appearance:none;border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:9px;font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{filter:brightness(1.12)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.result{padding:12px 14px;border-radius:9px;background:var(--key);font-size:.95rem}
+.result:empty{display:none}
+
+/* Quiz */
+fieldset.q{border:0;margin:0;padding:0;display:grid;gap:6px}
+fieldset.q legend{font-weight:700;margin-bottom:6px;padding:0}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.opt input{margin-top:5px;accent-color:var(--accent)}
+.opt.right{background:var(--ok-soft);border-color:var(--ok)}
+.opt.wrong{background:var(--bad-soft);border-color:var(--bad)}
+.why{font-size:.9rem;color:var(--muted);padding-left:4px}
+.qlist{display:grid;gap:20px}
+
+/* Ergonomía */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.field{display:grid;gap:4px}
+.field label{font-weight:700;font-size:.92rem}
+.field input,.field select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.field small{color:var(--muted);font-size:.82rem}
+.checks{display:grid;gap:8px}
+.check-item{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+.pill{font-family:var(--mono);font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;margin-top:3px}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+
+/* Ordenar */
+ol.sortable{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ol.sortable li{display:grid;grid-template-columns:2em 1fr auto;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg)}
+ol.sortable li .pos{font-family:var(--mono);color:var(--muted)}
+ol.sortable li.right{border-color:var(--ok);background:var(--ok-soft)}
+ol.sortable li.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.mv{display:flex;gap:4px}
+.mv button{width:34px;height:32px;border:1px solid var(--key-edge);border-bottom-width:3px;background:var(--key);border-radius:6px;cursor:pointer;font-family:var(--mono)}
+
+/* Mecanografía */
+.target{font-family:var(--mono);font-size:1.02rem;line-height:1.9;padding:14px 16px;background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow-wrap:anywhere}
+.target .c{color:var(--ok)}
+.target .e{color:var(--bad);background:var(--bad-soft);text-decoration:underline}
+.target .cur{border-left:2px solid var(--signal);margin-left:-1px}
+textarea#typing-input{width:100%;min-height:110px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-family:var(--mono);font-size:1rem;resize:vertical}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.stat{padding:10px 12px;border:1px solid var(--line);border-radius:9px}
+.stat b{display:block;font-family:var(--mono);font-size:1.4rem;font-variant-numeric:tabular-nums}
+.stat span{font-size:.8rem;color:var(--muted)}
+.homerow{display:flex;flex-wrap:wrap;gap:5px}
+.homerow .kbd{min-width:2.4em;height:2.4em}
+.homerow .kbd.mark{border-color:var(--accent);box-shadow:inset 0 -3px 0 var(--accent)}
+
+/* Teclado numérico */
+.np-wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.numpad{display:grid;grid-template-columns:repeat(4,46px);grid-template-rows:repeat(5,46px);gap:6px}
+.numpad div{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;border:1px solid var(--key-edge);border-bottom-width:3px;border-radius:7px;font-size:.85rem;color:var(--ink)}
+.fi{background:var(--f-index)}.fm{background:var(--f-middle)}.fr{background:var(--f-ring)}.fp{background:var(--f-pinky)}.ft{background:var(--f-thumb)}
+.legend{display:grid;gap:6px;font-size:.9rem}
+.legend span{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid var(--key-edge);margin-right:8px;vertical-align:-2px}
+.drill{display:grid;gap:12px;flex:1 1 280px;min-width:0}
+.drill-now{font-family:var(--mono);font-size:2rem;font-weight:600;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+#num-input{font-family:var(--mono);font-size:1.3rem;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);width:100%;max-width:260px}
+.dots{display:flex;gap:5px;flex-wrap:wrap}
+.dots i{width:14px;height:14px;border-radius:4px;background:var(--key);border:1px solid var(--line)}
+.dots i.ok{background:var(--ok)}.dots i.bad{background:var(--bad)}
+
+/* Tablas */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:560px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+td.mono,td.cell{font-family:var(--mono);font-variant-numeric:tabular-nums}
+td.cell{cursor:pointer}
+td.cell:hover{background:var(--key)}
+td.cell.flag{background:var(--warn-soft);outline:2px solid var(--warn);outline-offset:-2px}
+td.cell.hit{background:var(--ok-soft);outline:2px solid var(--ok);outline-offset:-2px}
+td.cell.miss{background:var(--bad-soft);outline:2px dashed var(--bad);outline-offset:-2px}
+td.cell.fp{background:var(--bad-soft)}
+.tbl.sm table{min-width:0}
+.tbl.sm td,.tbl.sm th{vertical-align:top}
+.sec .content ol{margin:0;padding-left:1.3em;display:grid;gap:4px}
+.cap{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:6px}
+
+/* Shortcuts */
+.match{display:grid;gap:8px}
+.match .m{display:grid;grid-template-columns:minmax(120px,170px) 1fr auto;gap:10px;align-items:center}
+.match select{padding:7px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);min-width:0;width:100%}
+@media (max-width:480px){.match .m{grid-template-columns:1fr auto}.match .m select{grid-column:1/-1}}
+
+/* Actividades de aula */
+.acts{display:grid;gap:12px}
+.act{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;padding:14px 0;border-top:1px solid var(--line)}
+.act .k{grid-row:span 3;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);padding-top:3px}
+.act h4{font-size:1rem}
+.act p{color:var(--muted);font-size:.95rem;max-width:66ch}
+.act .crit{font-size:.85rem;font-family:var(--mono);color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding-block:28px 48px;color:var(--muted);font-size:.9rem}
+footer ul{margin:8px 0 0;padding-left:1.2em}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* Figuras e ilustraciones */
+figure.fig{margin:6px 0;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;display:grid;gap:12px}
+figure.fig svg{width:100%;height:auto;display:block;max-width:620px;margin:0 auto}
+figure.fig figcaption{font-size:.88rem;color:var(--muted);max-width:66ch}
+.fig text{font-family:var(--body);font-size:13px;fill:var(--ink)}
+.fig .sm{font-size:11px;fill:var(--muted)}
+.fig .b{font-weight:700}
+.fig .mk{font-family:var(--mono);font-size:11px;font-weight:600;fill:var(--surface)}
+ol.leg{margin:0;padding-left:0;list-style:none;counter-reset:lg;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:4px 18px;color:var(--ink)}
+ol.leg li{position:relative;padding-left:1.9em;counter-increment:lg}
+ol.leg li::before{content:counter(lg);position:absolute;left:0;top:.15em;width:1.35em;height:1.35em;border-radius:50%;background:var(--signal);color:var(--surface);font-family:var(--mono);font-size:.75rem;font-weight:600;display:flex;align-items:center;justify-content:center}
+.risk{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.rk{padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:grid;gap:6px;align-content:start}
+.rk svg{width:44px;height:44px}
+.rk h5{font-family:var(--display);font-size:1rem;margin:0}
+.rk p{font-size:.88rem;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.tile{padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line);display:grid;gap:4px;align-content:start}
+.tile span{font-family:var(--mono);font-size:11px;color:var(--accent)}
+.tile p{font-size:.85rem;color:var(--muted)}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:4px;box-shadow:0 1px 0 var(--line),0 6px 0 -3px var(--key),0 6px 0 -2px var(--line);padding:18px 20px;font-size:.92rem;max-width:560px}
+.paper-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:10px;font-family:var(--mono);font-size:12px}
+.paper-h span:first-child{font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.paper dl{display:grid;grid-template-columns:minmax(110px,auto) 1fr;gap:6px 16px;margin:0}
+.paper dt{font-weight:700}.paper dd{margin:0;color:var(--muted)}
+.paper-f{margin-top:12px;padding-top:8px;border-top:1px dashed var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
+@media (max-width:480px){.paper dl{grid-template-columns:1fr}.paper dd{margin-bottom:6px}}
+/* Recuadros */
+.note::before{content:"Para recordar";display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--signal);margin-bottom:2px}
+.call{padding:12px 16px;border-radius:0 10px 10px 0;background:var(--surface);display:grid;gap:4px;font-size:.93rem}
+.call .lb{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.call.err{border-left:4px solid var(--bad)}.call.err .lb{color:var(--bad)}
+.call.ex{border-left:4px solid var(--accent)}.call.ex .lb{color:var(--accent)}
+/* Caso de partida */
+.case{display:grid;gap:10px;padding:20px 22px;border-radius:14px;background:var(--accent-soft);margin-bottom:8px}
+.case-tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.case p{max-width:66ch;font-size:1.02rem}
+.case ul{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.case small{color:var(--muted)}
+/* Glosario */
+.glos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.gl{appearance:none;text-align:left;cursor:pointer;padding:12px 14px;border-radius:10px;border:1px solid var(--key-edge);border-bottom-width:3px;background:var(--key);display:grid;gap:6px;align-content:start;min-height:64px}
+.gl span{display:none;font-size:.88rem;color:var(--muted)}
+.gl[aria-expanded="true"]{background:var(--surface);border-color:var(--accent)}
+.gl[aria-expanded="true"] span{display:block}
+.tbl.sm table{min-width:0}
+.tbl.sm td,.tbl.sm th{vertical-align:top}
+
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;font-size:16px;-webkit-text-size-adjust:100%}
+img{max-width:100%}[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="eyebrow">Módulo formativo MF0973_1 · Administración y gestión</div>
+  <h1>Grabación de datos<span class="cursor" aria-hidden="true"></span></h1>
+  <p class="lede">Desarrollo ampliado de las unidades 1 y 2: organización y mantenimiento del puesto, ergonomía y normativa de pantallas, organización del trabajo, trabajo en equipo, indicadores de calidad y ética profesional. Cada unidad parte de un caso real, combina teoría ilustrada, ejercicios que se corrigen al momento, actividades de aula y glosario.</p>
+  <div class="facts">
+    <span><b>2</b> unidades didácticas</span>
+    <span><b>11</b> epígrafes · pp. 1–53</span>
+    <span><b>17</b> ilustraciones</span>
+    <span><b>9</b> ejercicios interactivos</span>
+    <span><b>24</b> términos de glosario</span>
+  </div>
+  <div class="progress-global"><span>Epígrafes estudiados</span><div class="bar"><i id="gbar"></i></div><span id="gtxt">0 %</span></div>
+</header>
+
+<nav class="units" aria-label="Unidades didácticas"><div class="wrap" id="unit-nav"></div></nav>
+
+<main class="wrap" id="main"></main>
+
+<footer class="wrap">
+  <strong>Normativa y documentación de referencia</strong>
+  <ul>
+    <li><a href="https://www.boe.es/eli/es/rd/1997/04/14/488/con" target="_blank" rel="noopener">Real Decreto 488/1997, pantallas de visualización (BOE)</a></li>
+    <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292" target="_blank" rel="noopener">Ley 31/1995 de Prevención de Riesgos Laborales (BOE)</a></li>
+    <li><a href="https://www.insst.es/documentacion/colecciones-tecnicas/ntp-notas-tecnicas-de-prevencion/17-serie-ntp-numeros-576-a-610-ano-2001/ntp-602-el-diseno-ergonomico-del-puesto-de-trabajo-con-pantallas-de-visualizacion-el-equipo-de-trabajo-2001" target="_blank" rel="noopener">INSST · NTP 602, diseño ergonómico del puesto con PVD</a></li>
+    <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673" target="_blank" rel="noopener">Ley Orgánica 3/2018 de Protección de Datos (BOE)</a></li>
+  </ul>
+  <p style="margin-top:14px">El progreso de epígrafes se guarda solo en este navegador.</p>
+</footer>
+
+<script>
+(function(){
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let seen=store.get("gd-seen-v2",{});
+const MK=(n,x,y)=>`<g><circle cx="${x}" cy="${y}" r="10" style="fill:var(--signal)"/><text x="${x}" y="${y+4}" text-anchor="middle" class="mk">${n}</text></g>`;
+const FIG={
+plano:`<figure class="fig"><svg viewBox="0 0 520 300" role="img" aria-label="Plano del puesto de grabación visto desde arriba">
+<rect x="10" y="10" width="500" height="280" rx="8" style="fill:var(--bg);stroke:var(--line);stroke-width:2"/>
+<line x1="10" y1="70" x2="10" y2="210" style="stroke:var(--accent);stroke-width:8"/>
+<text x="22" y="62" class="sm">Ventana</text>
+<rect x="100" y="70" width="340" height="110" rx="6" style="fill:var(--key);stroke:var(--key-edge)"/>
+<rect x="110" y="96" width="78" height="62" rx="4" style="fill:var(--f-index);stroke:var(--key-edge)"/>
+<text x="149" y="124" text-anchor="middle" class="b">Entrada</text><text x="149" y="140" text-anchor="middle" class="sm">pendientes</text>
+<rect x="215" y="82" width="100" height="12" rx="2" style="fill:var(--ink)"/>
+<text x="265" y="114" text-anchor="middle" class="sm">Pantalla</text>
+<rect x="210" y="138" width="110" height="28" rx="4" style="fill:var(--surface);stroke:var(--key-edge)"/>
+<text x="265" y="157" text-anchor="middle" class="sm">Teclado</text>
+<rect x="328" y="84" width="46" height="34" rx="3" style="fill:var(--f-ring);stroke:var(--key-edge)"/>
+<text x="351" y="105" text-anchor="middle" class="sm">Atril</text>
+<rect x="382" y="118" width="52" height="52" rx="4" style="fill:var(--f-middle);stroke:var(--key-edge)"/>
+<text x="408" y="148" text-anchor="middle" class="sm">Salida</text>
+<rect x="458" y="70" width="40" height="110" rx="4" style="fill:var(--f-thumb);stroke:var(--key-edge)"/>
+<text x="478" y="125" text-anchor="middle" class="sm" transform="rotate(-90 478 125)">Consulta</text>
+<line x1="265" y1="205" x2="265" y2="172" style="stroke:var(--signal);stroke-width:2;stroke-dasharray:4 4"/>
+<circle cx="265" cy="228" r="22" style="fill:var(--accent-soft);stroke:var(--accent);stroke-width:2"/>
+<text x="265" y="268" text-anchor="middle" class="sm">Usuario</text>
+<text x="300" y="236" class="sm">La luz de la ventana entra de lado:</text>
+<text x="300" y="252" class="sm">ni reflejos ni deslumbramientos</text>
+</svg><figcaption>Zonas del puesto vistas desde arriba. Los documentos avanzan de izquierda a derecha: entrada, atril, salida. La zona de consulta queda al alcance sin levantarse.</figcaption></figure>`,
+
+eisen:`<figure class="fig"><svg viewBox="0 0 520 285" role="img" aria-label="Matriz urgente importante">
+<text x="182" y="24" text-anchor="middle" class="b">Urgente</text><text x="402" y="24" text-anchor="middle" class="b">No urgente</text>
+<text x="30" y="92" text-anchor="middle" class="b" transform="rotate(-90 30 92)">Importante</text>
+<text x="30" y="212" text-anchor="middle" class="b" transform="rotate(-90 30 212)">No importante</text>
+<rect x="75" y="35" width="215" height="115" rx="8" style="fill:var(--bad-soft)"/>
+<text x="91" y="67" class="b">1. Hacer ya</text><text x="91" y="92" class="sm">Lote con entrega hoy a las 14:00</text>
+<rect x="295" y="35" width="215" height="115" rx="8" style="fill:var(--ok-soft)"/>
+<text x="311" y="67" class="b">2. Programar</text><text x="311" y="92" class="sm">Revisar la plantilla</text><text x="311" y="108" class="sm">del formulario</text>
+<rect x="75" y="155" width="215" height="115" rx="8" style="fill:var(--warn-soft)"/>
+<text x="91" y="187" class="b">3. Resolver o delegar</text><text x="91" y="212" class="sm">Llamada que pide un dato</text><text x="91" y="228" class="sm">puntual</text>
+<rect x="295" y="155" width="215" height="115" rx="8" style="fill:var(--key)"/>
+<text x="311" y="187" class="b">4. Eliminar</text><text x="311" y="212" class="sm">Tener el correo abierto</text><text x="311" y="228" class="sm">toda la jornada</text>
+</svg><figcaption>Matriz urgente / importante aplicada a un servicio de grabación. El número indica el orden de atención.</figcaption></figure>`,
+
+s5:`<figure class="fig"><svg viewBox="0 0 520 262" role="img" aria-label="Ciclo de las 5S">
+<circle cx="260" cy="140" r="92" style="fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:6 6"/>
+<text x="260" y="146" text-anchor="middle" style="font-family:var(--display);font-size:30px;font-weight:700;fill:var(--accent)">5S</text>
+${[[260,48,"Clasificar","f-index"],[347.5,111.6,"Ordenar","f-middle"],[314.1,214.4,"Limpiar","f-ring"],[205.9,214.4,"Estandarizar","f-pinky"],[172.5,111.6,"Mantener","f-thumb"]].map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="42" style="fill:var(--${p[3]});stroke:var(--key-edge)"/><text x="${p[0]}" y="${p[1]-4}" text-anchor="middle" class="b">${i+1}</text><text x="${p[0]}" y="${p[1]+13}" text-anchor="middle" style="font-size:11px">${p[2]}</text>`).join("")}
+</svg><figcaption>Las 5S se aplican en orden y se repiten: el último paso, mantener, vuelve a empezar el ciclo cada día.</figcaption></figure>`,
+
+gantt:`<figure class="fig"><svg viewBox="0 0 520 220" role="img" aria-label="Cronograma de un lote en tres días">
+${[175,305,435].map((x,i)=>`<text x="${x}" y="26" text-anchor="middle" class="b">Día ${i+1}</text>`).join("")}
+${[110,240,370,500].map(x=>`<line x1="${x}" y1="36" x2="${x}" y2="196" style="stroke:var(--line)"/>`).join("")}
+${["Preparación","Grabación","Verificación","Entrega"].map((t,i)=>`<text x="10" y="${66+i*40}" class="sm">${t}</text>`).join("")}
+<rect x="110" y="48" width="40" height="22" rx="4" style="fill:var(--f-index);stroke:var(--key-edge)"/>
+<rect x="150" y="88" width="246" height="22" rx="4" style="fill:var(--accent)"/>
+<rect x="300" y="128" width="174" height="22" rx="4" style="fill:var(--signal)"/>
+<path d="M487 160 L497 171 L487 182 L477 171 Z" style="fill:var(--ink)"/>
+<text x="273" y="103" text-anchor="middle" style="font-size:11px;fill:var(--surface)">16 h con pausas</text>
+</svg><figcaption>Cronograma del ejemplo de 1.200 fichas. La verificación empieza antes de terminar la grabación: se verifica cada parte del lote ya grabada.</figcaption></figure>`,
+
+postura:`<figure class="fig"><svg viewBox="0 0 560 360" role="img" aria-label="Postura correcta sentado ante la pantalla, vista lateral">
+<line x1="20" y1="330" x2="545" y2="330" style="stroke:var(--line);stroke-width:2"/>
+<path d="M182 118 Q172 185 182 245 L258 245" style="fill:none;stroke:var(--muted);stroke-width:6;stroke-linecap:round;stroke-linejoin:round"/>
+<line x1="215" y1="248" x2="215" y2="312" style="stroke:var(--muted);stroke-width:6"/>
+<line x1="175" y1="318" x2="255" y2="318" style="stroke:var(--muted);stroke-width:6;stroke-linecap:round"/>
+<rect x="285" y="200" width="255" height="10" rx="2" style="fill:var(--key);stroke:var(--key-edge)"/>
+<line x1="525" y1="210" x2="525" y2="330" style="stroke:var(--key-edge);stroke-width:6"/>
+<rect x="300" y="191" width="62" height="8" rx="2" style="fill:var(--ink)"/>
+<rect x="472" y="98" width="12" height="74" rx="2" style="fill:var(--ink)"/>
+<rect x="475" y="172" width="6" height="26" style="fill:var(--ink)"/>
+<rect x="462" y="196" width="32" height="4" style="fill:var(--ink)"/>
+<line x1="234" y1="86" x2="468" y2="101" style="stroke:var(--signal);stroke-width:2;stroke-dasharray:5 5"/>
+<line x1="232" y1="40" x2="470" y2="40" style="stroke:var(--muted);stroke-width:1.5"/>
+<line x1="232" y1="33" x2="232" y2="47" style="stroke:var(--muted);stroke-width:1.5"/><line x1="470" y1="33" x2="470" y2="47" style="stroke:var(--muted);stroke-width:1.5"/>
+<g style="stroke:var(--accent);stroke-width:14;stroke-linecap:round;stroke-linejoin:round;fill:none">
+<path d="M204 120 L198 228"/><path d="M198 228 L300 232 L300 320 L335 322"/><path d="M206 128 L214 202 L318 196"/></g>
+<circle cx="214" cy="86" r="24" style="fill:var(--accent)"/>
+${MK(1,254,62)}${MK(2,351,40)}${MK(3,500,98)}${MK(4,158,175)}${MK(5,240,178)}${MK(6,336,174)}${MK(7,272,258)}${MK(8,322,268)}${MK(9,362,308)}
+</svg><figcaption><ol class="leg">
+<li>Cabeza erguida, mirada ligeramente hacia abajo</li><li>Distancia ojos–pantalla de 40 a 75 cm</li><li>Borde superior de la pantalla a la altura de los ojos</li>
+<li>Espalda apoyada, con soporte lumbar</li><li>Codo cerca de 90°, hombros relajados</li><li>Muñeca recta, antebrazo apoyado</li>
+<li>Cadera entre 90° y 110°</li><li>Rodilla cerca de 90°, espacio libre bajo la mesa</li><li>Pies planos en el suelo o reposapiés</li></ol></figcaption></figure>`,
+
+muneca:`<figure class="fig"><svg viewBox="0 0 540 180" role="img" aria-label="Posiciones de la muñeca">
+${[5,185,365].map(x=>`<rect x="${x}" y="5" width="170" height="170" rx="10" style="fill:var(--bg);stroke:var(--line)"/>`).join("")}
+<rect x="25" y="114" width="130" height="8" rx="2" style="fill:var(--key-edge)"/><rect x="205" y="118" width="130" height="8" rx="2" style="fill:var(--key-edge)"/>
+<g style="stroke-linecap:round;fill:none">
+<line x1="30" y1="96" x2="108" y2="96" style="stroke:var(--accent);stroke-width:16"/><line x1="108" y1="96" x2="148" y2="100" style="stroke:var(--ok);stroke-width:12"/>
+<line x1="210" y1="104" x2="288" y2="104" style="stroke:var(--accent);stroke-width:16"/><line x1="288" y1="104" x2="318" y2="74" style="stroke:var(--bad);stroke-width:12"/>
+<line x1="390" y1="88" x2="465" y2="88" style="stroke:var(--accent);stroke-width:16"/><line x1="465" y1="88" x2="500" y2="112" style="stroke:var(--bad);stroke-width:12"/></g>
+<circle cx="155" cy="28" r="11" style="fill:var(--ok)"/><path d="M150 28 L154 32 L161 24" style="stroke:var(--surface);stroke-width:2.5;fill:none"/>
+${[335,515].map(x=>`<circle cx="${x}" cy="28" r="11" style="fill:var(--bad)"/><path d="M${x-4} 24 L${x+4} 32 M${x+4} 24 L${x-4} 32" style="stroke:var(--surface);stroke-width:2.5"/>`).join("")}
+<text x="90" y="148" text-anchor="middle" class="b">Neutra</text><text x="90" y="164" text-anchor="middle" class="sm">Correcta</text>
+<text x="270" y="148" text-anchor="middle" class="b">Extensión</text><text x="270" y="164" text-anchor="middle" class="sm">Teclado muy inclinado</text>
+<text x="450" y="148" text-anchor="middle" class="b">Desviación lateral</text><text x="450" y="164" text-anchor="middle" class="sm">Vista desde arriba</text>
+</svg><figcaption>La muñeca neutra mantiene la mano en línea con el antebrazo. Las otras dos posiciones, sostenidas durante horas, comprimen los tendones y el nervio mediano.</figcaption></figure>`,
+
+riesgos:`<div class="risk">
+<div class="rk"><svg viewBox="0 0 48 48" aria-hidden="true">${[6,14,22,30,38].map(y=>`<rect x="16" y="${y}" width="16" height="6" rx="3" style="fill:var(--accent)"/>`).join("")}</svg><h5>Musculoesqueléticos</h5><p><b>Síntomas:</b> dolor de cuello, espalda, hombros y muñecas.</p><p><b>Origen:</b> postura estática, mobiliario mal regulado, repetición.</p></div>
+<div class="rk"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 24 Q24 6 44 24 Q24 42 4 24 Z" style="fill:none;stroke:var(--accent);stroke-width:3"/><circle cx="24" cy="24" r="7" style="fill:var(--accent)"/></svg><h5>Fatiga visual</h5><p><b>Síntomas:</b> picor, sequedad, visión borrosa, dolor de cabeza.</p><p><b>Origen:</b> reflejos, mala iluminación, distancia, poco parpadeo.</p></div>
+<div class="rk"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="32" height="20" rx="3" style="fill:none;stroke:var(--accent);stroke-width:3"/><rect x="38" y="20" width="4" height="8" style="fill:var(--accent)"/><rect x="10" y="18" width="7" height="12" style="fill:var(--bad)"/></svg><h5>Fatiga mental</h5><p><b>Síntomas:</b> cansancio, errores, irritabilidad, falta de concentración.</p><p><b>Origen:</b> ritmo, monotonía, plazos, software mal diseñado.</p></div>
+</div>`,
+
+ventana:`<figure class="fig"><svg viewBox="0 0 540 200" role="img" aria-label="Colocación de la pantalla respecto a la ventana">
+${[["Ventana delante","Deslumbramiento","bad","top"],["Ventana detrás","Reflejos en pantalla","bad","bottom"],["Ventana al lado","Posición correcta","ok","side"]].map((p,i)=>{const x=10+i*180;const w=p[3]==="top"?`<line x1="${x+30}" y1="20" x2="${x+130}" y2="20" style="stroke:var(--accent);stroke-width:7"/>`:p[3]==="bottom"?`<line x1="${x+30}" y1="150" x2="${x+130}" y2="150" style="stroke:var(--accent);stroke-width:7"/>`:`<line x1="${x}" y1="45" x2="${x}" y2="125" style="stroke:var(--accent);stroke-width:7"/>`;
+return `<rect x="${x}" y="20" width="160" height="130" rx="6" style="fill:var(--bg);stroke:var(--line);stroke-width:2"/>${w}<rect x="${x+45}" y="52" width="70" height="28" rx="3" style="fill:var(--key);stroke:var(--key-edge)"/><line x1="${x+55}" y1="57" x2="${x+105}" y2="57" style="stroke:var(--ink);stroke-width:5"/><line x1="${x+80}" y1="103" x2="${x+80}" y2="84" style="stroke:var(--signal);stroke-width:2;stroke-dasharray:3 3"/><circle cx="${x+80}" cy="115" r="12" style="fill:var(--accent-soft);stroke:var(--accent);stroke-width:2"/><circle cx="${x+146}" cy="34" r="7" style="fill:var(--${p[2]})"/><text x="${x+80}" y="172" text-anchor="middle" class="b">${p[0]}</text><text x="${x+80}" y="189" text-anchor="middle" class="sm">${p[1]}</text>`}).join("")}
+</svg><figcaption>Vista desde arriba. La línea de visión debe quedar paralela a la ventana; las luminarias del techo, a los lados del puesto.</figcaption></figure>`,
+
+normas:`<figure class="fig"><svg viewBox="0 0 540 240" role="img" aria-label="Jerarquía de la normativa">
+${[[300,15,"f-thumb","Unión Europea","Directiva marco 89/391/CEE · Directiva 90/270/CEE"],[380,69,"f-index","Ley 31/1995 de Prevención de Riesgos Laborales","Marco general en España"],[460,123,"f-middle","RD 39/1997 · RD 486/1997 · RD 488/1997","Desarrollo reglamentario, obligatorio"],[520,177,"f-ring","Guía técnica del INSST · NTP · UNE-EN ISO 9241","Criterios técnicos de aplicación, orientativos"]].map(l=>`<rect x="${270-l[0]/2}" y="${l[1]}" width="${l[0]}" height="48" rx="8" style="fill:var(--${l[2]});stroke:var(--key-edge)"/><text x="270" y="${l[1]+21}" text-anchor="middle" class="b">${l[3]}</text><text x="270" y="${l[1]+38}" text-anchor="middle" class="sm">${l[4]}</text>`).join("")}
+</svg><figcaption>De arriba abajo: las directivas europeas se trasponen en leyes y reales decretos españoles; las guías técnicas explican cómo aplicarlos.</figcaption></figure>`,
+
+organi:`<figure class="fig"><svg viewBox="0 0 540 250" role="img" aria-label="Organización de un servicio de grabación">
+<defs><marker id="ah-org" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" style="fill:var(--muted)"/></marker></defs>
+<rect x="195" y="12" width="150" height="40" rx="8" style="fill:var(--accent)"/><text x="270" y="37" text-anchor="middle" class="b" style="fill:var(--surface)">Coordinador/a</text>
+<path d="M270 52 L270 72 M110 72 L430 72 M110 72 L110 88 M270 72 L270 88 M430 72 L430 88" style="stroke:var(--muted);stroke-width:2;fill:none"/>
+${[[40,"Grabador/a 1","f-index"],[200,"Grabador/a 2","f-index"],[360,"Verificador/a","f-ring"]].map(b=>`<rect x="${b[0]}" y="88" width="140" height="40" rx="8" style="fill:var(--${b[2]});stroke:var(--key-edge)"/><text x="${b[0]+70}" y="113" text-anchor="middle" class="b">${b[1]}</text>`).join("")}
+<text x="15" y="168" class="sm">Grabación en cadena</text>
+${[[15,"Documento"],[150,"Grabación"],[285,"Verificación"],[420,"Entrega"]].map((b,i)=>`<rect x="${b[0]}" y="178" width="105" height="40" rx="20" style="fill:var(--bg);stroke:var(--line);stroke-width:2"/><text x="${b[0]+52}" y="203" text-anchor="middle" style="font-size:12px">${b[1]}</text>${i<3?`<line x1="${b[0]+107}" y1="198" x2="${b[0]+131}" y2="198" style="stroke:var(--muted);stroke-width:2" marker-end="url(#ah-org)"/>`:""}`).join("")}
+</svg><figcaption>Estructura típica: el coordinador reparte y resuelve criterios; quien verifica no es quien grabó.</figcaption></figure>`,
+
+paper:`<div class="paper"><div class="paper-h"><span>Hoja de instrucciones de lote</span><span>Lote 14 · Pedidos web · 600 docs.</span></div>
+<dl>
+<dt>Fecha</dt><dd>dd/mm/aaaa, siempre con cuatro cifras de año</dd>
+<dt>Nombre y apellidos</dt><dd>Mayúscula inicial, sin abreviar</dd>
+<dt>Provincia</dt><dd>Código de dos cifras (tabla 3 del manual)</dd>
+<dt>Importe</dt><dd>Dos decimales con coma: 96,00</dd>
+<dt>Campos obligatorios</dt><dd>Nombre, código postal, importe, referencia</dd>
+<dt>Dato ilegible</dt><dd>No inventar. Marcar el documento y apartarlo en la carpeta de incidencias</dd>
+<dt>Entrega</dt><dd>Jueves, 14:00, con hoja de control firmada</dd>
+</dl><div class="paper-f">Dudas de criterio: coordinación</div></div>`,
+
+semaforo:`<figure class="fig"><svg viewBox="0 0 540 175" role="img" aria-label="Niveles de autonomía">
+<rect x="45" y="18" width="450" height="64" rx="32" style="fill:var(--key);stroke:var(--key-edge)"/>
+${[[90,"ok","Resuelvo yo","Errores propios,","orden del lote"],[270,"warn","Consulto","Dato ilegible,","criterio dudoso"],[450,"bad","Escalo de inmediato","Riesgo para los datos,","avería, plazo en peligro"]].map(c=>`<circle cx="${c[0]}" cy="50" r="24" style="fill:var(--${c[1]})"/><text x="${c[0]}" y="112" text-anchor="middle" class="b">${c[2]}</text><text x="${c[0]}" y="132" text-anchor="middle" class="sm">${c[3]}</text><text x="${c[0]}" y="148" text-anchor="middle" class="sm">${c[4]}</text>`).join("")}
+</svg><figcaption>Saber en qué nivel está cada situación evita dos errores: preguntarlo todo y no preguntar nada.</figcaption></figure>`,
+
+sinergia:`<figure class="fig"><svg viewBox="0 0 540 210" role="img" aria-label="Sinergia en un equipo">
+<line x1="20" y1="170" x2="520" y2="170" style="stroke:var(--line);stroke-width:2"/>
+<text x="40" y="104" class="b">Por separado</text><text x="40" y="120" class="sm">3 × 80 = 240 registros/h</text>
+${["Ana","Bruno","Carla"].map((n,i)=>`<rect x="${40+i*55}" y="130" width="40" height="40" rx="3" style="fill:var(--f-index);stroke:var(--key-edge)"/><text x="${60+i*55}" y="188" text-anchor="middle" class="sm">${n}</text>`).join("")}
+${[130,90,50].map(y=>`<rect x="350" y="${y}" width="60" height="40" style="fill:var(--f-index);stroke:var(--key-edge)"/>`).join("")}
+<rect x="350" y="25" width="60" height="25" style="fill:var(--signal)"/>
+<text x="380" y="188" text-anchor="middle" class="sm">Equipo</text>
+<text x="424" y="104" class="b">En equipo</text><text x="424" y="120" class="sm">≈ 290 registros/h</text>
+<text x="424" y="34" class="sm">+50 por menos</text><text x="424" y="48" class="sm">retrabajo y dudas</text>
+<text x="270" y="110" text-anchor="middle" style="font-family:var(--display);font-size:28px;font-weight:700;fill:var(--accent)">→</text>
+</svg><figcaption>Ejemplo ilustrativo. La ganancia no viene de teclear más rápido, sino de repartir mejor, resolver dudas una sola vez y corregir menos después.</figcaption></figure>`,
+
+tuckman:`<figure class="fig"><svg viewBox="0 0 540 225" role="img" aria-label="Fases de formación de un equipo">
+<line x1="50" y1="195" x2="520" y2="195" style="stroke:var(--muted);stroke-width:1.5"/><line x1="50" y1="20" x2="50" y2="195" style="stroke:var(--muted);stroke-width:1.5"/>
+<text x="518" y="214" text-anchor="end" class="sm">Tiempo</text><text x="32" y="108" text-anchor="middle" class="sm" transform="rotate(-90 32 108)">Resultado del equipo</text>
+<path d="M70 150 C130 150 150 178 190 178 S270 120 320 112 S420 60 480 50" style="fill:none;stroke:var(--accent);stroke-width:4"/>
+${[[70,150],[190,178],[320,112],[480,50]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="7" style="fill:var(--signal)"/>`).join("")}
+<text x="62" y="136" class="b">Formación</text><text x="190" y="160" text-anchor="middle" class="b">Conflicto</text><text x="330" y="142" text-anchor="middle" class="b">Normalización</text><text x="476" y="36" text-anchor="middle" class="b">Rendimiento</text>
+</svg><figcaption>El resultado baja en la fase de conflicto. Es normal y se supera acordando criterios por escrito.</figcaption></figure>`,
+
+kpi:`<figure class="fig"><svg viewBox="0 0 540 230" role="img" aria-label="Tasa de error por grabador frente al límite">
+${[[190,"0 %"],[110,"1 %"],[30,"2 %"]].map(t=>`<text x="60" y="${t[0]+4}" text-anchor="end" class="sm">${t[1]}</text><line x1="68" y1="${t[0]}" x2="520" y2="${t[0]}" style="stroke:var(--line)"/>`).join("")}
+${[["Eva",.4],["Luis",.8],["Marta",1.6],["Óscar",.6],["Sara",1.2]].map((d,i)=>{const h=d[1]*80,x=90+i*85;return `<rect x="${x}" y="${190-h}" width="45" height="${h}" rx="3" style="fill:var(--${d[1]<=1?"ok":"bad"})"/><text x="${x+22}" y="${184-h}" text-anchor="middle" class="sm">${String(d[1]).replace(".",",")} %</text><text x="${x+22}" y="210" text-anchor="middle" class="sm">${d[0]}</text>`}).join("")}
+<line x1="68" y1="110" x2="520" y2="110" style="stroke:var(--bad);stroke-width:2;stroke-dasharray:6 4"/><text x="74" y="102" class="sm" style="fill:var(--bad)">Límite 1 %</text>
+</svg><figcaption>Tablero de tasa de error de un equipo (datos de ejemplo). De un vistazo se ve quién necesita apoyo: Marta y Sara superan el límite.</figcaption></figure>`,
+
+pdca:`<figure class="fig"><svg viewBox="0 0 540 240" role="img" aria-label="Ciclo PDCA">
+<circle cx="150" cy="120" r="106" style="fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:6 5"/>
+<path d="M150 120 L150 25 A95 95 0 0 1 245 120 Z" style="fill:var(--f-index);stroke:var(--surface);stroke-width:3"/>
+<path d="M150 120 L245 120 A95 95 0 0 1 150 215 Z" style="fill:var(--f-middle);stroke:var(--surface);stroke-width:3"/>
+<path d="M150 120 L150 215 A95 95 0 0 1 55 120 Z" style="fill:var(--f-ring);stroke:var(--surface);stroke-width:3"/>
+<path d="M150 120 L55 120 A95 95 0 0 1 150 25 Z" style="fill:var(--f-thumb);stroke:var(--surface);stroke-width:3"/>
+<text x="192" y="84" text-anchor="middle" class="b" style="font-size:12px">Planificar</text><text x="190" y="166" text-anchor="middle" class="b" style="font-size:12px">Hacer</text><text x="110" y="166" text-anchor="middle" class="b" style="font-size:12px">Verificar</text><text x="110" y="84" text-anchor="middle" class="b" style="font-size:12px">Actuar</text>
+<circle cx="150" cy="120" r="28" style="fill:var(--surface);stroke:var(--line)"/><text x="150" y="124" text-anchor="middle" class="sm">Mejora</text>
+${[["Planificar","Detectar el problema y su causa"],["Hacer","Probar el cambio en pequeño"],["Verificar","Medir antes y después"],["Actuar","Extender el cambio o corregirlo"]].map((l,i)=>`<text x="290" y="${50+i*48}" class="b">${l[0]}</text><text x="290" y="${67+i*48}" class="sm">${l[1]}</text>`).join("")}
+</svg><figcaption>Ciclo de mejora continua. Al terminar Actuar se vuelve a Planificar con el siguiente problema.</figcaption></figure>`,
+
+rgpd:`<div class="tiles">${[["5.1.a","Licitud, lealtad y transparencia","Tratar los datos con base legal y sin engaño"],["5.1.b","Limitación de la finalidad","Usarlos solo para aquello para lo que se recogieron"],["5.1.c","Minimización","Grabar solo los datos necesarios"],["5.1.d","Exactitud","Datos correctos y actualizados: grabar sin errores es una obligación legal"],["5.1.e","Limitación del plazo","No conservarlos más tiempo del necesario"],["5.1.f","Integridad y confidencialidad","Protegerlos de accesos, pérdidas y destrucción"],["5.2","Responsabilidad proactiva","La empresa debe poder demostrar que cumple"]].map(t=>`<div class="tile"><span>Art. ${t[0]}</span><b>${t[1]}</b><p>${t[2]}</p></div>`).join("")}</div>`
+};
+
+const T=(head,rows)=>`<div class="tbl sm"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+
+const UNITS=[
+{id:"ud1",key:"F1",short:"Puesto de trabajo",pages:"pp. 1–33",
+ title:"Organización y mantenimiento del puesto de trabajo y los terminales informáticos en el proceso de grabación de datos",
+ obj:"Organizar el espacio, el tiempo, los documentos y los recursos de grabación; mantener los equipos operativos, y adaptar el puesto a la normativa de pantallas de visualización para trabajar con rendimiento y sin lesiones.",
+ tags:["Planificación","Programación","Mantenimiento","Ergonomía","RD 488/1997"],
+ secs:[
+ ["1.1","Planificar en el proceso de grabación de datos","p. 3",`
+  <p>Grabar datos es trasladar información de un soporte (papel, imagen, audio, otro sistema) a una aplicación informática, de forma exacta y en el formato que exige la empresa. Planificar es decidir antes de teclear: dónde se trabaja, con qué medios, qué se hace y qué resultado se espera. Las cuatro decisiones se toman juntas, porque una condiciona a las demás.</p>
+  <h4>1.1.1 Los espacios de trabajo</h4>
+  <p>El espacio se divide en zonas de uso. El objetivo es que el grabador no tenga que levantarse ni girar el tronco para continuar la tarea.</p>
+  <ul>
+   <li><b>Zona de entrada</b>: bandeja o carpeta de documentos pendientes, a la izquierda para quien teclea con la derecha en el bloque numérico.</li>
+   <li><b>Zona activa</b>: teclado, ratón y atril con el documento en curso, todo dentro del alcance de los brazos sin estirarlos.</li>
+   <li><b>Zona de salida</b>: documentos ya grabados, separados físicamente de los pendientes para no grabar dos veces el mismo.</li>
+   <li><b>Zona de consulta</b>: manuales de códigos, listados de referencia y hoja de incidencias.</li>
+  </ul>
+  ${FIG.plano}<p>Condiciones generales del local según el RD 486/1997: altura mínima de 2,5 m en oficinas, 2 m² de superficie libre y 10 m³ de volumen no ocupado por trabajador. La pantalla se coloca perpendicular a las ventanas y con las luminarias a los lados, nunca detrás ni delante del usuario.</p>
+  <h4>1.1.2 Las herramientas a usar en el proceso</h4>
+  ${T(["Tipo","Ejemplos","Para qué sirve"],[
+   ["Hardware","Terminal, pantalla, teclado extendido con bloque numérico, ratón, escáner","Introducir, visualizar y digitalizar"],
+   ["Software","Aplicación de grabación, formularios, hoja de cálculo, gestor de bases de datos","Recoger los datos con estructura fija"],
+   ["Ayudas de la aplicación","Máscaras de entrada, listas desplegables, valores por defecto, validaciones","Reducir pulsaciones y errores"],
+   ["Ergonómicas","Atril, reposapiés, guía o regla de lectura, lámpara de mesa","Mantener la postura y el orden de lectura"],
+   ["Documentales","Manual de procedimiento, tablas de códigos, plantillas de cotejo","Unificar criterios entre grabadores"]])}
+  <p>Antes de empezar un lote se comprueba que todo funciona: la aplicación abre la plantilla correcta, el teclado tiene activado el bloque numérico y la distribución es español (España).</p>
+  <h4>1.1.3 Las actividades a realizar</h4>
+  <ul>
+   <li><b>Altas</b>: crear registros nuevos (un cliente, un pedido, una factura).</li>
+   <li><b>Modificaciones</b>: actualizar datos existentes (cambio de dirección, de importe).</li>
+   <li><b>Bajas</b>: marcar o eliminar registros según el procedimiento, normalmente con autorización.</li>
+   <li><b>Consultas</b>: localizar un registro para verificarlo o completarlo.</li>
+   <li><b>Transcripción</b>: pasar a texto el contenido de una grabación de voz o de un documento manuscrito.</li>
+   <li><b>Verificación</b>: comprobar lo grabado contra el original.</li>
+  </ul>
+  <p>Cada actividad tiene su propio ritmo. Una alta de cliente con 15 campos no se mide igual que una modificación de un solo dato.</p><div class="call err"><b class="lb">Error frecuente</b><p>Tratar una baja como una modificación y borrar un registro que había que conservar. Las bajas siguen siempre el procedimiento y, si lo exige, llevan autorización.</p></div>
+  <h4>1.1.4 Los objetivos a cumplir</h4>
+  <p>Un objetivo útil es concreto, medible, alcanzable, relevante para el servicio y con plazo. Combina siempre cantidad y calidad.</p>
+  ${T(["Mal planteado","Bien planteado"],[
+   ["Grabar rápido los pedidos","Grabar los 600 pedidos del lote 14 antes del jueves a las 14:00"],
+   ["Cometer pocos errores","Tasa de error por debajo del 0,5 % de los campos grabados"],
+   ["Mejorar la velocidad","Pasar de 70 a 85 registros por hora en cuatro semanas"]])}
+  <div class="note">Un objetivo solo de cantidad empuja a grabar mal. Un objetivo solo de calidad no permite programar el trabajo. Hacen falta los dos.</div>`],
+
+ ["1.2","Organización del tiempo de actividad, el área de trabajo y documentos a grabar","p. 11",`
+  <h4>Organización del tiempo</h4>
+  <ul>
+   <li><b>Matriz urgente / importante</b>: lo urgente e importante se hace primero; lo importante no urgente se programa; lo urgente no importante se delega o se resuelve rápido; lo demás se elimina.</li>
+   <li><b>Trabajo por lotes</b>: agrupar documentos del mismo tipo reduce los cambios de plantilla y de atención.</li>
+   <li><b>Bloques de concentración</b>: tramos de grabación continua de 45 a 60 minutos separados por pausas cortas. Coincide con lo que pide la normativa de pantallas.</li>
+   <li><b>Horas de mayor rendimiento</b>: las tareas que exigen más atención (tablas numéricas, verificación) se colocan en la franja en que cada persona rinde mejor, que suele ser la primera mitad de la jornada.</li>
+   <li><b>Lista de tareas del día</b>: escrita al empezar, con el lote, el objetivo y la hora prevista de cierre.</li>
+   <li><b>Ladrones de tiempo</b>: interrupciones, correo abierto, buscar documentos mal archivados, repetir trabajo por errores. Se identifican y se limitan.</li>
+  </ul>
+  ${FIG.eisen}<h4>Organización del área de trabajo: método de las 5S</h4>${FIG.s5}
+  ${T(["Fase","Qué se hace en el puesto de grabación"],[
+   ["Clasificar","Retirar de la mesa todo lo que no se usa en el lote actual"],
+   ["Ordenar","Un sitio fijo para cada cosa: pendientes, en curso, grabados, consulta"],
+   ["Limpiar","Teclado, pantalla y mesa limpios al final de la jornada"],
+   ["Estandarizar","Mismo orden en todos los puestos del equipo, rotulado si hace falta"],
+   ["Mantener","Revisión breve diaria hasta que se convierte en hábito"]])}
+  <h4>Organización de los documentos a grabar</h4>
+  <ol>
+   <li><b>Recepción</b>: anotar fecha, procedencia y número de documentos recibidos.</li>
+   <li><b>Comprobación</b>: que estén completos, legibles y que correspondan al lote.</li>
+   <li><b>Clasificación</b> según el criterio que fije la empresa.</li>
+   <li><b>Preparación física</b>: desgrapar, alinear, orientar todos en el mismo sentido.</li>
+   <li><b>Numeración</b> correlativa del lote para poder controlar lo grabado.</li>
+   <li><b>Marcado</b> de cada documento una vez grabado (sello, señal o separación).</li>
+  </ol><div class="call ex"><b class="lb">Ejemplo</b><p>Un lote de 400 pedidos ordenado por código postal permite grabar seguidas las provincias y detectar al momento un código que no encaja con su zona.</p></div>
+  ${T(["Criterio","Ejemplo de ordenación"],[
+   ["Alfabético","Fichas de clientes por primer apellido"],
+   ["Numérico","Facturas por número correlativo"],
+   ["Cronológico","Albaranes por fecha de entrega"],
+   ["Geográfico","Pedidos por provincia o código postal"],
+   ["Temático","Expedientes por tipo de trámite"],
+   ["Alfanumérico","Referencias del tipo PED-20418"]])}
+  <div class="note">Los documentos con datos ilegibles o incompletos se separan antes de empezar, en una carpeta de incidencias. Así no interrumpen el ritmo de grabación.</div>`],
+
+ ["1.3","Programación de la actividad de grabación de datos","p. 14",`
+  <p>Programar es pasar el plan a un calendario concreto y realista, con recursos asignados.</p>
+  <h4>Pasos de la programación</h4>
+  <ol>
+   <li><b>Inventario del trabajo</b>: número de documentos, campos por documento y tipo de dato (texto, numérico, fechas).</li>
+   <li><b>Estimación del rendimiento</b>: medido en pruebas reales, nunca a partir de la velocidad máxima de una persona.</li>
+   <li><b>Cálculo del tiempo de grabación</b>: documentos ÷ rendimiento por hora.</li>
+   <li><b>Suplementos</b>: verificación (entre un 15 % y un 25 % del tiempo de grabación), pausas e imprevistos.</li>
+   <li><b>Reparto</b>: entre personas o turnos, con lotes de tamaño similar.</li>
+   <li><b>Calendario</b>: fechas de inicio, entregas parciales y cierre.</li>
+   <li><b>Seguimiento</b>: comparar cada día lo previsto con lo realizado y replanificar si hay desvío.</li>
+  </ol>
+  <div class="note">Ejemplo: 1.200 fichas de 8 campos a 90 fichas/hora son 13,3 horas de grabación. Con un 20 % de verificación suben a 16 horas. Si cada hora de trabajo incluye 10 minutos de pausa, hacen falta 19,2 horas de presencia: tres jornadas de 7 horas.</div>
+  ${FIG.gantt}<h4>Hoja de control de lote</h4>
+  <p>Es el documento de seguimiento. Campos mínimos:</p>
+  ${T(["Campo","Contenido"],[
+   ["Lote","Código o número"],["Tipo de documento","Pedido, factura, ficha..."],["Documentos recibidos","Cantidad y fecha de recepción"],["Grabador / verificador","Nombre o código de cada uno"],["Inicio y fin","Fecha y hora"],["Registros grabados","Cantidad"],["Errores detectados","Cantidad y tipo"],["Incidencias","Documentos apartados y motivo"],["Entrega","Fecha, destinatario y firma"]])}
+  <p>La programación se representa con un cronograma o diagrama de barras (Gantt), donde cada lote es una barra sobre los días de trabajo. Permite ver de un vistazo si se llega al plazo.</p>`],
+
+ ["1.4","Mantenimiento y reposición de terminales informáticos y recursos o materiales","p. 17",`
+  <p>Un equipo parado o un consumible agotado detiene la grabación. El mantenimiento puede ser <b>preventivo</b> (se hace antes de que falle) o <b>correctivo</b> (se repara tras la avería). El grabador se ocupa del preventivo básico y comunica el correctivo.</p>
+  ${T(["Frecuencia","Tareas del usuario"],[
+   ["Diaria","Cerrar sesión o bloquear el equipo al ausentarse; guardar y hacer copia del trabajo al cerrar el lote; apagar correctamente"],
+   ["Semanal","Limpiar teclado (equipo apagado, aire a presión entre teclas, paño apenas húmedo) y pantalla con producto específico; vaciar papelera y archivos temporales"],
+   ["Mensual","Comprobar actualizaciones pendientes; revisar cables, ratón y estado del teclado; revisar stock de consumibles"],
+   ["Cuando ocurre","Registrar cualquier fallo en la hoja de incidencias y avisar al servicio técnico"]])}
+  <h4>Normas de uso del terminal</h4>
+  <ul>
+   <li>No comer ni beber sobre el teclado.</li>
+   <li>No instalar programas ni conectar memorias externas sin autorización.</li>
+   <li>No abrir la carcasa ni manipular el cableado interno.</li>
+   <li>Respetar las rejillas de ventilación del equipo.</li>
+  </ul><div class="call err"><b class="lb">Error frecuente</b><p>Limpiar el teclado con el equipo encendido y la aplicación abierta: se cuelan caracteres en el registro activo y nadie lo nota hasta la verificación.</p></div>
+  <h4>Copias de seguridad</h4>
+  <p>Regla 3-2-1: tres copias de los datos, en dos soportes distintos, una de ellas fuera del lugar de trabajo o en la nube. En la mayoría de empresas la copia la hace el sistema; el grabador debe saber dónde guardar para que su trabajo quede incluido.</p>
+  <h4>Reposición de recursos y materiales</h4>
+  <ul>
+   <li>Inventario de consumibles (papel, tóner, etiquetas, carpetas, soportes) con un <b>stock mínimo</b> que dispara el pedido.</li>
+   <li>Solicitud por el canal fijado (formulario, correo al responsable).</li>
+   <li>Retirada de residuos electrónicos y tóner a punto limpio o gestor autorizado.</li>
+  </ul>
+  <h4>Protocolo ante una avería</h4>
+  <ol><li>Guardar lo que se pueda y anotar en qué registro se quedó la grabación.</li><li>Describir el fallo: equipo, mensaje de error, qué se estaba haciendo.</li><li>Comunicarlo al responsable o servicio técnico.</li><li>Continuar en un puesto alternativo si lo hay.</li></ol>`],
+
+ ["1.5","Postura corporal ante el terminal informático","p. 20",`
+  <p>La postura sentada mantenida durante horas es el principal origen de molestias en el trabajo de grabación. La referencia es una postura neutra que se puede mantener sin esfuerzo y que se cambia con frecuencia.</p>
+  ${FIG.postura}${T(["Zona","Posición correcta"],[
+   ["Cabeza y cuello","Erguidos, mirada ligeramente hacia abajo; borde superior de la pantalla a la altura de los ojos o algo por debajo"],
+   ["Espalda","Apoyada en el respaldo, con la curva lumbar sostenida"],
+   ["Cadera","Ángulo de 90° a 110° entre tronco y muslos"],
+   ["Rodillas","Ángulo cercano a 90°, con espacio libre bajo la mesa"],
+   ["Pies","Planos en el suelo o en un reposapiés"]])}
+  <h4>1.5.1 Prevención de vicios posturales y tensiones</h4>
+  ${T(["Vicio postural","Consecuencia","Corrección"],[
+   ["Cabeza adelantada hacia la pantalla","Dolor cervical","Acercar la pantalla o ampliar el texto"],
+   ["Sentarse en el borde del asiento","Carga lumbar","Usar todo el asiento y el respaldo"],
+   ["Piernas cruzadas","Peor circulación, cadera desequilibrada","Pies apoyados y separados"],
+   ["Hombros elevados","Tensión en trapecios","Bajar la mesa o subir la silla con reposapiés"],
+   ["Girar el tronco hacia el documento","Sobrecarga dorsal","Atril junto a la pantalla"],
+   ["Pantalla de portátil sobre la mesa","Flexión de cuello mantenida","Elevador más teclado y ratón externos"]])}
+  <p>Señales de alarma: hormigueo en los dedos, dolor de cuello al final de la jornada, ojos secos o enrojecidos, dolor de cabeza. Se comunican al responsable y al servicio de vigilancia de la salud.</p>
+  <h4>Pausas activas</h4>
+  <ul>
+   <li><b>Cuello</b>: inclinar la cabeza hacia cada lado y hacia delante, sin forzar, 10 segundos.</li>
+   <li><b>Hombros</b>: subirlos hacia las orejas y soltarlos; círculos hacia atrás.</li>
+   <li><b>Muñecas y dedos</b>: brazo extendido, palma hacia fuera, tirar suavemente de los dedos con la otra mano; abrir y cerrar las manos.</li>
+   <li><b>Espalda</b>: levantarse, entrelazar las manos y estirar los brazos hacia arriba.</li>
+   <li><b>Ojos</b>: regla 20-20-20, cada 20 minutos mirar 20 segundos un punto a unos 6 metros (20 pies).</li>
+  </ul>
+  <h4>1.5.2 Posición de los brazos, muñecas y manos</h4>${FIG.muneca}
+  <ul>
+   <li><b>Brazos</b>: pegados al cuerpo, hombros relajados, codos en ángulo de 90° o algo abiertos.</li>
+   <li><b>Antebrazos</b>: horizontales, apoyados en la mesa en el espacio libre delante del teclado (unos 10 cm).</li>
+   <li><b>Muñecas</b>: rectas, en línea con el antebrazo. Sin doblarlas hacia arriba (extensión) ni hacia los lados (desviación cubital o radial).</li>
+   <li><b>Manos</b>: dedos curvados sobre la fila guía, pulsación ligera.</li>
+   <li><b>Teclado</b>: plano o con poca inclinación. Las patas traseras levantadas fuerzan la extensión de la muñeca.</li>
+   <li><b>Ratón</b>: al lado del teclado, a la misma altura; se mueve con todo el antebrazo, no solo con la muñeca.</li>
+   <li><b>Reposamuñecas</b>: para descansar en las pausas entre pulsaciones, no para apoyarse mientras se teclea.</li>
+  </ul>
+  <div class="note">La extensión y la desviación de muñeca mantenidas se asocian al síndrome del túnel carpiano y a tendinitis, dos de los trastornos más frecuentes en tareas de teclado intensivo.</div>`],
+
+ ["1.6","Mitigación de los riesgos laborales derivados de la grabación de datos","p. 24",`
+  <p>El trabajo con pantallas genera tres familias de riesgos:</p>
+  ${FIG.riesgos}
+  <p>El anexo del RD 488/1997 fija los requisitos mínimos en tres bloques (equipo, entorno e interconexión ordenador/persona), y la guía técnica del INSST añade el análisis de las exigencias de la tarea.</p>
+  <h4>1.6.1 Equipo</h4>
+  <ul>
+   <li><b>Pantalla</b>: caracteres bien definidos y de tamaño suficiente; imagen estable, sin destellos; brillo y contraste regulables; orientable e inclinable; sin reflejos.</li>
+   <li><b>Teclado</b>: inclinable e independiente de la pantalla; con espacio delante para apoyar manos y brazos; superficie mate; símbolos contrastados y legibles.</li>
+   <li><b>Mesa</b>: poco reflectante, de dimensiones suficientes para colocar pantalla, teclado, documentos y material; atril estable y regulable si se trabaja con documentos.</li>
+   <li><b>Asiento</b>: estable, que permita libertad de movimiento y postura confortable; altura regulable; respaldo reclinable y de altura ajustable; reposapiés a disposición de quien lo pida.</li>
+  </ul>
+  <h4>1.6.2 Entorno</h4>
+  ${FIG.ventana}${T(["Factor","Referencia orientativa"],[
+   ["Espacio","Dimensiones del puesto que permitan cambiar de postura"],
+   ["Iluminación","En torno a 500 lux sobre la mesa para tareas habituales de oficina; luz general más lámpara regulable si hace falta"],
+   ["Reflejos y deslumbramientos","Pantalla perpendicular a ventanas; persianas o cortinas; luminarias apantalladas"],
+   ["Ruido","Que no perturbe la atención ni la palabra; para tareas de concentración se orienta a no superar 55 dB(A)"],
+   ["Temperatura","Entre 17 y 27 °C en trabajos sedentarios (RD 486/1997); la guía técnica recomienda 23–26 °C en verano y 20–24 °C en invierno"],
+   ["Humedad","Entre 30 % y 70 % según RD 486/1997; para evitar sequedad ocular, mejor entre 45 % y 65 %"],
+   ["Calor de los equipos","Los equipos no deben producir un calor adicional molesto"]])}
+  <h4>1.6.3 Interconexión ordenador/persona</h4>
+  <ul>
+   <li>El programa debe estar adaptado a la tarea que se realiza.</li>
+   <li>Fácil de usar y, cuando proceda, adaptable al nivel de conocimientos y experiencia del usuario.</li>
+   <li>Debe dar indicaciones sobre su desarrollo (mensajes claros, confirmación de lo guardado, avisos de error comprensibles).</li>
+   <li>Mostrar la información en un formato y a un ritmo adaptados a los operadores.</li>
+   <li>No se puede usar ningún dispositivo de control cuantitativo o cualitativo del trabajo sin que los trabajadores hayan sido informados.</li>
+  </ul>
+  <p>En la práctica: formularios en el mismo orden que el documento fuente, campos con máscara, tabulación lógica, validaciones que avisan en el momento y no al final.</p>
+  <h4>1.6.4 Exigencias de la tarea</h4>
+  <ul>
+   <li><b>Carga mental</b>: atención sostenida y memoria a corto plazo. Se reduce con documentos legibles y criterios claros.</li>
+   <li><b>Monotonía y repetitividad</b>: se combate alternando tareas (grabación, verificación, archivo) y rotando tipos de documento.</li>
+   <li><b>Ritmo impuesto</b>: cuanto menos control tiene la persona sobre su ritmo, mayor fatiga. Objetivos alcanzables y cierto margen de autonomía.</li>
+   <li><b>Pausas</b>: el RD 488/1997 obliga a organizar la actividad con pausas periódicas o cambios de actividad. Mejor cortas y frecuentes que largas y espaciadas.</li>
+  </ul>`],
+
+ ["1.7","Normativa vigente en materia de seguridad, salud e higiene postural","p. 30",`
+  ${FIG.normas}${T(["Norma","Qué regula","Puntos clave para el grabador"],[
+   ["Ley 31/1995, de Prevención de Riesgos Laborales","Marco general de la prevención","Derecho a protección (art. 14), información (art. 18), formación (art. 19) y vigilancia de la salud (art. 22); obligaciones del trabajador (art. 29)"],
+   ["RD 39/1997, Reglamento de los Servicios de Prevención","Organización de la prevención","Evaluación de riesgos de cada puesto y planificación de medidas"],
+   ["RD 488/1997, pantallas de visualización","Trabajo con equipos con pantalla","Evaluación del puesto, pausas, vigilancia de la salud y requisitos del anexo"],
+   ["RD 486/1997, lugares de trabajo","Condiciones del local","Espacio, temperatura, humedad, iluminación"],
+   ["Ley 10/2021, de trabajo a distancia","Teletrabajo","El puesto en el domicilio también se evalúa y se ajusta"],
+   ["Guía técnica del INSST sobre pantallas","Criterios de aplicación del RD 488/1997","Valores orientativos y métodos de evaluación"],
+   ["UNE-EN ISO 9241","Ergonomía de la interacción persona-sistema","Requisitos técnicos de pantallas, teclados y software"]])}
+  <h4>El RD 488/1997 por artículos</h4>
+  <ul>
+   <li><b>Art. 1 y 2</b>: objeto y definiciones. Es trabajador usuario quien utiliza la pantalla de forma habitual y durante una parte relevante de su trabajo normal.</li>
+   <li><b>Art. 3</b>: obligaciones del empresario. Evaluar los riesgos del puesto (vista, postura, carga mental) y organizar la actividad con pausas o cambios de tarea.</li>
+   <li><b>Art. 4</b>: vigilancia de la salud. Antes de empezar, periódicamente y cuando aparezcan trastornos. Incluye reconocimiento oftalmológico si es necesario y gafas especiales para el trabajo con pantalla cuando las normales no sirvan.</li>
+   <li><b>Art. 5</b>: información y formación sobre los riesgos y las medidas.</li>
+   <li><b>Art. 6</b>: consulta y participación de los trabajadores.</li>
+  </ul>
+  <div class="note">El artículo 29 de la Ley 31/1995 también obliga al trabajador: usar correctamente los equipos, no anular los dispositivos de seguridad, informar de cualquier riesgo que detecte y cooperar con la empresa en la prevención.</div>`]
+ ],
+ ex:["ergo","riesgos","prog","order","quiz1"],
+ acts:[
+  ["A1","Auditoría del propio puesto","Por parejas, cada alumno mide el puesto del compañero (altura de silla y mesa, distancia a la pantalla, ángulo del codo, iluminación con una app de luxómetro) y rellena una ficha de comprobación basada en el anexo del RD 488/1997.","Ficha completa · tres mejoras propuestas y justificadas con la norma"],
+  ["A2","Programación de un encargo","Encargo: 2.400 albaranes de 6 campos, rendimiento medido de 110 albaranes/hora, 20 % de verificación, plazo de 5 días. El alumno calcula las horas, reparte el trabajo entre dos grabadores y dibuja el cronograma.","Cálculo correcto · pausas incluidas · plazo cumplido"],
+  ["A3","Preparación de un lote real","Se entregan 40 documentos desordenados (algunos incompletos). El alumno los recibe, comprueba, clasifica, numera y aparta las incidencias, y rellena la hoja de control de lote.","Criterio aplicado sin fallos · incidencias bien separadas"],
+  ["A4","Plan de mantenimiento del aula","En grupo, redactar el plan de mantenimiento preventivo semanal y la hoja de registro de incidencias de los equipos del aula, con responsable por tarea.","Tareas, frecuencia y responsable definidos"],
+  ["A5","5S en el puesto","Fotografiar el puesto antes y después de aplicar las 5S y explicar cada cambio.","Las cinco fases aplicadas y justificadas"]
+ ]},
+
+{id:"ud2",key:"F2",short:"Actuación profesional",pages:"pp. 35–53",
+ title:"La actuación personal y profesional en el entorno de trabajo de la actividad de grabación de datos",
+ obj:"Integrarse en un servicio de grabación asumiendo funciones, instrucciones y objetivos; trabajar en equipo; medir la propia calidad con indicadores, y actuar con ética y confidencialidad en el tratamiento de los datos.",
+ tags:["Organización","Trabajo en equipo","Indicadores","Ética","Protección de datos"],
+ secs:[
+ ["2.1","Organización del trabajo en la actividad de grabación de datos en terminales informáticos","p. 37",`
+  <h4>2.1.1 Funciones e instrucciones, objetivos y formas</h4>
+  ${T(["Puesto","Funciones principales"],[
+   ["Operador de grabación","Recibir y preparar documentos, grabar, autocomprobar, registrar incidencias"],
+   ["Verificador","Cotejar lo grabado con el original, clasificar errores, devolver para corrección"],
+   ["Coordinador o supervisor","Repartir lotes, resolver dudas de criterio, controlar plazos e indicadores, dar el visto bueno a la entrega"]])}
+  ${FIG.organi}<p>En empresas pequeñas una misma persona puede asumir las tres funciones; lo que no cambia es que la verificación la haga alguien distinto de quien grabó siempre que sea posible.</p>
+  <p><b>Instrucciones</b>. Pueden ser orales o escritas. Todo lo que afecta a cómo se graba un dato debe estar por escrito:</p>
+  <ul>
+   <li>Manual de procedimiento del servicio.</li>
+   <li>Hoja de instrucciones de cada lote: campos, formato de fecha, uso de mayúsculas, abreviaturas permitidas, campos obligatorios, qué hacer con datos ilegibles.</li>
+   <li>Tablas de códigos (provincias, tipos de cliente, productos).</li>
+  </ul>
+  ${FIG.paper}<p>Ante una instrucción oral ambigua se repite con las propias palabras para confirmar que se ha entendido y se anota.</p>
+  <p><b>Objetivos</b>. Pueden ser individuales (rendimiento y error de cada persona) o del equipo (lote entregado en plazo). Conviene conocer los dos y cómo se miden.</p>
+  <p><b>Formas de organización</b>:</p>
+  ${T(["Forma","Características"],[
+   ["Centralizada","Un departamento graba para toda la empresa; criterios uniformes"],
+   ["Descentralizada","Cada departamento graba sus propios datos; más cerca del origen"],
+   ["Externalizada","Una empresa de servicios graba por encargo, con contrato y acuerdo de confidencialidad"],
+   ["Grabación en cadena","Un grabador graba y otro verifica"],
+   ["Doble grabación","Dos personas graban lo mismo y el sistema compara"],
+   ["Teletrabajo","Se graba a distancia con acceso seguro y puesto evaluado"]])}
+  <h4>2.1.2 Pautas de actuación, actitud y autonomía personal y en el grupo</h4>
+  <p>La autonomía consiste en saber qué se decide solo, qué se consulta y qué se escala de inmediato.</p>
+  ${FIG.semaforo}${T(["Nivel","Situaciones típicas"],[
+   ["Resuelvo yo","Errores propios detectados antes de entregar; orden de trabajo dentro del lote; ajuste de mi puesto"],
+   ["Consulto","Documento que no encaja en ningún criterio; dato ilegible; duda de interpretación"],
+   ["Escalo de inmediato","Posible fuga o acceso indebido a datos; avería que para el servicio; plazo que no se va a cumplir"]])}
+  <p>Pautas de actitud que se valoran en un servicio de grabación:</p>
+  <ul>
+   <li>Puntualidad y cumplimiento de los plazos comprometidos.</li>
+   <li>Atención sostenida y cuidado en el detalle.</li>
+   <li>Receptividad ante las correcciones del verificador.</li>
+   <li>Iniciativa para proponer mejoras en formularios o procedimientos.</li>
+   <li>Discreción con la información que se maneja.</li>
+   <li>Disposición a ayudar al equipo cuando el propio lote está terminado.</li>
+  </ul>`],
+
+ ["2.2","Aplicación del concepto de trabajo en equipo: el espíritu de equipo y la sinergia","p. 41",`
+  ${T(["Grupo de trabajo","Equipo de trabajo"],[
+   ["Personas que comparten espacio o jefe","Personas que comparten un objetivo"],
+   ["Cada uno responde de lo suyo","Responsabilidad compartida del resultado"],
+   ["Información que circula poco","Comunicación constante"],
+   ["El resultado es la suma de las partes","El resultado supera la suma de las partes"]])}
+  <h4>Sinergia</h4>
+  <p>Hay sinergia cuando el resultado conjunto es mayor que lo que cada persona conseguiría por separado. En grabación se produce cuando:</p>
+  <ul>
+   <li>Los lotes se reparten según las fortalezas (quien es más rápido en numérico, quien es más preciso en verificación).</li>
+   <li>Las dudas resueltas se comparten y se escriben en un registro común de criterios.</li>
+   <li>Quien termina antes apoya a quien va con retraso.</li>
+   <li>Los errores frecuentes se analizan en grupo, sin buscar culpables.</li>
+  </ul>
+  ${FIG.sinergia}<h4>Fases de formación de un equipo</h4>${FIG.tuckman}
+  ${T(["Fase","Qué ocurre","Qué ayuda"],[
+   ["Formación","Las personas se conocen, hay incertidumbre","Objetivos y roles claros"],
+   ["Conflicto","Aparecen diferencias de criterio y de ritmo","Escucha y normas acordadas"],
+   ["Normalización","Se fijan criterios y formas de trabajo","Escribir los acuerdos"],
+   ["Rendimiento","El equipo funciona con autonomía","Mantener la comunicación y revisar resultados"]])}
+  <h4>El espíritu de equipo en la práctica</h4>
+  <ul>
+   <li><b>Comunicación</b>: escucha activa, mensajes claros, preguntar antes de suponer.</li>
+   <li><b>Asertividad</b>: expresar desacuerdos con respeto y con datos ("en los últimos 50 registros hay 6 fechas con formato distinto").</li>
+   <li><b>Retroalimentación</b>: describir el hecho, no juzgar a la persona; proponer una solución.</li>
+   <li><b>Conflictos</b>: se tratan cuando aparecen, en privado y centrados en el trabajo.</li>
+  </ul>`],
+
+ ["2.3","Identificación de parámetros de actuación profesional en la actividad de grabación de datos","p. 45",`
+  <h4>2.3.1 Indicadores de calidad de la organización</h4>
+  ${T(["Indicador","Cálculo","Qué mide"],[
+   ["Tasa de error","Campos erróneos ÷ campos grabados × 100","Exactitud"],
+   ["Productividad","Registros grabados ÷ horas de grabación","Rendimiento"],
+   ["Pulsaciones por minuto","Pulsaciones ÷ minutos","Velocidad de tecleo"],
+   ["Cumplimiento de plazos","Lotes entregados a tiempo ÷ lotes totales × 100","Fiabilidad del servicio"],
+   ["Retrabajo","Registros corregidos tras la entrega ÷ registros entregados × 100","Calidad que llega al cliente"],
+   ["Incidencias resueltas","Incidencias cerradas ÷ incidencias abiertas × 100","Capacidad de respuesta"]])}
+  ${FIG.kpi}<p>El estándar lo fija la empresa según la importancia del dato. Un error en un importe bancario no tiene la misma gravedad que en un campo de observaciones, por eso a veces se ponderan los errores por campo.</p>
+  <h4>2.3.2 Integración de hábitos profesionales</h4>
+  <ul>
+   <li>Preparar el puesto y el lote antes de empezar.</li>
+   <li>Guardar con frecuencia y al cerrar cada documento.</li>
+   <li>Revisar el último registro antes de pasar al siguiente.</li>
+   <li>Anotar las dudas en el momento, no al final de la jornada.</li>
+   <li>Bloquear la pantalla al levantarse.</li>
+   <li>Respetar las pausas aunque haya prisa.</li>
+   <li>Dejar el puesto ordenado al terminar.</li>
+  </ul><div class="call err"><b class="lb">Error frecuente</b><p>Guardar solo al final de la jornada. Un bloqueo de la aplicación o un corte de luz se lleva horas de trabajo.</p></div>
+  <h4>2.3.3 Procedimientos de trabajo sometidos a normas de seguridad y salud laboral</h4>
+  <p>Ajustar el puesto, hacer pausas y comunicar molestias forma parte del procedimiento. El artículo 29 de la Ley 31/1995 obliga al trabajador a:</p>
+  <ul>
+   <li>Usar correctamente los equipos y medios de trabajo.</li>
+   <li>Usar los medios de protección que facilite la empresa.</li>
+   <li>No desactivar los dispositivos de seguridad.</li>
+   <li>Informar de inmediato de cualquier situación de riesgo.</li>
+   <li>Cumplir las obligaciones que fije la autoridad competente.</li>
+   <li>Cooperar con la empresa para que las condiciones de trabajo sean seguras.</li>
+  </ul>
+  <h4>2.3.4 Coordinación</h4>
+  ${T(["Mecanismo","Ejemplo en grabación"],[
+   ["Normalización del proceso","Manual de procedimiento y hoja de instrucciones de lote"],
+   ["Normalización de resultados","Objetivos de error y productividad conocidos por todos"],
+   ["Supervisión directa","El coordinador reparte lotes y resuelve dudas"],
+   ["Ajuste mutuo","Los grabadores se coordinan entre ellos en el día a día"]])}
+  <p>Herramientas: reunión breve al inicio de cada lote, tablero de reparto (quién tiene qué lote y en qué estado), registro compartido de criterios.</p>
+  <h4>2.3.5 La orientación a resultados</h4>
+  <p>Trabajar mirando el objetivo, no solo la tarea. En la práctica significa saber en cada momento cuántos registros quedan, a qué ritmo se va y con qué calidad, y avisar en cuanto se ve que no se llegará al plazo.</p><div class="call ex"><b class="lb">Ejemplo</b><p>A media mañana del segundo día llevas 520 de 1.200 fichas, cuando el plan decía 600. Avisas al coordinador ese mismo día: hay margen para reforzar con otra persona. Si avisas el último día, ya no lo hay.</p></div>
+  <h4>2.3.6 Necesidad de mejora y otros</h4>
+  <p>La mejora continua sigue el ciclo PDCA:</p>${FIG.pdca}
+  ${T(["Fase","Ejemplo"],[
+   ["Planificar","Las fechas tienen muchos errores: se decide probar una máscara dd/mm/aaaa"],
+   ["Hacer","Se aplica la máscara en un lote de prueba"],
+   ["Verificar","Se compara la tasa de error en fechas antes y después"],
+   ["Actuar","Si mejora, se extiende a todos los formularios"]])}
+  <p>Otras herramientas: análisis de los cinco porqués para llegar a la causa de un error repetido, buzón de sugerencias, formación continua en mecanografía y en las aplicaciones.</p>`],
+
+ ["2.4","Caracterización de la profesionalidad: ética personal y profesional en el entorno de trabajo","p. 53",`
+  <h4>Principios éticos del grabador de datos</h4>
+  ${T(["Principio","Cómo se aplica"],[
+   ["Confidencialidad","Lo que se graba no se comenta ni se usa fuera del trabajo"],
+   ["Integridad","Nunca se inventa, completa o modifica un dato sin base en el original"],
+   ["Responsabilidad","Se comunican los errores propios aunque nadie los haya visto"],
+   ["Lealtad","Se usan los recursos de la empresa para los fines de la empresa"],
+   ["Respeto","Trato correcto a compañeros y a las personas cuyos datos se manejan"],
+   ["Imparcialidad","Mismo criterio para todos los registros, sin preferencias"]])}
+  <h4>Protección de datos personales</h4>
+  <p>El Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD) regulan cualquier tratamiento de datos de personas físicas, y grabar es tratar datos. Principios del artículo 5 del RGPD:</p>
+  ${FIG.rgpd}
+  <p>El artículo 5 de la LOPDGDD establece el <b>deber de confidencialidad</b> de todas las personas que intervienen en el tratamiento, y ese deber se mantiene después de terminar la relación laboral.</p>
+  <div class="call ex"><b class="lb">Ejemplo</b><p>Envías por error un listado de clientes a un proveedor. Avisas en ese momento al responsable, que valora si hay que notificarlo a la Agencia Española de Protección de Datos. Intentar ocultarlo agrava el problema.</p></div><h4>Medidas prácticas en el puesto</h4>
+  <ul>
+   <li>Bloquear la pantalla al levantarse (<span class="kbd">Windows</span> + <span class="kbd">L</span>).</li>
+   <li>Política de mesa limpia: ningún documento con datos a la vista al ausentarse.</li>
+   <li>Contraseñas personales, que no se comparten ni se apuntan a la vista.</li>
+   <li>No enviar datos por canales no autorizados (correo personal, mensajería, memorias USB).</li>
+   <li>Destruir los documentos con trituradora o contenedor de destrucción confidencial, nunca en la papelera.</li>
+   <li>Comunicar cualquier incidente (pérdida de un documento, envío a un destinatario equivocado): la empresa tiene 72 horas para notificar ciertas brechas a la Agencia Española de Protección de Datos.</li>
+  </ul>`]
+ ],
+ ex:["autonomia","kpi","etica","quiz2"],
+ acts:[
+  ["A1","Grabación en cadena","Equipos de tres: grabador, verificador y coordinador. Se graba un lote de 30 fichas y se rotan los roles tres veces. Al final se calculan tasa de error y productividad de cada configuración.","Indicadores calculados · conclusiones del grupo"],
+  ["A2","Manual de criterios del equipo","El grupo redacta una hoja de instrucciones de lote: formato de fecha, mayúsculas, abreviaturas, campos obligatorios y tratamiento de datos ilegibles. Otro grupo la prueba grabando 10 fichas.","El otro grupo graba sin tener que preguntar"],
+  ["A3","Debate de casos éticos","Cada grupo recibe una situación (filtración de un listado, presión para entregar con errores, compañero que comparte su contraseña) y defiende una actuación citando norma o procedimiento.","Argumento basado en RGPD, LOPDGDD o procedimiento"],
+  ["A4","Ciclo de mejora","A partir de los errores de la actividad A1, el grupo elige el más frecuente, aplica los cinco porqués y diseña una prueba PDCA.","Causa identificada · prueba medible"],
+  ["A5","Feedback entre compañeros","Por parejas, cada uno da retroalimentación sobre el trabajo del otro siguiendo el esquema hecho, efecto, propuesta.","Sin juicios personales · propuesta concreta"]
+ ]}
+];
+
+
+const CASE={
+ud1:{t:"Situación de partida",p:"Lucía empieza el lunes como grabadora de datos en una distribuidora. Su puesto: un portátil sobre la mesa, la ventana a su espalda, una silla sin regular y una caja con 800 albaranes sin ordenar. Le piden tenerlos grabados en tres días.",q:["¿Qué cambiarías del puesto antes de empezar y en qué norma te apoyas?","¿Cómo prepararías los albaranes antes de teclear el primero?","Si graba 80 albaranes por hora, ¿llega al plazo con verificación y pausas?"]},
+ud2:{t:"Situación de partida",p:"Dos meses después, Lucía se incorpora a un equipo de cuatro personas. En la misma semana el verificador le devuelve un lote con errores en las fechas, una compañera le pide su contraseña porque la suya está bloqueada y el coordinador quiere saber si el equipo cumple el estándar de calidad.",q:["¿Cómo debería tomarse Lucía la devolución del verificador?","¿Qué responde a la compañera y a quién avisa?","¿Qué datos necesita el coordinador para saber si se cumple el estándar?"]}
+};
+const GLOS={
+ud1:[["Pantalla de visualización (PVD)","Pantalla alfanumérica o gráfica, sea cual sea el método de representación. Su uso regula el RD 488/1997."],["Usuario de PVD","Trabajador que usa la pantalla de forma habitual y durante una parte relevante de su trabajo normal."],["Lote","Conjunto de documentos del mismo tipo que se graban, controlan y entregan juntos."],["Atril","Soporte que sostiene el documento a la altura y distancia de la pantalla."],["Ergonomía","Disciplina que adapta el trabajo, los equipos y el entorno a la persona."],["Lux","Unidad de iluminancia: la cantidad de luz que llega a una superficie."],["Trastorno musculoesquelético","Lesión de músculos, tendones, articulaciones o nervios relacionada con posturas y movimientos repetidos."],["Mantenimiento preventivo","El que se hace de forma programada para evitar averías."],["Stock mínimo","Cantidad de un consumible por debajo de la cual se hace el pedido de reposición."],["Pausa activa","Interrupción breve del trabajo con estiramientos o cambio de postura."],["Cronograma","Representación de las tareas sobre una escala de tiempo."],["5S","Método de orden y limpieza en cinco fases: clasificar, ordenar, limpiar, estandarizar y mantener."]],
+ud2:[["Sinergia","Efecto por el que el resultado conjunto supera la suma de los resultados individuales."],["Indicador","Dato medible que permite saber si se cumple un objetivo."],["Tasa de error","Campos erróneos divididos entre campos grabados, en porcentaje."],["Retrabajo","Trabajo que hay que repetir o corregir después de entregado."],["Verificación","Comprobación de lo grabado contra el documento original."],["Doble grabación","Método en que dos personas graban lo mismo y el sistema compara."],["Asertividad","Expresar opiniones y desacuerdos con claridad y respeto."],["Escalar","Trasladar un problema al nivel que tiene capacidad para resolverlo."],["PDCA","Ciclo de mejora: planificar, hacer, verificar y actuar."],["RGPD","Reglamento europeo 2016/679 de protección de datos personales."],["Deber de confidencialidad","Obligación de no revelar los datos tratados, que continúa tras terminar la relación laboral."],["Brecha de seguridad","Incidente que provoca la pérdida, alteración o acceso no autorizado a datos personales."]]
+};
+const nav=document.getElementById("unit-nav"), main=document.getElementById("main");
+nav.innerHTML=UNITS.map(u=>`<a href="#${u.id}" data-id="${u.id}"><span class="fk">${u.key}</span><span class="lbl"><small>UD${u.id.slice(2)} · <span id="np-${u.id}">0/${u.secs.length}</span></small><span>${u.short}</span></span></a>`).join("");
+
+function updateProgress(){
+  let tot=0,done=0;
+  UNITS.forEach(u=>{let d=0;u.secs.forEach(s=>{tot++;if(seen[u.id+s[0]]){done++;d++}});const el=document.getElementById("np-"+u.id);if(el)el.textContent=d+"/"+u.secs.length});
+  const p=Math.round(done/tot*100);document.getElementById("gbar").style.width=p+"%";document.getElementById("gtxt").textContent=p+" %";
+}
+
+function render(){
+  const id=(location.hash||"#ud1").slice(1);
+  const u=UNITS.find(x=>x.id===id)||UNITS[0];
+  nav.querySelectorAll("a").forEach(a=>{if(a.dataset.id===u.id)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  main.innerHTML=`
+  <section class="unit-head">
+    <div class="eyebrow">Unidad didáctica ${u.id.slice(2)} · ${u.pages}</div>
+    <h2>${u.title}</h2>
+    <p class="obj"><b>Objetivo.</b> ${u.obj}</p>
+    <div class="meta-row">${u.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+  </section>
+  <section class="case"><div class="case-tag">${CASE[u.id].t}</div><p>${CASE[u.id].p}</p><ul>${CASE[u.id].q.map(q=>`<li>${q}</li>`).join("")}</ul><small>Al terminar la unidad deberías poder responder estas tres preguntas.</small></section>
+  <div class="block-title"><h3>Contenidos</h3><span>${u.secs.length} epígrafes</span></div>
+  ${u.secs.map((s,i)=>`<details class="sec${seen[u.id+s[0]]?" is-seen":""}" ${i===0?"open":""}>
+    <summary><span class="num">${s[0]}</span><span class="st"><span class="seen-dot"></span>${s[1]}</span><span class="pg">${s[2]}</span></summary>
+    <div class="content">${s[3]}<label class="seen-toggle"><input type="checkbox" id="seen-${u.id}-${s[0]}" data-k="${u.id+s[0]}" ${seen[u.id+s[0]]?"checked":""}> Epígrafe estudiado</label></div>
+  </details>`).join("")}
+  <div class="block-title"><h3>Ejercicios interactivos</h3><span>${u.ex.length} ejercicios · se corrigen al momento</span></div>
+  <div id="ex-zone"></div>
+  <div class="block-title"><h3>Actividades de aula</h3><span>Para evaluar en clase</span></div>
+  <div class="acts">${u.acts.map(a=>`<div class="act"><span class="k">${u.id.toUpperCase()}-${a[0]}</span><h4>${a[1]}</h4><p>${a[2]}</p><span class="crit">Criterio: ${a[3]}</span></div>`).join("")}</div>
+  <div class="block-title"><h3>Glosario</h3><span>Toca un término para ver su definición</span></div>
+  <div class="glos">${GLOS[u.id].map((g,i)=>`<button type="button" class="gl" id="gl-${u.id}-${i}" aria-expanded="false"><b>${g[0]}</b><span>${g[1]}</span></button>`).join("")}</div>`;
+  main.querySelectorAll(".seen-toggle input").forEach(cb=>cb.addEventListener("change",()=>{seen[cb.dataset.k]=cb.checked;store.set("gd-seen-v2",seen);cb.closest("details").classList.toggle("is-seen",cb.checked);updateProgress()}));
+  main.querySelectorAll(".gl").forEach(b=>b.onclick=()=>b.setAttribute("aria-expanded",b.getAttribute("aria-expanded")==="true"?"false":"true"));
+  const zone=document.getElementById("ex-zone");
+  u.ex.forEach(e=>EX[e](zone));
+  updateProgress();
+}
+
+function exBox(zone,type,title,inst){const d=document.createElement("section");d.className="ex";d.innerHTML=`<div class="ex-head"><span class="type">${type}</span><h4>${title}</h4></div><p class="inst">${inst}</p>`;zone.appendChild(d);return d}
+function addRes(box,btns){const row=document.createElement("div");row.className="row";row.innerHTML=btns.map((b,i)=>`<button class="btn${i?" ghost":""}" type="button">${b}</button>`).join("");box.appendChild(row);const res=document.createElement("div");res.className="result";box.appendChild(res);return [row.querySelectorAll("button"),res]}
+
+function quiz(zone,id,title,inst,qs){
+  const box=exBox(zone,"Test",title,inst);
+  const list=document.createElement("div");list.className="qlist";
+  list.innerHTML=qs.map((q,i)=>`<fieldset class="q" id="${id}-q${i}"><legend>${i+1}. ${q.q}</legend>${q.o.map((o,j)=>`<label class="opt"><input type="radio" name="${id}-${i}" id="${id}-${i}-${j}" value="${j}"><span>${o}</span></label>`).join("")}<p class="why" hidden></p></fieldset>`).join("");
+  box.appendChild(list);
+  const [[bC,bR],res]=addRes(box,["Corregir","Reiniciar"]);
+  bC.onclick=()=>{let ok=0;qs.forEach((q,i)=>{const fs=document.getElementById(`${id}-q${i}`);fs.querySelectorAll(".opt").forEach((l,j)=>{l.classList.remove("right","wrong");const inp=l.querySelector("input");if(j===q.a)l.classList.add("right");else if(inp.checked)l.classList.add("wrong")});const sel=fs.querySelector("input:checked");if(sel&&+sel.value===q.a)ok++;const w=fs.querySelector(".why");w.textContent=q.w;w.hidden=false});res.innerHTML=`<b>${ok} de ${qs.length}</b> respuestas correctas. ${ok===qs.length?"Bloque dominado.":"Repasa los epígrafes de las preguntas falladas; la explicación aparece bajo cada una."}`};
+  bR.onclick=()=>{box.querySelectorAll("input").forEach(i=>i.checked=false);box.querySelectorAll(".opt").forEach(l=>l.classList.remove("right","wrong"));box.querySelectorAll(".why").forEach(w=>w.hidden=true);res.innerHTML=""};
+}
+
+function classify(zone,id,title,inst,cats,items,tip){
+  const box=exBox(zone,"Clasificar",title,inst);
+  const m=document.createElement("div");m.className="match";
+  m.innerHTML=items.map((it,i)=>`<div class="m"><span>${it[0]}</span><select id="${id}-${i}" aria-label="Categoría"><option value="">Elige…</option>${cats.map((c,j)=>`<option value="${j}">${c}</option>`).join("")}</select><span class="pill" id="${id}-p${i}" hidden></span></div>`).join("");
+  box.appendChild(m);
+  const [[bC,bR],res]=addRes(box,["Comprobar","Reiniciar"]);
+  bC.onclick=()=>{let ok=0;items.forEach((it,i)=>{const s=document.getElementById(`${id}-${i}`),p=document.getElementById(`${id}-p${i}`);p.hidden=false;if(s.value!==""&&+s.value===it[1]){ok++;p.className="pill ok";p.textContent="Bien"}else{p.className="pill bad";p.textContent=cats[it[1]]}});res.innerHTML=`<b>${ok} de ${items.length}</b> correctas. ${ok<items.length?"En las falladas, la etiqueta roja indica la categoría correcta. ":""}${tip||""}`};
+  bR.onclick=()=>{items.forEach((it,i)=>{document.getElementById(`${id}-${i}`).value="";document.getElementById(`${id}-p${i}`).hidden=true});res.innerHTML=""};
+}
+
+const EX={
+ergo(zone){
+  const box=exBox(zone,"Simulador","Evalúa tu puesto de trabajo","Mide tu puesto real (o el del aula) e introduce los valores. El simulador los contrasta con el RD 488/1997, el RD 486/1997 y la guía técnica del INSST.");
+  const f=document.createElement("div");f.innerHTML=`<div class="form-grid">
+   <div class="field"><label for="eg-dist">Distancia ojos–pantalla (cm)</label><input id="eg-dist" type="number" value="55" min="10" max="150"><small>Con el cuerpo en posición de trabajo</small></div>
+   <div class="field"><label for="eg-alt">Borde superior de la pantalla</label><select id="eg-alt"><option value="up">Por encima de los ojos</option><option value="ok" selected>A la altura de los ojos o algo por debajo</option><option value="low">Muy por debajo (portátil sobre la mesa)</option></select></div>
+   <div class="field"><label for="eg-codo">Ángulo del codo (grados)</label><input id="eg-codo" type="number" value="90" min="40" max="180"></div>
+   <div class="field"><label for="eg-mun">Muñecas al teclear</label><select id="eg-mun"><option value="ok">Rectas, en línea con el antebrazo</option><option value="ext">Dobladas hacia arriba</option><option value="lat">Desviadas hacia los lados</option></select></div>
+   <div class="field"><label for="eg-lux">Iluminación sobre la mesa (lux)</label><input id="eg-lux" type="number" value="420" min="0" max="3000"><small>Una app de luxómetro sirve como aproximación</small></div>
+   <div class="field"><label for="eg-temp">Temperatura (°C)</label><input id="eg-temp" type="number" value="22" min="5" max="40"></div>
+   <div class="field"><label for="eg-pausa">Minutos seguidos sin pausa</label><input id="eg-pausa" type="number" value="75" min="0" max="480"></div>
+   <div class="field"><label for="eg-pies">Pies</label><select id="eg-pies"><option value="ok">Apoyados en el suelo o reposapiés</option><option value="no">Colgando o en la base de la silla</option></select></div>
+   <div class="field"><label for="eg-esp">Espalda</label><select id="eg-esp"><option value="ok">Apoyada en el respaldo</option><option value="no">Separada, en el borde del asiento</option></select></div>
+   <div class="field"><label for="eg-doc">Documento fuente</label><select id="eg-doc"><option value="atril">En atril junto a la pantalla</option><option value="mesa">Plano sobre la mesa</option></select></div>
+   <div class="field"><label for="eg-ref">Reflejos en la pantalla</label><select id="eg-ref"><option value="no">No hay</option><option value="si">Sí, de ventana o lámparas</option></select></div>
+  </div>`;
+  box.appendChild(f);
+  const [[b],out]=addRes(box,["Evaluar puesto"]);out.className="checks";
+  b.onclick=()=>{
+    const v=k=>document.getElementById("eg-"+k).value;const r=[];
+    const d=+v("dist");r.push(d<40?["bad","Pantalla demasiado cerca: la distancia mínima recomendada es de 40 cm. (1.6.1)"]:d>80?["warn","Pantalla lejos: obliga a adelantar la cabeza. Acércala o amplía el texto. (1.5.1)"]:["ok","Distancia a la pantalla correcta."]);
+    r.push(v("alt")==="up"?["bad","Pantalla alta: extensión de cuello mantenida. Bájala hasta que el borde superior quede a la altura de los ojos. (1.5)"]:v("alt")==="low"?["warn","Pantalla baja: flexión de cuello mantenida. Usa un elevador y teclado externo. (1.5.1)"]:["ok","Altura de pantalla correcta."]);
+    const c=+v("codo");r.push(c<80||c>110?["warn","Codo fuera del rango 80°–110°. Ajusta la altura de la silla respecto a la mesa. (1.5.2)"]:["ok","Codos en ángulo cómodo."]);
+    r.push(v("mun")==="ext"?["bad","Muñecas en extensión: riesgo de túnel carpiano. Baja las patas del teclado y apoya los antebrazos. (1.5.2)"]:v("mun")==="lat"?["bad","Desviación lateral de muñeca: separa menos las manos o centra el teclado. (1.5.2)"]:["ok","Muñecas en posición neutra."]);
+    const l=+v("lux");r.push(l<300?["bad","Iluminación insuficiente; se orienta a unos 500 lux. (1.6.2)"]:l<500?["warn","Iluminación algo baja para leer documentos. Valora una lámpara regulable. (1.6.2)"]:["ok","Iluminación suficiente."]);
+    const t=+v("temp");r.push(t<17||t>27?["bad","Temperatura fuera del rango de 17–27 °C del RD 486/1997. (1.6.2)"]:t<20||t>26?["warn","Dentro de la norma, pero fuera del rango de confort recomendado por la guía técnica. (1.6.2)"]:["ok","Temperatura confortable."]);
+    const p=+v("pausa");r.push(p>90?["bad","Demasiado tiempo sin pausa. El RD 488/1997 exige pausas o cambios de actividad. (1.6.4)"]:p>60?["warn","Tramo largo. Una pausa corta cada hora reduce la fatiga. (1.6.4)"]:["ok","Ritmo de pausas adecuado."]);
+    r.push(v("pies")==="no"?["bad","Sin apoyo de pies se carga la zona lumbar. Pide un reposapiés. (1.5)"]:["ok","Pies bien apoyados."]);
+    r.push(v("esp")==="no"?["bad","Sin respaldo la zona lumbar trabaja todo el tiempo. Siéntate al fondo del asiento. (1.5.1)"]:["ok","Espalda apoyada."]);
+    r.push(v("doc")==="mesa"?["warn","Documento plano: giro y flexión de cuello en cada línea. Usa atril. (1.1.2)"]:["ok","Documento a la altura de la pantalla."]);
+    r.push(v("ref")==="si"?["bad","Hay reflejos. Pantalla perpendicular a la ventana y luminarias a los lados. (1.1.1)"]:["ok","Sin reflejos."]);
+    const n={ok:"Correcto",warn:"Mejorable",bad:"Corregir"};const okc=r.filter(x=>x[0]==="ok").length;
+    out.innerHTML=r.map(x=>`<div class="check-item"><span class="pill ${x[0]}">${n[x[0]]}</span><span>${x[1]}</span></div>`).join("")+`<div class="result" style="margin-top:6px"><b>${okc} de ${r.length}</b> puntos correctos. Entre paréntesis, el epígrafe que lo explica.</div>`;
+  };
+},
+riesgos(zone){classify(zone,"rg","¿Equipo, entorno, interconexión o tarea?","Clasifica cada problema detectado en un puesto según el bloque del RD 488/1997 y la guía técnica al que pertenece (epígrafe 1.6).",
+ ["Equipo","Entorno","Interconexión ordenador/persona","Exigencias de la tarea"],[
+ ["La silla no se puede subir ni bajar",0],
+ ["La ventana queda justo detrás de la pantalla",1],
+ ["El programa solo avisa de los errores al guardar el lote completo",2],
+ ["Se graba el mismo tipo de documento ocho horas seguidas",3],
+ ["El teclado tiene las letras borradas",0],
+ ["El aire acondicionado deja la sala a 16 °C",1],
+ ["Los campos del formulario están en distinto orden que el documento",2],
+ ["El jefe fija 200 registros/hora sin medir el rendimiento real",3],
+ ["La pantalla parpadea",0],
+ ["La empresa mide las pulsaciones sin haberlo comunicado",2]],
+ "Recuerda: el control del rendimiento sin informar al trabajador está prohibido por el anexo del RD 488/1997.")},
+prog(zone){
+  const box=exBox(zone,"Calculadora","Programa un lote de grabación","Introduce los datos del encargo y calcula cuántas horas y jornadas necesitas (epígrafe 1.3). Prueba después a cambiar el rendimiento o el porcentaje de verificación.");
+  box.insertAdjacentHTML("beforeend",`<div class="form-grid">
+   <div class="field"><label for="pg-docs">Documentos del lote</label><input id="pg-docs" type="number" value="1200" min="1"></div>
+   <div class="field"><label for="pg-rend">Rendimiento (documentos/hora)</label><input id="pg-rend" type="number" value="90" min="1"></div>
+   <div class="field"><label for="pg-ver">Verificación (% del tiempo de grabación)</label><input id="pg-ver" type="number" value="20" min="0" max="100"></div>
+   <div class="field"><label for="pg-pau">Pausa por hora de trabajo (minutos)</label><input id="pg-pau" type="number" value="10" min="0" max="30"></div>
+   <div class="field"><label for="pg-jor">Horas de jornada</label><input id="pg-jor" type="number" value="7" min="1" max="12"></div>
+   <div class="field"><label for="pg-per">Personas grabando</label><input id="pg-per" type="number" value="1" min="1" max="20"></div>
+   <div class="field"><label for="pg-pla">Plazo (días laborables)</label><input id="pg-pla" type="number" value="3" min="1"></div>
+  </div><div class="stats"><div class="stat"><b id="pg-g">0</b><span>horas de grabación</span></div><div class="stat"><b id="pg-v">0</b><span>horas con verificación</span></div><div class="stat"><b id="pg-t">0</b><span>horas con pausas</span></div><div class="stat"><b id="pg-d">0</b><span>jornadas necesarias</span></div></div><div class="result" id="pg-res"></div>`);
+  const g=k=>+box.querySelector("#pg-"+k).value||0,fmt=x=>x.toLocaleString("es-ES",{maximumFractionDigits:1});
+  function calc(){const gr=g("docs")/Math.max(g("rend"),1),ve=gr*(1+g("ver")/100),pa=ve*60/Math.max(60-g("pau"),1),jo=pa/Math.max(g("jor"),1)/Math.max(g("per"),1);
+   box.querySelector("#pg-g").textContent=fmt(gr);box.querySelector("#pg-v").textContent=fmt(ve);box.querySelector("#pg-t").textContent=fmt(pa);box.querySelector("#pg-d").textContent=fmt(jo);
+   const ok=jo<=g("pla");box.querySelector("#pg-res").innerHTML=ok?`<span class="pill ok">Llega</span> El lote cabe en ${g("pla")} días con ${fmt(g("pla")-jo)} jornadas de margen para imprevistos.`:`<span class="pill bad">No llega</span> Faltan ${fmt(jo-g("pla"))} jornadas. Opciones: añadir personas, negociar el plazo o entregar por partes. Bajar la verificación no es una opción válida.`}
+  box.querySelectorAll("input").forEach(i=>i.addEventListener("input",calc));calc();
+},
+order(zone){
+  const box=exBox(zone,"Ordenar","Fases de un lote de grabación","Coloca las fases en el orden en que se ejecutan (epígrafes 1.2 y 1.3). Usa las flechas para mover cada paso.");
+  const steps=["Recibir el lote y anotar fecha, procedencia y número de documentos","Comprobar que los documentos están completos y legibles","Clasificar, numerar y apartar las incidencias","Preparar el puesto: atril, aplicación y hoja de instrucciones","Grabar los datos del lote","Verificar y cotejar lo grabado","Rellenar la hoja de control y entregar","Archivar los originales"];
+  let cur=[3,6,0,5,2,7,1,4];
+  const ol=document.createElement("ol");ol.className="sortable";box.appendChild(ol);
+  const [[b],res]=addRes(box,["Comprobar orden"]);
+  function draw(mark){ol.innerHTML=cur.map((s,i)=>`<li class="${mark?(s===i?"right":"wrong"):""}"><span class="pos">${i+1}</span><span>${steps[s]}</span><span class="mv"><button type="button" aria-label="Subir" data-i="${i}" data-d="-1">↑</button><button type="button" aria-label="Bajar" data-i="${i}" data-d="1">↓</button></span></li>`).join("");
+    ol.querySelectorAll("button").forEach(bt=>bt.onclick=()=>{const i=+bt.dataset.i,j=i+ +bt.dataset.d;if(j<0||j>=cur.length)return;[cur[i],cur[j]]=[cur[j],cur[i]];res.innerHTML="";draw(false)})}
+  draw(false);
+  b.onclick=()=>{draw(true);const ok=cur.filter((s,i)=>s===i).length;res.innerHTML=ok===steps.length?"<b>Orden correcto.</b> Las incidencias se apartan antes de grabar y la verificación siempre precede a la entrega.":`<b>${ok} de ${steps.length}</b> fases en su sitio. Las marcadas en rojo están desplazadas.`};
+},
+quiz1(zone){quiz(zone,"q1","Test de la unidad 1","Elige una respuesta por pregunta y pulsa Corregir.",[
+ {q:"¿Qué norma regula las condiciones del trabajo con pantallas de visualización?",o:["Real Decreto 486/1997","Real Decreto 488/1997","Ley Orgánica 3/2018"],a:1,w:"El RD 488/1997 recoge las disposiciones mínimas para equipos con pantallas de visualización. (1.7)"},
+ {q:"¿Dónde se coloca la pantalla respecto a las ventanas?",o:["De espaldas a la ventana","De frente a la ventana","Perpendicular a la ventana"],a:2,w:"Así se evitan reflejos en la pantalla y deslumbramientos directos. (1.1.1)"},
+ {q:"¿Qué objetivo está bien planteado?",o:["Grabar lo más rápido posible","Grabar 600 pedidos antes del jueves con menos de un 0,5 % de error","Mejorar la calidad"],a:1,w:"Es concreto, medible, con plazo y combina cantidad y calidad. (1.1.4)"},
+ {q:"En el método 5S, ¿qué fase consiste en dar un sitio fijo a cada cosa?",o:["Clasificar","Ordenar","Estandarizar"],a:1,w:"Clasificar retira lo innecesario; ordenar asigna un lugar a lo que queda. (1.2)"},
+ {q:"Un lote de 900 fichas a 75 fichas/hora necesita, sin contar verificación ni pausas…",o:["10 horas","12 horas","15 horas"],a:1,w:"900 ÷ 75 = 12 horas de grabación neta. (1.3)"},
+ {q:"El mantenimiento preventivo es…",o:["El que se hace cuando el equipo falla","El que se hace para evitar que falle","El que solo puede hacer el servicio técnico"],a:1,w:"El usuario se encarga del preventivo básico: limpieza, copias, revisión. (1.4)"},
+ {q:"¿Cómo deben quedar las muñecas al teclear?",o:["Dobladas hacia arriba","Rectas y alineadas con el antebrazo","Apoyadas en el reposamuñecas todo el tiempo"],a:1,w:"El reposamuñecas es para las pausas; mientras se teclea, la muñeca va neutra. (1.5.2)"},
+ {q:"La regla 20-20-20 sirve para prevenir…",o:["La fatiga visual","El dolor lumbar","La fatiga mental"],a:0,w:"Cada 20 minutos, mirar 20 segundos a unos 6 metros relaja la acomodación del ojo. (1.5.1)"},
+ {q:"¿Puede la empresa medir las pulsaciones de cada grabador sin decírselo?",o:["Sí, si es para mejorar la productividad","No, el anexo del RD 488/1997 lo prohíbe sin información previa","Solo en periodo de prueba"],a:1,w:"Ningún control cuantitativo o cualitativo sin que los trabajadores hayan sido informados. (1.6.3)"},
+ {q:"¿Qué tipo de pausas pide la normativa?",o:["Una pausa larga al final de la jornada","Pausas periódicas o cambios de actividad","Solo cuando aparecen molestias"],a:1,w:"Artículo 3 del RD 488/1997; mejor cortas y frecuentes. (1.6.4)"},
+ {q:"Según el art. 29 de la Ley 31/1995, el trabajador debe…",o:["Comprar su propia silla ergonómica","Informar de inmediato de cualquier riesgo que detecte","Hacer la evaluación de riesgos de su puesto"],a:1,w:"La evaluación es obligación de la empresa; informar de riesgos es obligación del trabajador. (1.7)"}
+])},
+autonomia(zone){classify(zone,"au","¿Lo resuelvo, lo consulto o lo escalo?","Decide el nivel de autonomía adecuado para cada situación (epígrafe 2.1.2).",
+ ["Resuelvo yo","Consulto","Escalo de inmediato"],[
+ ["Me doy cuenta de que he tecleado mal un código postal antes de guardar",0],
+ ["Un pedido trae dos direcciones de entrega distintas",1],
+ ["Veo que un compañero ha dejado abierto en su pantalla un listado con datos bancarios y se ha ido",2],
+ ["Quiero empezar por las facturas más largas del lote",0],
+ ["La fecha de un albarán no se lee",1],
+ ["El servidor no responde y todo el equipo está parado",2],
+ ["La silla está demasiado alta para mí",0],
+ ["Con el ritmo actual no llegaremos al plazo de mañana",2],
+ ["El documento usa una abreviatura que no está en el manual",1]],
+ "Escalar no es quejarse: es avisar a tiempo de algo que afecta al servicio o a la seguridad de los datos.")},
+kpi(zone){
+  const box=exBox(zone,"Indicadores","¿Quién cumple el estándar?","El servicio exige una tasa de error igual o inferior al 1 % y al menos 80 registros por hora. Cada registro tiene 10 campos. Calcula los indicadores de cada grabador (epígrafe 2.3.1) y marca quién cumple los dos.");
+  const data=[["Ana","640","7","38"],["Bruno","720","8","95"],["Carla","510","6","22"],["David","600","8","50"]];
+  box.insertAdjacentHTML("beforeend",`<div class="tbl"><table><thead><tr><th>Grabador</th><th>Registros</th><th>Horas</th><th>Campos con error</th><th>Cumple</th></tr></thead><tbody>${data.map((d,i)=>`<tr><td>${d[0]}</td><td class="mono">${d[1]}</td><td class="mono">${d[2]}</td><td class="mono">${d[3]}</td><td><input type="checkbox" id="kp-${i}" aria-label="${d[0]} cumple"></td></tr>`).join("")}</tbody></table></div>`);
+  const [[b,s],res]=addRes(box,["Comprobar","Ver cálculos"]);
+  const calc=data.map(d=>{const prod=+d[1]/+d[2],err=+d[3]/(+d[1]*10)*100;return{prod,err,ok:prod>=80&&err<=1}});
+  const f=x=>x.toLocaleString("es-ES",{maximumFractionDigits:2});
+  const detail=()=>`<ul style="margin:8px 0 0;padding-left:1.2em">${data.map((d,i)=>`<li>${d[0]}: ${d[1]} ÷ ${d[2]} = <b>${f(calc[i].prod)}</b> reg/h · ${d[3]} ÷ ${+d[1]*10} × 100 = <b>${f(calc[i].err)} %</b> → ${calc[i].ok?"cumple":"no cumple"}</li>`).join("")}</ul>`;
+  b.onclick=()=>{let ok=0;calc.forEach((c,i)=>{if(document.getElementById("kp-"+i).checked===c.ok)ok++});res.innerHTML=`<b>${ok} de 4</b> bien valorados.${ok<4?" Pulsa Ver cálculos para revisar.":" Fíjate en Bruno: es el más rápido y no cumple por calidad."}`};
+  s.onclick=()=>{res.innerHTML="<b>Cálculos</b>"+detail()};
+},
+etica(zone){classify(zone,"et","Actuación correcta o incorrecta","Valora cada actuación según los principios éticos y la normativa de protección de datos (epígrafe 2.4).",
+ ["Correcta","Incorrecta"],[
+ ["Bloquear la pantalla con Windows + L al ir a por un café",0],
+ ["Completar un DNI ilegible con los números que parecen más probables",1],
+ ["Tirar a la papelera las fichas ya grabadas",1],
+ ["Avisar al responsable de que enviaste un listado al destinatario equivocado",0],
+ ["Comentar en casa el sueldo de un cliente famoso que has visto al grabar",1],
+ ["Prestar tu contraseña a un compañero que tiene la suya bloqueada",1],
+ ["Grabar solo los campos que pide el formulario aunque el documento traiga más datos",0],
+ ["Seguir guardando secreto sobre los datos después de dejar la empresa",0],
+ ["Llevarte un lote en un USB para terminarlo en casa sin autorización",1]],
+ "El deber de confidencialidad del artículo 5 de la LOPDGDD no termina con el contrato.")},
+quiz2(zone){quiz(zone,"q2","Test de la unidad 2","Elige una respuesta por pregunta y pulsa Corregir.",[
+ {q:"¿Por qué conviene que la verificación la haga una persona distinta de quien grabó?",o:["Para repartir el trabajo","Porque quien graba tiende a no ver sus propios errores","Porque lo exige el RD 488/1997"],a:1,w:"La lectura de lo propio está condicionada por lo que uno cree haber escrito. (2.1.1)"},
+ {q:"Una instrucción oral te parece ambigua. ¿Qué haces?",o:["Interpretarla como mejor te parezca","Repetirla con tus palabras para confirmar y anotarla","Esperar a que otro la aplique y copiar"],a:1,w:"Confirmar y dejar por escrito evita errores en todo el lote. (2.1.1)"},
+ {q:"¿Qué distingue a un equipo de un grupo de trabajo?",o:["El número de personas","Que comparten un objetivo y la responsabilidad del resultado","Que trabajan en la misma sala"],a:1,w:"El equipo comparte objetivo, responsabilidad y comunicación. (2.2)"},
+ {q:"¿Qué describe mejor la sinergia?",o:["Cada uno trabaja a su ritmo sin coordinarse","El resultado conjunto supera la suma de los trabajos individuales","El coordinador hace la mayor parte del trabajo"],a:1,w:"Reparto con criterio, reglas comunes y dudas compartidas. (2.2)"},
+ {q:"En la fase de conflicto de un equipo, ¿qué ayuda más?",o:["Ignorar las diferencias","Escuchar y acordar normas de trabajo","Cambiar a todo el equipo"],a:1,w:"El conflicto es una fase normal; se supera fijando criterios comunes. (2.2)"},
+ {q:"Un grabador hace 480 registros de 10 campos con 24 campos erróneos. Su tasa de error es…",o:["0,5 %","5 %","2,4 %"],a:0,w:"24 ÷ 4.800 × 100 = 0,5 %. (2.3.1)"},
+ {q:"Un retrabajo alto indica que…",o:["Los errores llegan al cliente y hay que corregir después de entregar","El equipo es muy rápido","Hay muchos documentos por grabar"],a:0,w:"El retrabajo mide la calidad que realmente sale del servicio. (2.3.1)"},
+ {q:"En el ciclo PDCA, ¿qué se hace en la fase Verificar?",o:["Aplicar el cambio en todos los formularios","Medir si el cambio ha mejorado el resultado","Elegir el problema"],a:1,w:"Se comparan los datos antes y después de la prueba. (2.3.6)"},
+ {q:"El principio de exactitud del RGPD implica que…",o:["Los datos deben ser correctos y estar actualizados","Hay que grabar todos los datos disponibles","Los datos se conservan para siempre"],a:0,w:"Grabar sin errores es también una obligación legal. (2.4)"},
+ {q:"Descubres un error tuyo en un lote ya entregado que nadie ha detectado.",o:["Lo comunicas y propones la corrección","Esperas a ver si alguien lo nota","Lo corriges sin avisar"],a:0,w:"Responsabilidad e integridad: los cambios deben quedar registrados. (2.4)"}
+])}
+};
+
+window.addEventListener("hashchange",()=>{render();window.scrollTo({top:document.querySelector("nav.units").offsetTop,behavior:"auto"})});
+render();
+})();
+
+</script>
+
+</body>
+</html>
