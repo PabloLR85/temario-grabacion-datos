@@ -50,6 +50,14 @@ header.top{padding-block:40px 28px}
 .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-family:var(--mono);font-size:13px}
 .facts span b{color:var(--ink);font-weight:600}
 .facts span{color:var(--muted)}
+.dl{margin-top:22px;display:flex;align-items:center;gap:14px;max-width:560px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);text-decoration:none}
+.dl:hover{border-color:var(--accent)}
+.dl-ic{flex:none;width:42px;height:42px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center}
+.dl-t{display:flex;flex-direction:column;min-width:0;flex:1}
+.dl-t b{font-family:var(--display)}
+.dl-t small{color:var(--muted);font-size:13px}
+.dl-b{flex:none;font-weight:700;padding:8px 14px;border-radius:9px;background:var(--ink);color:var(--bg)}
+@media (max-width:480px){.dl-b{display:none}}
 .progress-global{margin-top:24px;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;color:var(--muted)}
 .bar{flex:1;max-width:340px;height:8px;background:var(--key);border-radius:4px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
@@ -271,6 +279,11 @@ img{max-width:100%}[hidden]{display:none!important}
     <span><b>24</b> términos de glosario</span>
   </div>
   <div class="progress-global"><span>Epígrafes estudiados</span><div class="bar"><i id="gbar"></i></div><span id="gtxt">0 %</span></div>
+  <a class="dl" href="ejercicios/cuaderno-ejercicios-ud1.pdf" download>
+    <span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="dl-t"><b>Cuaderno de ejercicios · Unidad 1</b><small>Apartados 1.3 a 1.6 · 8 ejercicios para imprimir · PDF A4, 9 páginas</small></span>
+    <span class="dl-b">Descargar</span>
+  </a>
 </header>
 
 <nav class="units" aria-label="Unidades didácticas"><div class="wrap" id="unit-nav"></div></nav>
