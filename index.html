@@ -73,6 +73,62 @@ header.top{padding-block:40px 28px}
 .rc-bar span{position:absolute;top:-4px;width:4px;height:18px;margin-left:-2px;background:var(--signal);border-radius:2px}
 .rc-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted)}
 .tile b{font-size:.92rem}
+@media (max-width:640px){
+.wx-tbl:has(.wx-grid){overflow:visible;border:none}
+.wx-grid,.wx-grid tbody,.wx-grid tr,.wx-grid td{display:block;width:100%}
+.wx-grid thead{display:none}
+.wx-grid tr{border:1px solid var(--line);border-radius:10px;margin-bottom:8px;padding:8px 12px}
+.wx-grid td{border:none;padding:3px 0}
+.wx-grid td[data-h]:not(:first-child)::before{content:attr(data-h);display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:2px}
+.wx-grid td:first-child{font-weight:700}
+.wx-grid tr.wx-why{border-left:3px solid var(--bad);background:var(--warn-soft);margin-top:-4px}
+.wx-grid tr.wx-why td{border:none;font-weight:400}
+.wx-grid tr.wx-why[hidden]{display:none}
+}
+.wx-intro{color:var(--muted);max-width:66ch;margin-bottom:12px}
+details.wx{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin-bottom:10px}
+details.wx>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;padding:14px 16px}
+details.wx>summary::-webkit-details-marker{display:none}
+details.wx>summary .num{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;white-space:nowrap}
+details.wx>summary .st{font-weight:700}
+details.wx>summary .pg{font-family:var(--mono);font-size:12px;color:var(--muted)}
+details.wx[open]>summary{border-bottom:1px solid var(--line)}
+.wx-body{padding:16px;display:grid;gap:14px;min-width:0}
+.box-k{background:var(--bg);border-radius:10px;padding:12px 14px;display:grid;gap:6px;font-size:.95rem}
+.wx-part{display:grid;gap:8px;min-width:0}
+.wx-q{font-weight:700}
+.wx-tbl table{min-width:0}
+.wx-tbl td{vertical-align:middle}
+.wx-tbl select,.wx-tbl input{width:100%;min-width:72px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;background:var(--bg);font-size:.92rem}
+.wx-tbl select{min-width:110px}
+.wx-ok{border-color:var(--ok)!important;background:var(--ok-soft)!important}
+.wx-bad{border-color:var(--bad)!important;background:var(--bad-soft)!important}
+tr.wx-why td{background:var(--warn-soft);font-size:.9rem;border-left:3px solid var(--bad)}
+tr.wx-why span{color:var(--ink)}
+.wx-part textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;background:var(--bg);font:inherit;resize:vertical}
+.wx-part .wx-show{justify-self:start}
+.wx-model{background:var(--accent-soft);border-radius:9px;padding:10px 14px;font-size:.94rem}
+.wx-gantt td{text-align:center;padding:4px}
+.wx-gantt td:first-child{text-align:left;font-weight:700;font-size:.85rem;white-space:nowrap}
+.wx-gantt th{text-align:center}
+.wx-cell{width:100%;min-width:30px;height:30px;border:1px solid var(--key-edge);border-radius:6px;background:var(--bg);cursor:pointer}
+.wx-cell[aria-pressed="true"]{background:var(--accent);border-color:var(--accent)}
+.wx-msgs{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.wx-msgs:empty{display:none}
+.wx-msgs li.bad::marker{color:var(--bad)}
+.wx-msgs li.ok::marker{color:var(--ok)}
+.wx-msgs li.bad{color:var(--ink)}
+.wx-times{display:flex;flex-wrap:wrap;gap:10px}
+.wx-times label{display:grid;gap:4px;font-size:.88rem;font-weight:700}
+.wx-times input{padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.wx-self{display:grid;gap:6px}
+.wx-si{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.wx-yn{display:flex;gap:12px}
+.wx-yn input{accent-color:var(--accent)}
+.wx-adv{grid-column:1/-1;font-size:.9rem;background:var(--warn-soft);padding:8px 12px;border-radius:8px}
+.paper-w{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:.92rem}
+.wx-case{background:var(--warn-soft);border-radius:8px;padding:10px 12px}
+@media (max-width:560px){details.wx>summary{grid-template-columns:auto 1fr}details.wx>summary .pg{display:none}.wx-body{padding:12px}}
 .progress-global{margin-top:24px;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;color:var(--muted)}
 .bar{flex:1;max-width:340px;height:8px;background:var(--key);border-radius:4px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
@@ -297,12 +353,12 @@ img{max-width:100%}[hidden]{display:none!important}
   <div class="dls">
     <a class="dl" href="ejercicios/cuaderno-ejercicios-ud1.pdf" download>
       <span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="dl-t"><b>Cuaderno de ejercicios · Unidad 1</b><small>Apartados 1.3 a 1.6 · 8 ejercicios para imprimir · PDF A4, 9 páginas</small></span>
+      <span class="dl-t"><b>Cuaderno de ejercicios · Unidad 1</b><small>Apartados 1.3 a 1.6 · 8 ejercicios · PDF rellenable, 9 páginas</small></span>
       <span class="dl-b">Descargar</span>
     </a>
     <a class="dl" href="ejercicios/cuaderno-ejercicios-ud2.pdf" download>
       <span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="dl-t"><b>Cuaderno de ejercicios · Unidad 2</b><small>Apartados 2.1 a 2.4 · 8 ejercicios para imprimir · PDF A4, 9 páginas</small></span>
+      <span class="dl-t"><b>Cuaderno de ejercicios · Unidad 2</b><small>Apartados 2.1 a 2.4 · 8 ejercicios · PDF rellenable, 9 páginas</small></span>
       <span class="dl-b">Descargar</span>
     </a>
   </div>
@@ -1010,6 +1066,9 @@ function render(){
   </details>`).join("")}
   <div class="block-title"><h3>Ejercicios interactivos</h3><span>${u.ex.length} ejercicios · se corrigen al momento</span></div>
   <div id="ex-zone"></div>
+  <div class="block-title"><h3>Cuaderno de ejercicios en línea</h3><span>Se corrigen al momento y explican cada fallo</span></div>
+  <p class="wx-intro">Son los mismos ejercicios del cuaderno en PDF. Responde, pulsa Comprobar y, si fallas, verás la respuesta correcta y por qué.</p>
+  <div id="wx-zone"></div>
   <div class="block-title"><h3>Actividades de aula</h3><span>Para evaluar en clase</span></div>
   <div class="acts">${u.acts.map(a=>`<div class="act"><span class="k">${u.id.toUpperCase()}-${a[0]}</span><h4>${a[1]}</h4><p>${a[2]}</p><span class="crit">Criterio: ${a[3]}</span></div>`).join("")}</div>
   <div class="block-title"><h3>Glosario</h3><span>Toca un término para ver su definición</span></div>
@@ -1019,6 +1078,7 @@ function render(){
   main.querySelectorAll(".gl").forEach(b=>b.onclick=()=>b.setAttribute("aria-expanded",b.getAttribute("aria-expanded")==="true"?"false":"true"));
   const zone=document.getElementById("ex-zone");
   u.ex.forEach(e=>EX[e](zone));
+  wxRender(document.getElementById("wx-zone"),u.id);
   updateProgress();
 }
 
@@ -1092,6 +1152,340 @@ function initCalc(el){
   }
   el.querySelectorAll("select,input").forEach(i=>i.addEventListener("input",calc));el.querySelectorAll("select,input").forEach(i=>i.addEventListener("change",calc));calc();
 }
+/* ===== Cuaderno de ejercicios en línea ===== */
+const YN=["Sí","No"];
+const WX={
+ud1:[
+{n:1,sec:"1.3",t:"Calcula cuánto tiempo necesita un lote",
+ know:`<p>Se programa en cuatro pasos: <b>1)</b> documentos ÷ rendimiento por hora; <b>2)</b> × (1 + % de verificación); <b>3)</b> × 60 ÷ (60 − minutos de pausa por hora); <b>4)</b> ÷ horas de jornada ÷ personas, redondeando siempre hacia arriba.</p><p class="small">Ejemplo: 1.200 fichas a 90/h con 20 % de verificación, 10 min de pausa y jornada de 7 h: 13,33 h → 16 h → 19,2 h → 3 jornadas.</p>`,
+ parts:[
+ {k:"html",h:`<div class="tbl"><table><thead><tr><th></th><th>Encargo A</th><th>Encargo B</th><th>Encargo C</th></tr></thead><tbody><tr><td>Documentos</td><td>900 facturas</td><td>2.400 albaranes</td><td>650 fichas</td></tr><tr><td>Rendimiento</td><td>75 /h</td><td>110 /h</td><td>50 /h</td></tr><tr><td>Verificación</td><td>20 %</td><td>20 %</td><td>25 %</td></tr><tr><td>Pausa por hora</td><td>10 min</td><td>10 min</td><td>5 min</td></tr><tr><td>Jornada · personas</td><td>7 h · 1</td><td>7 h · 2</td><td>8 h · 1</td></tr><tr><td>Plazo</td><td>3 días</td><td>2 días</td><td>2 días</td></tr></tbody></table></div>`},
+ {k:"grid",q:"Calcula cada paso. Escribe los decimales con coma; las horas, con dos decimales.",head:["Paso","A","B","C"],rows:[
+  {c:["1. Horas de grabación",{n:12,tol:.05},{n:21.82,tol:.05},{n:13,tol:.05}],why:"Documentos ÷ rendimiento: 900 ÷ 75 = 12 · 2.400 ÷ 110 = 21,82 · 650 ÷ 50 = 13."},
+  {c:["2. Con verificación",{n:14.4,tol:.06},{n:26.18,tol:.1},{n:16.25,tol:.06}],why:"Se multiplica por 1 más el porcentaje: 12 × 1,20 = 14,4 · 21,82 × 1,20 = 26,18 · 13 × 1,25 = 16,25. En C la verificación es del 25 %."},
+  {c:["3. Con pausas",{n:17.28,tol:.1},{n:31.42,tol:.15},{n:17.73,tol:.1}],why:"Horas × 60 ÷ (60 − pausa): 14,4 × 60 ÷ 50 = 17,28 · 26,18 × 60 ÷ 50 = 31,42 · 16,25 × 60 ÷ 55 = 17,73. En C la pausa es de 5 minutos, así que se divide entre 55."},
+  {c:["4. Jornadas (redondeadas)",{n:3,tol:0},{n:3,tol:0},{n:3,tol:0}],why:"Horas ÷ jornada ÷ personas y se redondea hacia arriba: 17,28 ÷ 7 = 2,47 → 3 · 31,42 ÷ 7 ÷ 2 = 2,24 → 3 · 17,73 ÷ 8 = 2,22 → 3. Si redondeas hacia abajo, el lote no se termina."},
+  {c:["¿Llega al plazo?",{s:YN,a:0},{s:YN,a:1},{s:YN,a:1}],why:"A necesita 3 jornadas y tiene 3 días: llega. B y C necesitan 3 jornadas y solo tienen 2 días: no llegan."}]},
+ {k:"open",q:"Un compañero propone quitar la verificación para llegar al plazo. ¿Por qué no es buena idea?",model:"Sin verificación los errores llegan al cliente y hay que corregirlos después (retrabajo), así que el tiempo ahorrado se pierde. Además se incumple el objetivo de calidad, que forma parte del encargo igual que el plazo. Para B la solución es una tercera persona (31,42 ÷ 7 ÷ 3 = 1,5 → 2 días); para C, pedir un día más o una segunda persona."}]},
+{n:2,sec:"1.3",t:"Hoja de control de lote y cronograma",
+ know:`<p class="wx-case"><b>Caso.</b> El lunes 9 de noviembre a las 9:00 llega el lote 27: 1.500 pedidos web. Se apartan 12 documentos ilegibles. Graban Ana y Luis (100 pedidos/hora cada uno) y verifica Marta (20 % del tiempo de grabación). Jornada de 7 h con 10 min de pausa por hora. Entrega: jueves 12 a las 14:00.</p>`,
+ parts:[
+ {k:"grid",q:"a) Calcula.",head:["Dato","Respuesta"],rows:[
+  {c:["Pedidos que hay que grabar",{n:1488,tol:0}],why:"1.500 recibidos − 12 apartados por ilegibles = 1.488. Los apartados no se graban hasta resolver la incidencia."},
+  {c:["Pedidos por grabador",{n:744,tol:0}],why:"Se reparten a partes iguales entre Ana y Luis: 1.488 ÷ 2 = 744."},
+  {c:["Horas por grabador, con pausas",{n:8.93,tol:.05}],why:"744 ÷ 100 = 7,44 h de grabación; con pausas, 7,44 × 60 ÷ 50 = 8,93 h."},
+  {c:["Horas de verificación, con pausas",{n:3.57,tol:.05}],why:"La verificación es el 20 % del tiempo total de grabación: 14,88 × 0,20 = 2,98 h; con pausas, 2,98 × 60 ÷ 50 = 3,57 h."}]},
+ {k:"grid",q:"b) Hoja de control.",head:["Campo","Dato"],rows:[
+  {c:["Grabadores",{s:["Ana y Luis","Ana, Luis y Marta","Marta"],a:0}],why:"Marta verifica; quien verifica no figura como grabador."},
+  {c:["Documentos a grabar",{s:["1.500","1.488","12"],a:1}],why:"Se descuentan los 12 apartados por incidencia."},
+  {c:["Entrega prevista",{s:["Jueves 12/11, 14:00","Jueves 12/11, 20:00","Viernes 13/11"],a:0}],why:"La entrega se anota con la fecha y la hora pactadas: jueves a las 14:00."}]},
+ {k:"gantt",q:"c) Marca en el cronograma las medias jornadas de cada tarea."}]},
+{n:3,sec:"1.4",t:"¿Preventivo o correctivo? ¿Cada cuánto?",
+ know:`<p><b>Preventivo</b>: se hace de forma programada para que nada falle. <b>Correctivo</b>: se hace cuando algo ya ha fallado. Frecuencias: diaria, semanal, mensual o cuando ocurre.</p>`,
+ parts:[
+ {k:"grid",q:"Completa cada tarea.",head:["Tarea","Tipo","Frecuencia","Quién"],rows:[
+  ["Bloquear el equipo al levantarte",0,0,0,"Evita accesos indebidos cada vez que te ausentas: prevención diaria del propio usuario."],
+  ["Hacer copia del lote al terminarlo",0,0,0,"Protege el trabajo antes de que pase algo: preventiva, diaria y del usuario."],
+  ["Limpiar el teclado con aire a presión",0,1,0,"Limpieza programada cada semana, con el equipo apagado, por el usuario."],
+  ["Cambiar el disco duro que no arranca",1,3,1,"El disco ya ha fallado: es correctivo, se hace cuando ocurre y lo repara el servicio técnico."],
+  ["Revisar las actualizaciones pendientes",0,2,[0,1],"Revisión mensual preventiva; según la empresa la hace el usuario o el técnico."],
+  ["Vaciar la papelera y los temporales",0,1,0,"Libera espacio y evita fallos: preventivo y semanal."],
+  ["Sustituir un ratón que no responde",1,3,[0,1],"El ratón ya ha fallado: correctivo, cuando ocurre. Puede cambiarlo el usuario o el técnico."],
+  ["Revisar cables y conexiones",0,2,0,"Revisar antes de que falle es preventivo; se hace una vez al mes."],
+  ["Reinstalar la aplicación tras un error",1,3,1,"Es la reparación de un fallo y la hace el servicio técnico."],
+  ["Comprobar las existencias de consumibles",0,2,0,"Evita quedarse sin material: preventivo y mensual."],
+  ["Apagar el equipo correctamente",0,0,0,"Hábito diario que alarga la vida del equipo."],
+  ["Anotar un fallo en la hoja de incidencias",1,3,0,"Se anota porque algo ha fallado: es correctivo y lo hace quien lo detecta."]
+ ].map(r=>({c:[r[0],{s:["Preventivo","Correctivo"],a:r[1]},{s:["Diaria","Semanal","Mensual","Cuando ocurre"],a:r[2]},{s:["Usuario","Servicio técnico"],a:r[3]}],why:r[4]}))},
+ {k:"grid",q:"Regla 3-2-1. Una oficina guarda los lotes en el ordenador y en un disco externo que está en el mismo cajón.",head:["Pregunta","Respuesta"],rows:[
+  {c:["¿Cumple la regla?",{s:["Sí, tiene dos copias","No, falta una copia fuera del lugar de trabajo","No, las dos copias están en el mismo soporte"],a:1}],why:"Tres copias, dos soportes y una fuera. Aquí hay dos copias en dos soportes, pero ninguna fuera: un robo o un incendio destruiría las dos. Falta una copia en la nube o en otra sede."}]}]},
+{n:4,sec:"1.4",t:"Stock mínimo y parte de avería",
+ know:`<p><b>Stock mínimo = consumo diario × días que tarda el proveedor + stock de seguridad.</b> Si las existencias son iguales o menores, se pide.</p><p class="small">Ejemplo: 2 paquetes/día × 3 días + 4 = 10. Con 11 no se pide; con 10, sí.</p>`,
+ parts:[
+ {k:"grid",q:"a) Calcula el stock mínimo y decide.",head:["Consumible","Datos","Stock mínimo","¿Pedir?"],rows:[
+  {c:["Papel A4","3/día · 2 días · seg. 4 · hay 9",{n:10,tol:0},{s:YN,a:0}],why:"3 × 2 + 4 = 10. Hay 9, que es menos que 10: se pide."},
+  {c:["Tóner","0,2/día · 5 días · seg. 1 · hay 3",{n:2,tol:0},{s:YN,a:1}],why:"0,2 × 5 + 1 = 2. Hay 3, más que 2: todavía no se pide."},
+  {c:["Etiquetas","1/día · 4 días · seg. 2 · hay 6",{n:6,tol:0},{s:YN,a:0}],why:"1 × 4 + 2 = 6. Hay justo 6: igual al mínimo, así que se pide."},
+  {c:["Carpetas","5/día · 3 días · seg. 10 · hay 40",{n:25,tol:0},{s:YN,a:1}],why:"5 × 3 + 10 = 25. Hay 40: no se pide."}]},
+ {k:"html",h:`<p class="wx-case"><b>b) Caso.</b> Martes 10 de noviembre, 11:20. Tras un reinicio, el equipo PG-04 muestra "Error de disco: no se encontró el sistema operativo". Estabas grabando el lote 27 y el último registro guardado es el 312. El PG-07 está libre.</p>`},
+ {k:"grid",head:["Parte de incidencia","Respuesta"],rows:[
+  {c:["Equipo afectado",{s:["PG-04","PG-07"],a:0}],why:"El fallo es del PG-04; el PG-07 es el puesto alternativo."},
+  {c:["Último registro guardado",{n:312,tol:0}],why:"Se anota tal cual para saber hasta dónde llega el trabajo seguro."},
+  {c:["Registro por el que continúas",{n:313,tol:0}],why:"Si el 312 está guardado, se sigue por el siguiente. Empezar por el 312 lo duplicaría."},
+  {c:["Medida provisional",{s:["Continuar en el PG-07","Esperar a que reparen el PG-04","Reiniciar hasta que arranque"],a:0}],why:"El trabajo no se para si hay un puesto libre. Reiniciar una y otra vez puede empeorar la avería."},
+  {c:["Comunicado a",{s:["Coordinador/a y servicio técnico","Nadie, suele arreglarse solo","Un compañero"],a:0}],why:"Las averías se comunican por el canal fijado: responsable y servicio técnico."}]}]},
+{n:5,sec:"1.5",t:"Detecta los vicios posturales",
+ know:`<p>Postura neutra: cabeza erguida, espalda apoyada, codos cerca de 90°, muñecas rectas, cadera y rodillas cerca de 90° y pies apoyados.</p>`,
+ parts:[
+ {k:"html",h:"BADPOSTURE"},
+ {k:"grid",q:"Identifica cada error numerado y su corrección.",head:["N.º","Qué está mal","Cómo se corrige"],rows:[
+  [1,0,0,"El 1 es la cabeza adelantada: el cuello se flexiona para acercarse a la pantalla y provoca dolor cervical."],
+  [2,1,1,"El 2 es la pantalla del portátil, demasiado baja. Se soluciona elevándola y usando teclado aparte."],
+  [3,2,2,"El 3 son los hombros elevados por una mesa demasiado alta respecto a la silla."],
+  [4,3,3,"El 4 es la espalda separada del respaldo, sentada en el borde: carga la zona lumbar."],
+  [5,4,4,"El 5 es la muñeca doblada hacia arriba (extensión), que se asocia al túnel carpiano."],
+  [6,5,5,"El 6 son los pies colgando porque la silla está muy alta."]
+ ].map(r=>({c:[String(r[0]),{s:["Cabeza adelantada","Pantalla demasiado baja","Hombros elevados","Espalda sin apoyo","Muñeca en extensión","Pies sin apoyo"],a:r[1]},{s:["Cabeza erguida, pantalla a la altura de los ojos","Elevador de portátil y teclado externo","Ajustar la altura de silla y mesa","Sentarse al fondo y apoyar la espalda","Teclado plano y antebrazo apoyado","Reposapiés o bajar la silla"],a:r[2]}],why:r[3]}))}]},
+{n:6,sec:"1.5",t:"Pausas activas y autoevaluación",
+ know:`<p>Pausas <b>cortas y frecuentes</b>: de 5 a 10 minutos cada 50 a 60 minutos de pantalla. Ejercicios: cuello, hombros, muñecas, espalda y la regla 20-20-20 para la vista.</p>`,
+ parts:[
+ {k:"pausas",q:"a) Jornada de 8:00 a 15:00 con descanso de 10:30 a 11:00. Escribe la hora de inicio de cinco pausas de 5 minutos."},
+ {k:"self",q:"b) Siéntate en tu puesto y responde con sinceridad.",items:[
+  ["La espalda apoya en el respaldo","Siéntate al fondo del asiento y ajusta el respaldo para que sostenga la zona lumbar."],
+  ["Los pies apoyan en el suelo o en un reposapiés","Baja la silla o pide un reposapiés; si bajas la silla, comprueba que los codos siguen a la altura de la mesa."],
+  ["Los codos están cerca de 90°","Ajusta la altura de la silla hasta que los antebrazos queden horizontales."],
+  ["Las muñecas están rectas al teclear","Baja las patas del teclado y apoya los antebrazos en la mesa."],
+  ["El borde superior de la pantalla está a la altura de los ojos","Sube o baja la pantalla; con un portátil, usa un elevador."],
+  ["La pantalla está a entre 40 y 75 cm","Aléjala o acércala; si tienes que forzar la vista, aumenta el tamaño del texto."],
+  ["El documento está en un atril","Coloca el documento junto a la pantalla, a la misma altura, para no girar el cuello."],
+  ["No hay reflejos en la pantalla","Gira el puesto para que la ventana quede a un lado y usa las persianas."]]}]},
+{n:7,sec:"1.6",t:"Clasifica el riesgo y propón la medida",
+ know:`<p><b>Bloques</b>: equipo, entorno, interconexión (el programa) y tarea. <b>Riesgos</b>: musculoesquelético, visual y mental.</p>`,
+ parts:[
+ {k:"grid",q:"Completa cada situación.",head:["Situación","Bloque","Riesgo","Medida"],rows:[
+  ["La pantalla refleja la luz de la ventana",1,1,0,"Los reflejos vienen de la luz del local (entorno) y cansan la vista. Se resuelve colocando la pantalla perpendicular a la ventana."],
+  ["La silla no tiene respaldo regulable",0,0,1,"La silla es equipo y sin respaldo regulable carga la espalda."],
+  ["El programa solo avisa de los errores al final",2,2,2,"Es un problema del software (interconexión) que obliga a revisar todo y genera fatiga mental."],
+  ["Mismo documento siete horas seguidas",3,[2,0],3,"Es organización de la tarea: la monotonía produce fatiga mental y la postura estática, problemas musculoesqueléticos."],
+  ["Teclado brillante con letras borradas",0,1,4,"El teclado es equipo y el brillo y las letras borradas fuerzan la vista."],
+  ["La sala llega a 29 °C",1,[2,0],5,"La temperatura es entorno; el calor provoca cansancio y falta de concentración. El RD 486/1997 fija 17–27 °C."],
+  ["Campos en distinto orden que el documento",2,2,6,"Es diseño del programa (interconexión): obliga a saltar de un sitio a otro y aumenta errores y fatiga."],
+  ["200 registros/hora sin medir el rendimiento real",3,2,7,"Es un objetivo de la tarea poco realista: genera presión y fatiga mental."],
+  ["Impresora muy ruidosa junto al puesto",1,2,8,"El ruido es entorno y perturba la concentración."],
+  ["La imagen de la pantalla parpadea",0,1,9,"Es un defecto del equipo que cansa la vista."]
+ ].map(r=>({c:[r[0],{s:["Equipo","Entorno","Interconexión","Tarea"],a:r[1]},{s:["Musculoesquelético","Visual","Mental"],a:r[2]},{s:["Pantalla perpendicular a la ventana","Silla con respaldo regulable","Validar cada campo al grabar","Alternar tareas y hacer pausas","Teclado mate y legible","Climatizar entre 23 y 26 °C","Ordenar los campos como el documento","Objetivos basados en pruebas reales","Alejar la impresora","Reparar o cambiar la pantalla"],a:r[3]}],why:r[4]}))}]},
+{n:8,sec:"1.6",t:"Evalúa un puesto con la lista del RD 488/1997",
+ know:`<p class="wx-case"><b>Puesto PG-02.</b> Pantalla a 35 cm · borde superior por encima de los ojos · 280 lux · 24 °C · humedad 25 % · 60 dB(A) por una fotocopiadora · respaldo fijo · pies sin apoyo y sin reposapiés · tres horas seguidas sin pausa · el usuario mira hacia la ventana · el programa cuenta las pulsaciones sin haber informado.</p>`,
+ parts:[
+ {k:"grid",q:"Decide si cada elemento cumple y elige la medida.",head:["Elemento","¿Cumple?","Medida"],rows:[
+  ["Distancia a la pantalla (35 cm)",1,0,"Por debajo de 40 cm la vista se fuerza. Hay que alejarla a 40–75 cm."],
+  ["Altura de pantalla",1,1,"Por encima de los ojos obliga a extender el cuello. El borde superior debe quedar a la altura de los ojos."],
+  ["Iluminación (280 lux)",1,2,"La referencia está en torno a 500 lux para trabajo de oficina."],
+  ["Temperatura (24 °C)",0,9,"Está dentro de 17–27 °C: no necesita medida."],
+  ["Humedad (25 %)",1,3,"El RD 486/1997 fija entre 30 % y 70 %. Con 25 % se resecan los ojos."],
+  ["Ruido (60 dB(A))",1,4,"Para tareas de concentración se orienta a no pasar de 55 dB(A)."],
+  ["Silla y pies",1,5,"El respaldo debe ser regulable y quien lo necesite tiene derecho a reposapiés."],
+  ["Pausas (3 h sin pausa)",1,6,"El RD 488/1997 obliga a pausas periódicas o cambios de actividad."],
+  ["Posición respecto a la ventana",1,7,"Mirar hacia la ventana deslumbra. La línea de visión debe quedar paralela a ella."],
+  ["Control de pulsaciones sin informar",1,8,"El anexo del RD 488/1997 prohíbe controlar el trabajo sin informar a los trabajadores."]
+ ].map(r=>({c:[r[0],{s:YN,a:r[1]},{s:["Alejar la pantalla a 40–75 cm","Bajar la pantalla a la altura de los ojos","Añadir luz hasta unos 500 lux","Humidificar hasta 30–70 %","Alejar o aislar la fotocopiadora","Silla con respaldo regulable y reposapiés","Pausas cortas cada hora","Girar el puesto: ventana a un lado","Informar a la plantilla o retirar el control","No necesita medida"],a:r[2]}],why:r[3]}))}]}
+],
+ud2:[
+{n:1,sec:"2.1",t:"Funciones y formas de organización",
+ know:`<p><b>Operador/a</b>: prepara, graba y anota incidencias. <b>Verificador/a</b>: coteja, clasifica errores y devuelve. <b>Coordinador/a</b>: reparte, resuelve criterios, controla plazos y da el visto bueno.</p>`,
+ parts:[
+ {k:"grid",q:"a) ¿Quién hace cada tarea?",head:["Tarea","Puesto"],rows:[
+  ["Recibir y preparar los documentos del lote",0,"Preparar el lote es el primer paso del operador antes de grabar."],
+  ["Cotejar lo grabado con el original",1,"Comparar con el original es la tarea central del verificador."],
+  ["Repartir los lotes entre el equipo",2,"Repartir trabajo es organizar el servicio: coordinación."],
+  ["Anotar un documento ilegible en la hoja de incidencias",0,"Lo anota quien lo detecta al preparar o grabar: el operador."],
+  ["Clasificar los errores por tipo",1,"El verificador clasifica los errores para devolverlos y analizarlos."],
+  ["Resolver una duda de criterio sobre abreviaturas",2,"Los criterios los fija el coordinador para que todos graben igual."],
+  ["Devolver al grabador los registros con error",1,"Tras verificar, el verificador devuelve para corregir."],
+  ["Controlar si el equipo va a cumplir el plazo",2,"El seguimiento de plazos es responsabilidad de coordinación."],
+  ["Grabar los datos del lote",0,"Es la función principal del operador."],
+  ["Dar el visto bueno a la entrega",2,"La aprobación final la da el coordinador."]
+ ].map(r=>({c:[r[0],{s:["Operador/a","Verificador/a","Coordinador/a"],a:r[1]}],why:r[2]}))},
+ {k:"grid",q:"b) ¿Qué forma de organización es?",head:["Situación","Forma"],rows:[
+  ["Un banco contrata a otra empresa que graba sus formularios",2,"Si graba otra empresa por encargo, es externalizada."],
+  ["Dos personas graban la misma encuesta y el programa compara",4,"Grabar lo mismo dos veces y comparar es doble grabación."],
+  ["Compras y Ventas graban cada uno sus documentos",1,"Cada departamento graba lo suyo: descentralizada."],
+  ["Una grabadora trabaja desde casa con conexión segura",5,"Es teletrabajo; el puesto también debe estar evaluado."],
+  ["Administración graba para toda la empresa",0,"Un único departamento para todos: centralizada."],
+  ["Un operador graba y una compañera revisa",3,"Una persona graba y otra verifica: grabación en cadena."]
+ ].map(r=>({c:[r[0],{s:["Centralizada","Descentralizada","Externalizada","En cadena","Doble grabación","Teletrabajo"],a:r[1]}],why:r[2]}))}]},
+{n:2,sec:"2.1",t:"Aplica las instrucciones y decide tu autonomía",
+ know:`<div class="paper-w"><b>Hoja de instrucciones · Lote 31</b><br>Fecha: dd/mm/aaaa, año con cuatro cifras · Nombre: mayúscula inicial en cada palabra, sin abreviar · Provincia: A Coruña 15, Lugo 27, Madrid 28, Ourense 32, Pontevedra 36 · Importe: dos decimales con coma, sin punto de miles · Ilegible: escribir INC y apartar.</div>`,
+ parts:[
+ {k:"grid",q:"a) Graba cada documento según las instrucciones.",head:["Original","Fecha","Nombre","Prov.","Importe"],rows:[
+  {c:["12/11/26 · JOSÉ RAMÓN PENA · A Coruña · 120",{x:["12/11/2026"]},{x:["José Ramón Pena"]},{x:["15"]},{x:["120,00"]}],why:"El año va con cuatro cifras, el nombre con mayúscula solo al inicio de cada palabra y el importe con dos decimales."},
+  {c:["7-1-2026 · ana belén díaz · Pontevedra · 9,9",{x:["07/01/2026"]},{x:["Ana Belén Díaz"]},{x:["36"]},{x:["9,90"]}],why:"Día y mes llevan dos cifras (07/01) y con barras; el importe 9,9 se completa a 9,90."},
+  {c:["21/10/2026 · Luis Fdez. Otero · Ourense · 1.250,5",{x:["21/10/2026"]},{x:["Luis Fernández Otero"]},{x:["32"]},{x:["1250,50"]}],why:"La instrucción dice sin abreviar: Fdez. se escribe Fernández. El importe va sin punto de miles: 1250,50."},
+  {c:["30/09/2026 · Carmen ███ (ilegible) · Lugo · 75",{x:["30/09/2026"]},{x:["INC"]},{x:["27"]},{x:["75,00"]}],why:"Con un apellido ilegible no se inventa nada: se escribe INC y el documento se aparta."},
+  {c:["5/11/2026 · Pedro Souto · Madrid · 60,25",{x:["05/11/2026"]},{x:["Pedro Souto"]},{x:["28"]},{x:["60,25"]}],why:"El día 5 se escribe 05. Madrid es 28."}]},
+ {k:"grid",q:"b) ¿Lo resuelves (R), lo consultas (C) o lo escalas de inmediato (E)?",head:["Situación","Decisión"],rows:[
+  ["Has puesto mal una fecha y aún no has guardado",0,"Es un error propio dentro del procedimiento: lo corriges tú."],
+  ["Un pedido trae dos importes distintos",1,"No encaja en ninguna regla y no se puede adivinar: se consulta."],
+  ["Encuentras en la papelera un listado de clientes",2,"Es un riesgo para los datos personales: se avisa de inmediato."],
+  ["La aplicación se cierra a todo el equipo al guardar",2,"Para el servicio entero: se escala en el momento."],
+  ["Quieres grabar primero los documentos de Lugo",0,"El orden dentro de tu lote es decisión tuya."],
+  ["Una provincia no aparece en la tabla de códigos",1,"No hay instrucción para ese caso: se consulta al coordinador."]
+ ].map(r=>({c:[r[0],{s:["R · Resuelvo","C · Consulto","E · Escalo"],a:r[1]}],why:r[2]}))}]},
+{n:3,sec:"2.2",t:"¿Grupo o equipo? Las fases de un equipo",
+ know:`<p>Un <b>grupo</b> comparte espacio o jefe; un <b>equipo</b> comparte objetivo, responsabilidad e información. Fases: formación, conflicto, normalización y rendimiento.</p>`,
+ parts:[
+ {k:"grid",q:"a) ¿Grupo o equipo?",head:["Frase","Respuesta"],rows:[
+  ["Cada persona responde solo de su lote",0,"Sin responsabilidad compartida es un grupo."],
+  ["El objetivo de entregar el viernes es de todos",1,"Un objetivo común es lo que define a un equipo."],
+  ["Las dudas resueltas se apuntan en un documento común",1,"Compartir información es propio de un equipo."],
+  ["Comparten oficina pero no saben qué hacen los demás",0,"Compartir espacio no basta: es un grupo."],
+  ["Quien termina antes ayuda a quien va con retraso",1,"La ayuda mutua muestra responsabilidad compartida."],
+  ["La información solo llega a través del jefe",0,"Si no circula entre todos, es un grupo."],
+  ["Los errores se analizan juntos, sin buscar culpables",1,"Analizar en común para mejorar es trabajo en equipo."],
+  ["El resultado es la suma de lo que hace cada uno",0,"En un equipo hay sinergia: el resultado supera la suma."]
+ ].map(r=>({c:[r[0],{s:["Grupo","Equipo"],a:r[1]}],why:r[2]}))},
+ {k:"grid",q:"b) ¿En qué fase está y qué le ayuda?",head:["Situación","Fase","Qué ayuda"],rows:[
+  ["Primera semana: todos preguntan todo al coordinador",0,0,"Es el inicio (formación): hacen falta objetivos y roles claros."],
+  ["Luis y Marta discuten por el formato de fecha",1,1,"Aparecen diferencias de criterio (conflicto): se superan escuchando y acordando normas."],
+  ["Acuerdan por escrito el formato y lo añaden al manual",2,2,"Fijar reglas escritas es la normalización."],
+  ["Se reparten los lotes solos y cumplen plazos",3,3,"El equipo funciona con autonomía (rendimiento): hay que mantener la comunicación."]
+ ].map(r=>({c:[r[0],{s:["Formación","Conflicto","Normalización","Rendimiento"],a:r[1]},{s:["Objetivos y roles claros","Escuchar y acordar normas","Escribir y aplicar los acuerdos","Mantener la comunicación y revisar resultados"],a:r[2]}],why:r[3]}))}]},
+{n:4,sec:"2.2",t:"Comunicación asertiva y retroalimentación",
+ know:`<p><b>Pasivo</b>: calla o cede. <b>Agresivo</b>: impone o ataca a la persona. <b>Asertivo</b>: dice lo que piensa con respeto. La retroalimentación sigue tres pasos: <b>hecho</b>, <b>efecto</b> y <b>propuesta</b>.</p>`,
+ parts:[
+ {k:"grid",q:"a) Clasifica cada frase.",head:["Frase","Estilo"],rows:[
+  ["«Vale, lo que tú digas» (y no estás de acuerdo)",0,"Ceder sin decir lo que piensas es pasivo, aunque suene amable."],
+  ["«Eres un desastre con los códigos»",1,"Juzga a la persona en lugar del trabajo: agresivo."],
+  ["«He visto cuatro códigos postales incompletos en tu lote; ¿los revisamos juntos?»",2,"Da un hecho concreto y propone una solución: asertivo."],
+  ["«No pasa nada, ya lo corrijo yo» (y siempre lo corriges tú)",0,"Evitar el problema y cargar con él es pasivo."],
+  ["«Si vuelves a equivocarte se lo digo al jefe»",1,"Es una amenaza: agresivo."],
+  ["«Necesito el lote a las 12 para verificarlo; ¿te viene bien?»",2,"Expresa una necesidad clara y pregunta: asertivo."]
+ ].map(r=>({c:[r[0],{s:["Pasivo","Agresivo","Asertivo"],a:r[1]}],why:r[2]}))},
+ {k:"open",q:"b) Reescribe de forma asertiva: «Siempre entregas tarde.»",model:"«Esta semana dos de tus lotes llegaron después de las 12 (hecho) y no pude verificarlos el mismo día (efecto). ¿Quedamos en una hora fija o me avisas si vas con retraso? (propuesta)»"},
+ {k:"open",q:"c) Reescribe de forma asertiva: «Tus verificaciones no sirven para nada.»",model:"«En el lote 18 el cliente encontró cinco errores que habían pasado la verificación (hecho); tuvimos que regrabarlo (efecto). ¿Revisamos juntos la plantilla de cotejo? (propuesta)»"}]},
+{n:5,sec:"2.3",t:"Calcula los indicadores de calidad",
+ know:`<p><b>Tasa de error</b> = campos con error ÷ (registros × 8) × 100 · <b>Productividad</b> = registros ÷ 7 h · <b>Retrabajo</b> = corregidos tras la entrega ÷ registros × 100. Estándar: error ≤ 1 %, productividad ≥ 80 reg/h, retrabajo ≤ 2 %.</p>`,
+ parts:[
+ {k:"grid",q:"Cada registro tiene 8 campos y todos trabajaron 7 horas. Escribe los porcentajes con dos decimales.",head:["Grabador","Datos","Error %","Reg/h","Retrabajo %","¿Cumple?"],rows:[
+  {c:["Ana","600 reg · 30 errores · 6 corregidos",{n:.63,tol:.011},{n:85.7,tol:.15},{n:1,tol:.011},{s:YN,a:0}],why:"30 ÷ 4.800 × 100 = 0,63 % · 600 ÷ 7 = 85,7 · 6 ÷ 600 × 100 = 1 %. Cumple los tres."},
+  {c:["Bruno","720 reg · 72 errores · 18 corregidos",{n:1.25,tol:.011},{n:102.9,tol:.15},{n:2.5,tol:.011},{s:YN,a:1}],why:"72 ÷ 5.760 × 100 = 1,25 % · 720 ÷ 7 = 102,9 · 18 ÷ 720 × 100 = 2,5 %. Es el más rápido, pero falla en error y retrabajo."},
+  {c:["Carla","490 reg · 20 errores · 4 corregidos",{n:.51,tol:.011},{n:70,tol:.15},{n:.82,tol:.011},{s:YN,a:1}],why:"20 ÷ 3.920 × 100 = 0,51 % · 490 ÷ 7 = 70 · 4 ÷ 490 × 100 = 0,82 %. Es precisa, pero no llega a 80 reg/h."},
+  {c:["David","595 reg · 40 errores · 9 corregidos",{n:.84,tol:.011},{n:85,tol:.15},{n:1.51,tol:.011},{s:YN,a:0}],why:"40 ÷ 4.760 × 100 = 0,84 % · 595 ÷ 7 = 85 · 9 ÷ 595 × 100 = 1,51 %. Cumple."},
+  {c:["Elena","560 reg · 50 errores · 14 corregidos",{n:1.12,tol:.011},{n:80,tol:.15},{n:2.5,tol:.011},{s:YN,a:1}],why:"50 ÷ 4.480 × 100 = 1,12 % · 560 ÷ 7 = 80 (justo el mínimo, cumple) · 14 ÷ 560 × 100 = 2,5 %. Falla en error y retrabajo."}]},
+ {k:"grid",head:["Equipo","Respuesta"],rows:[
+  {c:["Tasa de error del equipo (%)",{n:.89,tol:.011}],why:"Se suman errores y campos, no se hace la media: 212 ÷ (2.965 × 8 = 23.720) × 100 = 0,89 %."},
+  {c:["Cumplimiento de plazos: 17 de 20 lotes (%)",{n:85,tol:0}],why:"17 ÷ 20 × 100 = 85 %."},
+  {c:["¿Cumple el estándar de plazos (≥ 95 %)?",{s:YN,a:1}],why:"85 % está por debajo del 95 %."}]},
+ {k:"open",q:"Bruno y Carla no cumplen por motivos distintos. ¿Qué apoyo propondrías a cada uno?",model:"Bruno es rápido pero comete errores: bajar el ritmo, autocomprobar antes de guardar y revisar con el verificador sus errores más repetidos. Carla es precisa pero lenta: práctica de mecanografía y del teclado numérico, y revisar si pierde tiempo preparando documentos."}]},
+{n:6,sec:"2.3",t:"Cinco porqués, PDCA y coordinación",
+ know:`<p class="wx-case"><b>Caso.</b> El 40 % de los errores de octubre son fechas mal grabadas: con guiones, con el año de dos cifras o con día y mes cambiados. El campo fecha del formulario es texto libre.</p>`,
+ parts:[
+ {k:"open",q:"a) Escribe la cadena de cinco porqués hasta llegar a una causa que se pueda corregir.",model:"1. Cada grabador escribe la fecha en un formato distinto. 2. Porque copian el formato que trae cada documento. 3. Porque el formulario acepta cualquier texto. 4. Porque el campo no tiene máscara ni validación. 5. Porque al crear la plantilla nadie la definió. Causa raíz: falta una máscara dd/mm/aaaa en el campo."},
+ {k:"open",q:"b) Diseña la mejora con el ciclo PDCA.",model:"Planificar: añadir una máscara dd/mm/aaaa con validación y fijar el objetivo de reducir a la mitad los errores en fechas. Hacer: probarla en un lote de 200 pedidos. Verificar: comparar los errores en fechas antes y después. Actuar: si bajan, aplicarla a todos los formularios y anotarlo en el manual; si no, revisar la causa."},
+ {k:"grid",q:"c) ¿Qué mecanismo de coordinación es?",head:["Caso","Mecanismo"],rows:[
+  ["El manual dice cómo se graba cada campo",0,"Fija cómo se hace el trabajo: normalización del proceso."],
+  ["Todos saben que el límite de error es el 1 %",1,"Fija el resultado que hay que alcanzar: normalización de resultados."],
+  ["La coordinadora asigna los lotes cada mañana",2,"Una persona organiza a las demás: supervisión directa."],
+  ["Dos grabadores se avisan de un código nuevo",3,"Se coordinan entre ellos sin intermediarios: ajuste mutuo."]
+ ].map(r=>({c:[r[0],{s:["Normalización del proceso","Normalización de resultados","Supervisión directa","Ajuste mutuo"],a:r[1]}],why:r[2]}))}]},
+{n:7,sec:"2.4",t:"Los principios del RGPD en la práctica",
+ know:`<p>Principios del artículo 5 del RGPD: licitud y transparencia · limitación de la finalidad · minimización · exactitud · limitación del plazo · integridad y confidencialidad · responsabilidad proactiva.</p>`,
+ parts:[
+ {k:"grid",q:"¿Qué principio se incumple?",head:["Situación","Principio"],rows:[
+  ["Se usan teléfonos de garantías para enviar publicidad",1,"Los datos se recogieron para gestionar garantías, no para publicidad: limitación de la finalidad."],
+  ["El formulario de un pedido de ropa pide la religión",2,"Es un dato innecesario (y además sensible): minimización."],
+  ["Una dirección mal grabada hace que el pedido llegue a otra persona",[3,5],"El origen es un dato inexacto; como consecuencia, otra persona ve datos ajenos (confidencialidad)."],
+  ["Se guardan fichas de clientes de 2009 «por si acaso»",4,"Se conservan más tiempo del necesario: limitación del plazo de conservación."],
+  ["Los listados se quedan impresos en la mesa",5,"Cualquiera puede verlos: integridad y confidencialidad."],
+  ["Nadie sabe quién accede a los datos ni está documentado",6,"La empresa no puede demostrar que cumple: responsabilidad proactiva."],
+  ["Un formulario no explica para qué se usarán los datos",0,"Falta información al recogerlos: licitud, lealtad y transparencia."],
+  ["Un grabador consulta por curiosidad la ficha de su vecino",[5,1],"Accede sin necesidad de trabajo: confidencialidad y uso para otra finalidad."]
+ ].map(r=>({c:[r[0],{s:["Licitud y transparencia","Limitación de la finalidad","Minimización","Exactitud","Limitación del plazo","Integridad y confidencialidad","Responsabilidad proactiva"],a:r[1]}],why:r[2]}))}]},
+{n:8,sec:"2.4",t:"Casos éticos: ¿qué harías tú?",
+ know:`<p>Principios: confidencialidad, integridad, responsabilidad, lealtad, respeto e imparcialidad. El deber de confidencialidad (art. 5 LOPDGDD) continúa después de dejar la empresa.</p>`,
+ parts:[
+ {k:"grid",q:"Elige la actuación correcta.",head:["Caso","Qué haces"],rows:[
+  ["Una compañera te pide tu contraseña porque la suya está bloqueada",1,"Las contraseñas son personales: prestarla permite actuar en tu nombre. Se le ayuda a desbloquear la suya."],
+  ["Envías por error un Excel de clientes a un proveedor",0,"Es una posible brecha de seguridad: hay que avisar en el momento para que la empresa valore notificarla. Ocultarlo agrava el daño."],
+  ["Te piden cerrar un lote con 30 registros sin verificar «porque hay prisa»",2,"Integridad y responsabilidad: se explica el riesgo y se deja constancia, sin entregar a ciegas."],
+  ["Al grabar ves la deuda de tu vecino",0,"Confidencialidad: grabas lo que toca y no consultas ni comentas nada más."]
+ ].map((r,i)=>({c:[r[0],{s:[["Se la prestas solo esta vez","No se la das y le ayudas a desbloquear la suya","Se la mandas por mensaje"],["Avisas al responsable en el momento","Borras el correo enviado y no dices nada","Pides al proveedor que lo borre y no avisas a nadie"],["Lo cierras sin más, lo ordena el coordinador","Te niegas a trabajar","Explicas el riesgo y pides que conste por escrito o más plazo"],["Grabas el dato y no consultas ni comentas nada","Lo comentas con tu familia","Miras el resto de su ficha"]][i],a:r[1]}],why:r[2]}))},
+ {k:"grid",head:["Pregunta","Respuesta"],rows:[
+  {c:["Horas para notificar una brecha a la AEPD",{n:72,tol:0}],why:"El artículo 33 del RGPD da 72 horas desde que se tiene constancia."},
+  {c:["Al dejar la empresa, ¿puedes contar datos de clientes?",{s:YN,a:1}],why:"No: el deber de confidencialidad se mantiene aunque termine el contrato."}]}]}
+]};
+
+const BAD_SVG=`<figure class="fig"><svg viewBox="0 0 420 270" role="img" aria-label="Persona sentada con seis errores de postura numerados">
+<line x1="10" y1="252" x2="410" y2="252" style="stroke:var(--line);stroke-width:2"/>
+<path d="M96 92 L96 170 L176 170" style="fill:none;stroke:var(--muted);stroke-width:6;stroke-linecap:round;stroke-linejoin:round"/>
+<line x1="136" y1="172" x2="136" y2="240" style="stroke:var(--muted);stroke-width:6"/><line x1="102" y1="244" x2="170" y2="244" style="stroke:var(--muted);stroke-width:6;stroke-linecap:round"/>
+<rect x="232" y="150" width="172" height="9" rx="2" style="fill:var(--key);stroke:var(--key-edge)"/><line x1="392" y1="159" x2="392" y2="252" style="stroke:var(--key-edge);stroke-width:6"/>
+<rect x="286" y="141" width="56" height="8" rx="2" style="fill:var(--ink)"/><line x1="342" y1="146" x2="356" y2="104" style="stroke:var(--ink);stroke-width:6;stroke-linecap:round"/>
+<line x1="244" y1="80" x2="338" y2="128" style="stroke:var(--signal);stroke-width:2;stroke-dasharray:5 4"/>
+<g style="stroke:var(--accent);stroke-width:13;stroke-linecap:round;stroke-linejoin:round;fill:none"><path d="M168 162 L208 96"/><path d="M168 164 L240 168 L244 226 L262 228"/><path d="M206 98 L226 140 L272 140 L290 126"/></g>
+<circle cx="230" cy="74" r="21" style="fill:var(--accent)"/>
+${[[1,236,40],[2,372,98],[3,190,72],[4,128,128],[5,302,112],[6,280,222]].map(m=>`<circle cx="${m[1]}" cy="${m[2]}" r="11" style="fill:var(--signal)"/><text x="${m[1]}" y="${m[2]+4.5}" text-anchor="middle" class="mk">${m[0]}</text>`).join("")}
+</svg><figcaption>Seis errores de postura numerados.</figcaption></figure>`;
+
+function wxNum(v){v=String(v).trim().replace(/\s/g,"").replace("%","");if(!v)return NaN;if(v.includes(","))v=v.replace(/\./g,"").replace(",",".");else if(/^\d{1,3}(\.\d{3})+$/.test(v))v=v.replace(/\./g,"");return parseFloat(v)}
+const wxFmt=n=>Number.isInteger(n)?n.toLocaleString("es-ES"):n.toLocaleString("es-ES",{maximumFractionDigits:2});
+const wxNorm=s=>String(s).trim().replace(/\s+/g," ");
+
+function wxGrid(part,pid){
+  const head=part.head?`<thead><tr>${part.head.map(h=>`<th>${h}</th>`).join("")}</tr></thead>`:"";
+  const body=part.rows.map((r,ri)=>`<tr data-r="${ri}">${r.c.map((c,ci)=>{const id=`${pid}-${ri}-${ci}`;
+    const dh=part.head?part.head[ci]:"";if(typeof c==="string")return `<td data-h="${dh}">${c}</td>`;
+    if(c.s)return `<td data-h="${dh}"><select id="${id}" class="wx-f" aria-label="${part.head?part.head[ci]:"Respuesta"}"><option value="">Elige…</option>${c.s.map((o,oi)=>`<option value="${oi}">${o}</option>`).join("")}</select></td>`;
+    return `<td data-h="${dh}"><input id="${id}" class="wx-f" type="text" inputmode="${c.n!==undefined?"decimal":"text"}" autocomplete="off" spellcheck="false" aria-label="${part.head?part.head[ci]:"Respuesta"}"></td>`;}).join("")}</tr><tr class="wx-why" hidden><td colspan="${r.c.length}"></td></tr>`).join("");
+  return `${part.q?`<p class="wx-q">${part.q}</p>`:""}<div class="tbl wx-tbl"><table class="wx-grid">${head}<tbody>${body}</tbody></table></div>`;
+}
+function wxCheckGrid(part,pid,box){
+  let ok=0,tot=0;
+  part.rows.forEach((r,ri)=>{let rowOk=true;const corr=[];
+    r.c.forEach((c,ci)=>{if(typeof c==="string")return;tot++;const el=box.querySelector(`#${pid}-${ri}-${ci}`);let good=false,ans;
+      if(c.s){const acc=[].concat(c.a);good=el.value!==""&&acc.includes(+el.value);ans=acc.map(i=>c.s[i]).join(" o ")}
+      else if(c.n!==undefined){const v=wxNum(el.value);good=!isNaN(v)&&Math.abs(v-c.n)<=c.tol+1e-9;ans=wxFmt(c.n)}
+      else{good=c.x.some(a=>wxNorm(a)===wxNorm(el.value));ans=c.x[0]}
+      el.classList.toggle("wx-ok",good);el.classList.toggle("wx-bad",!good);if(good)ok++;else{rowOk=false;corr.push((part.head?part.head[ci]+": ":"")+ans)}});
+    const w=box.querySelector(`#${pid} tr[data-r="${ri}"] + tr.wx-why`);
+    if(rowOk){w.hidden=true}else{w.hidden=false;w.firstElementChild.innerHTML=`<b>Respuesta correcta:</b> ${corr.join(" · ")}<br><span>${r.why}</span>`}});
+  return [ok,tot];
+}
+
+const GANTT_T=["Preparación del lote","Grabación (Ana)","Grabación (Luis)","Verificación (Marta)","Corrección de errores","Entrega"];
+function wxGantt(pid){return `<div class="tbl wx-tbl"><table class="wx-gantt"><thead><tr><th>Tarea</th>${["Lun 9","Mar 10","Mié 11","Jue 12"].map(d=>`<th colspan="2">${d}<br><small>mañana · tarde</small></th>`).join("")}</tr></thead><tbody>${GANTT_T.map((t,ti)=>`<tr><td>${t}</td>${[0,1,2,3,4,5,6,7].map(c=>`<td><button type="button" class="wx-cell" data-t="${ti}" data-c="${c}" aria-pressed="false" aria-label="${t}, media jornada ${c+1}"></button></td>`).join("")}</tr>`).join("")}</tbody></table></div><ul class="wx-msgs" id="${pid}-m"></ul>`}
+function wxCheckGantt(pid,box){
+  const on=t=>[...box.querySelectorAll(`#${pid} .wx-cell[data-t="${t}"][aria-pressed="true"]`)].map(b=>+b.dataset.c);
+  const P=on(0),A=on(1),L=on(2),V=on(3),C=on(4),E=on(5),G=A.concat(L);const mn=a=>Math.min(...a),mx=a=>Math.max(...a);
+  const rules=[
+   [P.length>0&&G.length>0&&mx(P)<=mn(G),"La preparación tiene que ir antes de empezar a grabar: primero se revisa, se clasifica y se apartan las incidencias."],
+   [A.length>=3&&L.length>=3,"Cada grabador necesita 8,93 horas, unas tres medias jornadas de 3,5 h. Marca al menos tres casillas para Ana y tres para Luis."],
+   [V.length>0&&G.length>0&&mn(V)>mn(G),"La verificación empieza cuando ya hay parte del lote grabado, nunca antes de grabar."],
+   [C.length>0&&V.length>0&&mn(C)>=mn(V),"La corrección de errores va después de que empiece la verificación: solo se corrige lo que el verificador ha encontrado."],
+   [E.length===1&&E[0]<=6,"La entrega es una sola casilla y debe ser como muy tarde el jueves por la mañana, porque el plazo acaba a las 14:00."],
+   [E.length===1&&[...G,...V,...C].every(x=>x<=E[0]),"Ninguna tarea puede quedar después de la entrega."]];
+  const m=box.querySelector(`#${pid}-m`);const bad=rules.filter(r=>!r[0]);
+  m.innerHTML=bad.length?bad.map(r=>`<li class="bad">${r[1]}</li>`).join(""):`<li class="ok">Cronograma coherente: preparación, grabación, verificación, corrección y entrega en plazo.</li>`;
+  return [rules.length-bad.length,rules.length];
+}
+function wxPausas(pid){return `<div class="wx-times">${[1,2,3,4,5].map(i=>`<label>Pausa ${i}<input type="time" id="${pid}-t${i}" min="08:00" max="15:00" step="300"></label>`).join("")}</div><ul class="wx-msgs" id="${pid}-m"></ul>`}
+function wxCheckPausas(pid,box){
+  const tm=v=>{const p=v.split(":");return +p[0]*60+ +p[1]};const fh=n=>`${Math.floor(n/60)}:${String(n%60).padStart(2,"0")}`;
+  const vals=[1,2,3,4,5].map(i=>box.querySelector(`#${pid}-t${i}`).value).filter(Boolean).map(tm).sort((a,b)=>a-b);const msgs=[];let ok=true;
+  if(vals.length<5){msgs.push(["bad","Faltan pausas: escribe la hora de las cinco."]);ok=false}
+  vals.forEach(v=>{if(v<480||v+5>900){msgs.push(["bad",`La pausa de las ${fh(v)} queda fuera de la jornada (8:00 a 15:00).`]);ok=false}else if(v+5>630&&v<660){msgs.push(["bad",`La pausa de las ${fh(v)} coincide con el descanso de 10:30 a 11:00: no cuenta como pausa extra.`]);ok=false}});
+  const stops=[...vals.filter(v=>v>=480&&v+5<=900&&!(v+5>630&&v<660)).map(v=>[v,v+5]),[630,660]].sort((a,b)=>a[0]-b[0]);let cur=480;
+  stops.concat([[900,900]]).forEach(s=>{const len=s[0]-cur;if(len>60){msgs.push(["bad",`Entre las ${fh(cur)} y las ${fh(s[0])} hay ${len} minutos seguidos de pantalla. El máximo recomendable es 60: añade o mueve una pausa.`]);ok=false}cur=Math.max(cur,s[1])});
+  if(ok)msgs.push(["ok","Bien repartidas: ningún tramo supera los 60 minutos seguidos de pantalla."]);
+  box.querySelector(`#${pid}-m`).innerHTML=msgs.map(m=>`<li class="${m[0]}">${m[1]}</li>`).join("");return [ok?1:0,1];
+}
+function wxSelf(part,pid){return `<div class="wx-self">${part.items.map((it,i)=>`<div class="wx-si"><span>${it[0]}</span><span class="wx-yn"><label><input type="radio" name="${pid}-${i}" value="1"> Sí</label><label><input type="radio" name="${pid}-${i}" value="0"> No</label></span><p class="wx-adv" hidden></p></div>`).join("")}</div>`}
+function wxCheckSelf(part,pid,box){part.items.forEach((it,i)=>{const v=box.querySelector(`input[name="${pid}-${i}"]:checked`);const p=box.querySelectorAll(`#${pid} .wx-adv`)[i];if(v&&v.value==="0"){p.hidden=false;p.textContent="Cómo mejorarlo: "+it[1]}else p.hidden=true});return null}
+
+function wxRender(zone,unit){
+  zone.innerHTML=(WX[unit]||[]).map(ex=>`<details class="wx" id="wx-${unit}-${ex.n}"><summary><span class="num">Ej. ${ex.n}</span><span class="st">${ex.t}</span><span class="pg">${ex.sec}</span></summary><div class="wx-body"><div class="box-k">${ex.know}</div>${ex.parts.map((p,pi)=>{const pid=`w${unit}${ex.n}p${pi}`;
+    if(p.k==="html")return p.h==="BADPOSTURE"?BAD_SVG:p.h;
+    if(p.k==="grid")return `<div class="wx-part" id="${pid}">${wxGrid(p,pid)}</div>`;
+    if(p.k==="open")return `<div class="wx-part" id="${pid}"><p class="wx-q">${p.q}</p><textarea id="${pid}-a" rows="3" placeholder="Escribe tu respuesta"></textarea><button type="button" class="btn ghost wx-show">Ver respuesta modelo</button><div class="wx-model" hidden><b>Respuesta modelo.</b> ${p.model}</div></div>`;
+    if(p.k==="gantt")return `<div class="wx-part" id="${pid}"><p class="wx-q">${p.q}</p>${wxGantt(pid)}</div>`;
+    if(p.k==="pausas")return `<div class="wx-part" id="${pid}"><p class="wx-q">${p.q}</p>${wxPausas(pid)}</div>`;
+    if(p.k==="self")return `<div class="wx-part" id="${pid}"><p class="wx-q">${p.q}</p>${wxSelf(p,pid)}</div>`;
+  }).join("")}<div class="row"><button type="button" class="btn wx-chk">Comprobar</button><button type="button" class="btn ghost wx-rst">Reiniciar</button></div><div class="result wx-res"></div></div></details>`).join("");
+  (WX[unit]||[]).forEach(ex=>{const box=zone.querySelector(`#wx-${unit}-${ex.n}`);
+    box.querySelectorAll(".wx-cell").forEach(b=>b.onclick=()=>b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true"));
+    box.querySelectorAll(".wx-show").forEach(b=>b.onclick=()=>{b.nextElementSibling.hidden=false});
+    box.querySelector(".wx-chk").onclick=()=>{let ok=0,tot=0;
+      ex.parts.forEach((p,pi)=>{const pid=`w${unit}${ex.n}p${pi}`;let r=null;
+        if(p.k==="grid")r=wxCheckGrid(p,pid,box);else if(p.k==="gantt")r=wxCheckGantt(pid,box);else if(p.k==="pausas")r=wxCheckPausas(pid,box);else if(p.k==="self")wxCheckSelf(p,pid,box);
+        else if(p.k==="open")box.querySelector(`#${pid} .wx-model`).hidden=false;
+        if(r){ok+=r[0];tot+=r[1]}});
+      const res=box.querySelector(".wx-res");
+      res.innerHTML=tot?`<b>${ok} de ${tot}</b> ${ex.parts.some(p=>p.k==="gantt")?"comprobaciones":"respuestas"} correctas. ${ok===tot?"Ejercicio superado.":"Debajo de cada fallo tienes la respuesta correcta y la explicación."}${ex.parts.some(p=>p.k==="open")?" En las preguntas abiertas compara tu respuesta con el modelo.":""}`:"Revisa los consejos que aparecen en los puntos marcados con No.";};
+    box.querySelector(".wx-rst").onclick=()=>{box.querySelectorAll("input[type=text],input[type=time],textarea").forEach(i=>i.value="");box.querySelectorAll("select").forEach(s=>s.value="");box.querySelectorAll("input[type=radio]").forEach(i=>i.checked=false);
+      box.querySelectorAll(".wx-ok,.wx-bad").forEach(e=>e.classList.remove("wx-ok","wx-bad"));box.querySelectorAll(".wx-why,.wx-model,.wx-adv").forEach(e=>e.hidden=true);box.querySelectorAll(".wx-msgs").forEach(e=>e.innerHTML="");
+      box.querySelectorAll(".wx-cell").forEach(b=>b.setAttribute("aria-pressed","false"));box.querySelector(".wx-res").innerHTML=""};});
+}
+
 const EX={
 ergo(zone){
   const box=exBox(zone,"Simulador","Evalúa tu puesto de trabajo","Mide tu puesto real (o el del aula) e introduce los valores. El simulador los contrasta con el RD 488/1997, el RD 486/1997 y la guía técnica del INSST.");
