@@ -59,6 +59,20 @@ header.top{padding-block:40px 28px}
 .dl-t small{color:var(--muted);font-size:13px}
 .dl-b{flex:none;font-weight:700;padding:8px 14px;border-radius:9px;background:var(--ink);color:var(--bg)}
 @media (max-width:480px){.dl-b{display:none}}
+.calc-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:14px}
+.calc-box .form-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.calc-box .field{min-width:0}
+.calc-box select,.calc-box input[type=date]{width:100%;max-width:100%;min-width:0}
+.calc-box select:disabled,.calc-box input:disabled{opacity:.5}
+.rc-res{display:grid;gap:10px}
+.rc-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.rc-top .pill{font-size:13px;padding:4px 12px}
+.rc-res .stat b{font-size:1.05rem}
+.rc-bar{position:relative;height:10px;border-radius:5px;background:var(--key);margin-top:4px}
+.rc-bar i{display:block;height:100%;border-radius:5px;background:var(--accent)}
+.rc-bar span{position:absolute;top:-4px;width:4px;height:18px;margin-left:-2px;background:var(--signal);border-radius:2px}
+.rc-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.tile b{font-size:.92rem}
 .progress-global{margin-top:24px;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;color:var(--muted)}
 .bar{flex:1;max-width:340px;height:8px;background:var(--key);border-radius:4px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
@@ -274,10 +288,10 @@ img{max-width:100%}[hidden]{display:none!important}
   <p class="lede">Desarrollo ampliado de las unidades 1 y 2: organización y mantenimiento del puesto, ergonomía y normativa de pantallas, organización del trabajo, trabajo en equipo, indicadores de calidad y ética profesional. Cada unidad parte de un caso real, combina teoría ilustrada, ejercicios que se corrigen al momento, actividades de aula y glosario.</p>
   <div class="facts">
     <span><b>2</b> unidades didácticas</span>
-    <span><b>11</b> epígrafes · pp. 1–53</span>
-    <span><b>17</b> ilustraciones</span>
-    <span><b>9</b> ejercicios interactivos</span>
-    <span><b>24</b> términos de glosario</span>
+    <span><b>13</b> epígrafes · pp. 1–53 y ampliación</span>
+    <span><b>18</b> ilustraciones</span>
+    <span><b>11</b> ejercicios interactivos</span><span><b>1</b> calculadora de plazos</span>
+    <span><b>29</b> términos de glosario</span>
   </div>
   <div class="progress-global"><span>Epígrafes estudiados</span><div class="bar"><i id="gbar"></i></div><span id="gtxt">0 %</span></div>
   <div class="dls">
@@ -855,8 +869,101 @@ const UNITS=[
    <li>Destruir los documentos con trituradora o contenedor de destrucción confidencial, nunca en la papelera.</li>
    <li>Comunicar cualquier incidente (pérdida de un documento, envío a un destinatario equivocado): la empresa tiene 72 horas para notificar ciertas brechas a la Agencia Española de Protección de Datos.</li>
   </ul>`]
+ ,["2.4.1","Plazos de conservación de los datos personales","Ampliación",`
+  <p>El principio de <b>limitación del plazo de conservación</b> (artículo 5.1.e del RGPD) obliga a no conservar datos que identifiquen a una persona más tiempo del necesario para la finalidad con la que se recogieron. No existe un plazo único: depende de para qué se recogió el dato y de las leyes que obligan a conservar ciertos documentos.</p>
+  <figure class="fig"><svg viewBox="0 0 560 190" role="img" aria-label="Ciclo de vida de un dato personal">
+<defs><marker id="ah-lc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" style="fill:var(--muted)"/></marker></defs>
+<rect x="10" y="40" width="110" height="64" rx="10" style="fill:var(--f-index);stroke:var(--key-edge)"/>
+<text x="65" y="68" text-anchor="middle" class="b">Recogida</text><text x="65" y="86" text-anchor="middle" class="sm">se informa</text>
+<rect x="150" y="40" width="120" height="64" rx="10" style="fill:var(--f-middle);stroke:var(--key-edge)"/>
+<text x="210" y="68" text-anchor="middle" class="b">Uso activo</text><text x="210" y="86" text-anchor="middle" class="sm">mientras dura la finalidad</text>
+<rect x="300" y="40" width="130" height="64" rx="10" style="fill:var(--warn-soft);stroke:var(--warn)"/>
+<text x="365" y="68" text-anchor="middle" class="b">Bloqueo</text><text x="365" y="86" text-anchor="middle" class="sm">hasta que prescribe</text>
+<rect x="460" y="40" width="90" height="64" rx="10" style="fill:var(--bad-soft);stroke:var(--bad)"/>
+<text x="505" y="68" text-anchor="middle" class="b">Supresión</text><text x="505" y="86" text-anchor="middle" class="sm">borrado seguro</text>
+<line x1="122" y1="72" x2="146" y2="72" style="stroke:var(--muted);stroke-width:2" marker-end="url(#ah-lc)"/>
+<line x1="272" y1="72" x2="296" y2="72" style="stroke:var(--muted);stroke-width:2" marker-end="url(#ah-lc)"/>
+<line x1="432" y1="72" x2="456" y2="72" style="stroke:var(--muted);stroke-width:2" marker-end="url(#ah-lc)"/>
+<text x="210" y="134" text-anchor="middle" class="sm">Se usa para lo que se recogió</text>
+<text x="365" y="134" text-anchor="middle" class="sm">Nadie lo consulta; solo jueces,</text>
+<text x="365" y="150" text-anchor="middle" class="sm">Fiscalía y Administración</text>
+<text x="505" y="134" text-anchor="middle" class="sm">Art. 32 LOPDGDD</text>
+<text x="280" y="180" text-anchor="middle" class="sm">Art. 5.1.e RGPD: los datos no se conservan más tiempo del necesario</text>
+</svg><figcaption>Ciclo de vida de un dato personal. El plazo de conservación incluye el uso activo y el bloqueo; al terminar, el dato se suprime.</figcaption></figure>
+  <h4>Qué es el bloqueo</h4>
+  <p>Cuando la finalidad termina (el cliente se da de baja, el contrato acaba) pero una ley obliga a conservar el documento, el dato no se borra todavía: se <b>bloquea</b>. Según el artículo 32 de la LOPDGDD, bloquear es identificar y reservar los datos con medidas que impidan su tratamiento, incluida su visualización. Solo pueden ponerse a disposición de jueces y tribunales, el Ministerio Fiscal o las administraciones públicas competentes durante el plazo de prescripción. Al terminar ese plazo, se destruyen.</p>
+  <ul>
+   <li>En la práctica: el registro se marca como bloqueado, desaparece de los listados y de las búsquedas habituales y solo pueden verlo personas autorizadas.</li>
+   <li>Un dato bloqueado no se usa para nada más: ni para enviar publicidad, ni para estadísticas, ni para llamar al cliente.</li>
+   <li>Excepción: las imágenes de videovigilancia no se bloquean; se suprimen en un mes como máximo (artículo 22.3 de la LOPDGDD).</li>
+  </ul>
+  <h4>Plazos de referencia en España</h4>
+  ${T(["Documento o dato","Plazo","Desde cuándo se cuenta","Norma"],[
+   ["Libros, correspondencia, facturas y justificantes del negocio","6 años","Desde el último asiento en los libros","Art. 30 Código de Comercio"],
+   ["Documentación con trascendencia tributaria","4 años","Desde el día siguiente al fin del plazo de declaración","Arts. 66 y 67 Ley General Tributaria"],
+   ["Bases, cuotas o deducciones pendientes de compensar","10 años","Para justificar la compensación","Art. 66 bis Ley General Tributaria"],
+   ["Contratos y documentación laboral; altas, bajas y cotización","4 años","Desde la fecha del documento","Art. 21 LISOS"],
+   ["Registro diario de jornada","4 años","Desde la fecha del registro","Art. 34.9 Estatuto de los Trabajadores"],
+   ["Contratos con clientes (reclamaciones)","5 años","Desde que puede exigirse el cumplimiento","Art. 1964.2 Código Civil"],
+   ["Historia clínica","5 años como mínimo","Desde el alta de cada proceso asistencial","Art. 17 Ley 41/2002"],
+   ["Prevención del blanqueo de capitales","10 años","Desde el fin de la relación u operación","Art. 25 Ley 10/2010"],
+   ["Imágenes de videovigilancia","1 mes como máximo","Desde la captación","Art. 22.3 LOPDGDD"],
+   ["Datos para publicidad con consentimiento","Hasta que se retira o hay oposición","Desde la retirada","Arts. 7 y 21 RGPD"],
+   ["Currículums de candidatos no seleccionados","Sin plazo legal fijo","Lo fija la empresa y lo informa al candidato","Art. 5.1.e RGPD"]])}
+  <p class="note">Cuando a un mismo documento le afectan dos plazos, manda el más largo. Una factura tiene 4 años de plazo fiscal, pero el Código de Comercio obliga a guardarla 6 años: se conserva 6. Los plazos de prescripción pueden interrumpirse (por ejemplo, por una inspección), y entonces el cómputo vuelve a empezar.</p>
+  <h4>Calculadora de plazos de conservación</h4>
+  <p>Elige el tipo de documento y la fecha desde la que se cuenta el plazo. La calculadora indica hasta cuándo hay que conservarlo y qué hay que hacer hoy con él.</p>
+  <div id="calc-ret"></div>
+  <div class="call err"><b class="lb">Error frecuente</b><p>Guardar los datos de antiguos clientes "por si acaso" o seguir usándolos para enviar publicidad mientras están bloqueados. Un dato bloqueado solo se conserva para responder ante una reclamación o una inspección.</p></div>
+  <p class="small">Los plazos de la tabla son de referencia y salen de normas generales. Cada empresa fija los suyos en su registro de actividades de tratamiento, y la normativa de un sector concreto puede fijar otros. Ante la duda, se consulta al responsable o al delegado de protección de datos.</p>`]
+ ,["2.4.2","Datos sensibles: categorías especiales y cómo se tratan","Ampliación",`
+  <p>Algunos datos, si se conocen o se filtran, pueden provocar discriminación o daños graves a la persona. El RGPD los llama <b>categorías especiales de datos</b> (artículo 9) y la LOPDGDD los llama <b>datos sensibles</b>. Son los datos que revelan:</p>
+  <div class="tiles">
+   <div class="tile"><span>9.1</span><b>Origen étnico o racial</b></div>
+   <div class="tile"><span>9.1</span><b>Opiniones políticas</b></div>
+   <div class="tile"><span>9.1</span><b>Convicciones religiosas o filosóficas</b></div>
+   <div class="tile"><span>9.1</span><b>Afiliación sindical</b></div>
+   <div class="tile"><span>9.1</span><b>Datos genéticos</b></div>
+   <div class="tile"><span>9.1</span><b>Datos biométricos para identificar a una persona</b><p>Huella dactilar, reconocimiento facial</p></div>
+   <div class="tile"><span>9.1</span><b>Datos de salud</b><p>Diagnósticos, bajas, alergias, discapacidad</p></div>
+   <div class="tile"><span>9.1</span><b>Vida sexual u orientación sexual</b></div>
+  </div>
+  <p>Los <b>datos penales</b> (condenas e infracciones, artículo 10 del RGPD) no son una categoría especial, pero tienen un régimen propio todavía más restrictivo: solo pueden tratarse bajo control de una autoridad pública o cuando una ley lo permite.</p>
+  <h4>La regla: prohibido, salvo excepciones</h4>
+  <p>El artículo 9.1 del RGPD prohíbe tratar estos datos. El artículo 9.2 recoge las excepciones que permiten hacerlo:</p>
+  ${T(["Letra","Excepción","Ejemplo"],[
+   ["a","Consentimiento explícito del interesado para fines concretos","Un cliente marca una casilla para que se guarde su alergia en la ficha"],
+   ["b","Obligaciones en el ámbito laboral y de la Seguridad Social","Gestionar la baja por enfermedad de un trabajador"],
+   ["c","Proteger intereses vitales cuando la persona no puede consentir","Avisar de una alergia grave a los servicios de emergencia"],
+   ["d","Asociaciones sin ánimo de lucro con sus propios miembros","Un sindicato con la lista de sus afiliados"],
+   ["e","Datos que la persona ha hecho manifiestamente públicos","Un cargo electo que se presenta por un partido"],
+   ["f","Formular o defender reclamaciones judiciales","Aportar un informe médico en un juicio laboral"],
+   ["g","Interés público esencial previsto en una ley","Registros exigidos por una norma"],
+   ["h","Medicina preventiva o laboral y asistencia sanitaria","Reconocimientos médicos del servicio de prevención"],
+   ["i","Salud pública","Control de enfermedades transmisibles"],
+   ["j","Archivo, investigación científica o estadística","Estudios con datos seudonimizados"]])}
+  <p>La LOPDGDD añade un refuerzo en su artículo 9: el consentimiento por sí solo no basta para tratar datos cuya finalidad principal sea identificar la ideología, la afiliación sindical, la religión, la orientación sexual, las creencias o el origen racial o étnico de una persona. Una empresa no puede, por ejemplo, crear un fichero de clientes según su religión aunque estos den su permiso.</p>
+  <h4>Cómo se tratan</h4>
+  ${T(["Medida","Qué significa en la práctica"],[
+   ["Necesidad estricta","Solo se recoge el dato sensible si la finalidad lo exige. Si basta con saber que hay una baja, no se graba el diagnóstico"],
+   ["Acceso restringido","Solo acceden las personas que lo necesitan para su trabajo, con permisos individuales"],
+   ["Registro de accesos","El sistema guarda quién consulta cada registro y cuándo"],
+   ["Cifrado y seudonimización","Los ficheros van cifrados; en estadísticas se sustituye el nombre por un código"],
+   ["Separación","Los datos sensibles no se mezclan con los de uso general ni se escriben en campos libres como Observaciones"],
+   ["Papel bajo llave","Los documentos se guardan en armario cerrado y se destruyen con destrucción certificada"],
+   ["Evaluación de impacto","Es obligatoria cuando se tratan estos datos a gran escala (art. 35.3.b RGPD)"],
+   ["Delegado de protección de datos","Es obligatorio si la actividad principal consiste en tratar estos datos a gran escala (art. 37.1.c RGPD)"]])}
+  <h4>En el puesto de grabación</h4>
+  ${T(["Situación","Qué se graba","Qué no se graba"],[
+   ["Justificante médico de un trabajador","Fechas de inicio y fin de la ausencia","El diagnóstico, si no hace falta para la gestión"],
+   ["Nómina con cuota sindical","El descuento, en el campo previsto y con acceso restringido","Comentarios sobre la afiliación"],
+   ["Reserva con alergia alimentaria","La alergia, solo con consentimiento y para preparar el servicio","Otros datos de salud que comente el cliente"],
+   ["Ficha de empleado con foto","La foto para la tarjeta de identificación","Una plantilla biométrica, salvo que el sistema de fichaje la necesite y esté autorizado"]])}
+  <div class="call ex"><b class="lb">Ejemplo</b><p>Al grabar una solicitud de vacaciones, un trabajador escribe en el formulario que necesita los días para un tratamiento de fertilidad. El grabador registra las fechas solicitadas y avisa al responsable de que el documento contiene datos de salud, para que se archive con acceso restringido. No copia el motivo en el campo Observaciones.</p></div>
+  <p><b>Datos delicados que no son categoría especial.</b> El número de cuenta bancaria, el DNI, el salario, la dirección o la ubicación no son categorías especiales, pero su filtración puede causar fraudes o suplantaciones. Se protegen con el mismo cuidado: acceso por necesidad, sin copias fuera del sistema y sin mostrarlos en pantalla más de lo necesario.</p>
+  <div class="note">Tratar datos sensibles sin una excepción del artículo 9.2 es una infracción muy grave. Las multas pueden llegar a 20 millones de euros o al 4 % del volumen de negocio anual mundial (art. 83.5 RGPD).</div>`]
  ],
- ex:["autonomia","kpi","etica","quiz2"],
+ ex:["autonomia","kpi","etica","plazos","sensibles","quiz2"],
  acts:[
   ["A1","Grabación en cadena","Equipos de tres: grabador, verificador y coordinador. Se graba un lote de 30 fichas y se rotan los roles tres veces. Al final se calculan tasa de error y productividad de cada configuración.","Indicadores calculados · conclusiones del grupo"],
   ["A2","Manual de criterios del equipo","El grupo redacta una hoja de instrucciones de lote: formato de fecha, mayúsculas, abreviaturas, campos obligatorios y tratamiento de datos ilegibles. Otro grupo la prueba grabando 10 fichas.","El otro grupo graba sin tener que preguntar"],
@@ -873,7 +980,7 @@ ud2:{t:"Situación de partida",p:"Dos meses después, Lucía se incorpora a un e
 };
 const GLOS={
 ud1:[["Pantalla de visualización (PVD)","Pantalla alfanumérica o gráfica, sea cual sea el método de representación. Su uso regula el RD 488/1997."],["Usuario de PVD","Trabajador que usa la pantalla de forma habitual y durante una parte relevante de su trabajo normal."],["Lote","Conjunto de documentos del mismo tipo que se graban, controlan y entregan juntos."],["Atril","Soporte que sostiene el documento a la altura y distancia de la pantalla."],["Ergonomía","Disciplina que adapta el trabajo, los equipos y el entorno a la persona."],["Lux","Unidad de iluminancia: la cantidad de luz que llega a una superficie."],["Trastorno musculoesquelético","Lesión de músculos, tendones, articulaciones o nervios relacionada con posturas y movimientos repetidos."],["Mantenimiento preventivo","El que se hace de forma programada para evitar averías."],["Stock mínimo","Cantidad de un consumible por debajo de la cual se hace el pedido de reposición."],["Pausa activa","Interrupción breve del trabajo con estiramientos o cambio de postura."],["Cronograma","Representación de las tareas sobre una escala de tiempo."],["5S","Método de orden y limpieza en cinco fases: clasificar, ordenar, limpiar, estandarizar y mantener."]],
-ud2:[["Sinergia","Efecto por el que el resultado conjunto supera la suma de los resultados individuales."],["Indicador","Dato medible que permite saber si se cumple un objetivo."],["Tasa de error","Campos erróneos divididos entre campos grabados, en porcentaje."],["Retrabajo","Trabajo que hay que repetir o corregir después de entregado."],["Verificación","Comprobación de lo grabado contra el documento original."],["Doble grabación","Método en que dos personas graban lo mismo y el sistema compara."],["Asertividad","Expresar opiniones y desacuerdos con claridad y respeto."],["Escalar","Trasladar un problema al nivel que tiene capacidad para resolverlo."],["PDCA","Ciclo de mejora: planificar, hacer, verificar y actuar."],["RGPD","Reglamento europeo 2016/679 de protección de datos personales."],["Deber de confidencialidad","Obligación de no revelar los datos tratados, que continúa tras terminar la relación laboral."],["Brecha de seguridad","Incidente que provoca la pérdida, alteración o acceso no autorizado a datos personales."]]
+ud2:[["Bloqueo de datos","Reserva de los datos que impide usarlos o consultarlos; solo quedan a disposición de jueces, Ministerio Fiscal y administraciones hasta que prescriben las responsabilidades."],["Limitación del plazo de conservación","Principio del RGPD que impide conservar datos identificables más tiempo del necesario para su finalidad."],["Categorías especiales de datos","Datos que revelan origen étnico, opiniones políticas, religión, afiliación sindical, salud, vida u orientación sexual, o datos genéticos y biométricos."],["Dato biométrico","Dato de las características físicas de una persona, como la huella o el rostro, tratado técnicamente para identificarla."],["Seudonimización","Sustituir los datos que identifican a una persona por un código, de forma que sin información adicional no se sabe quién es."],["Sinergia","Efecto por el que el resultado conjunto supera la suma de los resultados individuales."],["Indicador","Dato medible que permite saber si se cumple un objetivo."],["Tasa de error","Campos erróneos divididos entre campos grabados, en porcentaje."],["Retrabajo","Trabajo que hay que repetir o corregir después de entregado."],["Verificación","Comprobación de lo grabado contra el documento original."],["Doble grabación","Método en que dos personas graban lo mismo y el sistema compara."],["Asertividad","Expresar opiniones y desacuerdos con claridad y respeto."],["Escalar","Trasladar un problema al nivel que tiene capacidad para resolverlo."],["PDCA","Ciclo de mejora: planificar, hacer, verificar y actuar."],["RGPD","Reglamento europeo 2016/679 de protección de datos personales."],["Deber de confidencialidad","Obligación de no revelar los datos tratados, que continúa tras terminar la relación laboral."],["Brecha de seguridad","Incidente que provoca la pérdida, alteración o acceso no autorizado a datos personales."]]
 };
 const nav=document.getElementById("unit-nav"), main=document.getElementById("main");
 nav.innerHTML=UNITS.map(u=>`<a href="#${u.id}" data-id="${u.id}"><span class="fk">${u.key}</span><span class="lbl"><small>UD${u.id.slice(2)} · <span id="np-${u.id}">0/${u.secs.length}</span></small><span>${u.short}</span></span></a>`).join("");
@@ -908,6 +1015,7 @@ function render(){
   <div class="block-title"><h3>Glosario</h3><span>Toca un término para ver su definición</span></div>
   <div class="glos">${GLOS[u.id].map((g,i)=>`<button type="button" class="gl" id="gl-${u.id}-${i}" aria-expanded="false"><b>${g[0]}</b><span>${g[1]}</span></button>`).join("")}</div>`;
   main.querySelectorAll(".seen-toggle input").forEach(cb=>cb.addEventListener("change",()=>{seen[cb.dataset.k]=cb.checked;store.set("gd-seen-v2",seen);cb.closest("details").classList.toggle("is-seen",cb.checked);updateProgress()}));
+  if(document.getElementById("calc-ret"))initCalc(document.getElementById("calc-ret"));
   main.querySelectorAll(".gl").forEach(b=>b.onclick=()=>b.setAttribute("aria-expanded",b.getAttribute("aria-expanded")==="true"?"false":"true"));
   const zone=document.getElementById("ex-zone");
   u.ex.forEach(e=>EX[e](zone));
@@ -937,6 +1045,53 @@ function classify(zone,id,title,inst,cats,items,tip){
   bR.onclick=()=>{items.forEach((it,i)=>{document.getElementById(`${id}-${i}`).value="";document.getElementById(`${id}-p${i}`).hidden=true});res.innerHTML=""};
 }
 
+
+const RET=[
+ {id:"fact",n:"Facturas, libros y justificantes contables",y:6,m:0,from:"Fecha del último asiento en los libros",law:"Art. 30 del Código de Comercio",blk:true},
+ {id:"trib",n:"Documentación tributaria (declaraciones de impuestos)",y:4,m:0,from:"Día siguiente al fin del plazo de declaración",law:"Arts. 66 y 67 de la Ley General Tributaria",blk:true,note:"Si hay bases o deducciones pendientes de compensar, el plazo para justificarlas es de 10 años (art. 66 bis LGT)."},
+ {id:"lab",n:"Contratos de trabajo, altas, bajas y cotización",y:4,m:0,from:"Fecha del documento",law:"Art. 21 de la LISOS",blk:true},
+ {id:"jor",n:"Registro diario de jornada",y:4,m:0,from:"Fecha del registro",law:"Art. 34.9 del Estatuto de los Trabajadores",blk:true},
+ {id:"cli",n:"Contrato con un cliente (posibles reclamaciones)",y:5,m:0,from:"Fecha desde la que puede exigirse el cumplimiento",law:"Art. 1964.2 del Código Civil",blk:true},
+ {id:"hc",n:"Historia clínica",y:5,m:0,from:"Fecha del alta del proceso asistencial",law:"Art. 17 de la Ley 41/2002",blk:true,note:"Es un mínimo: el centro sanitario puede conservarla más tiempo si está justificado."},
+ {id:"blq",n:"Documentación de prevención del blanqueo de capitales",y:10,m:0,from:"Fin de la relación de negocio u operación",law:"Art. 25 de la Ley 10/2010",blk:true},
+ {id:"vid",n:"Imágenes de videovigilancia",y:0,m:1,from:"Fecha de grabación de las imágenes",law:"Art. 22.3 de la LOPDGDD",blk:false,note:"No se bloquean. Si las imágenes muestran un delito, se entregan a la autoridad en un máximo de 72 horas."},
+ {id:"mkt",n:"Datos para publicidad con consentimiento",free:"Se suprimen cuando la persona retira su consentimiento o se opone. Si se mantiene la relación, se revisa periódicamente que sigan siendo necesarios.",law:"Arts. 7 y 21 del RGPD"},
+ {id:"cv",n:"Currículums de candidatos no seleccionados",free:"No hay plazo legal. La empresa fija uno justificado (y lo informa al candidato); al cumplirse, se suprimen.",law:"Art. 5.1.e del RGPD"}
+];
+function addPeriod(d,y,m){const r=new Date(d.getFullYear()+y,d.getMonth()+m,1);const last=new Date(r.getFullYear(),r.getMonth()+1,0).getDate();r.setDate(Math.min(d.getDate(),last));return r}
+const fmtD=d=>d.toLocaleDateString("es-ES",{day:"2-digit",month:"2-digit",year:"numeric"});
+function initCalc(el){
+  el.innerHTML=`<div class="calc-box"><div class="form-grid">
+   <div class="field"><label for="rc-doc">Tipo de documento o dato</label><select id="rc-doc">${RET.map(r=>`<option value="${r.id}">${r.n}</option>`).join("")}</select></div>
+   <div class="field"><label for="rc-date" id="rc-lab">Fecha</label><input id="rc-date" type="date" value="2020-12-31"><small id="rc-from"></small></div>
+  </div>
+  <label class="seen-toggle" id="rc-endw"><input type="checkbox" id="rc-end" checked> La finalidad ya terminó (cliente de baja, contrato acabado, proceso cerrado)</label>
+  <div id="rc-out" aria-live="polite"></div></div>`;
+  const $=s=>el.querySelector(s);
+  function calc(){
+    const r=RET.find(x=>x.id===$("#rc-doc").value);const out=$("#rc-out");
+    $("#rc-lab").textContent=r.from||"Fecha";$("#rc-from").textContent=r.free?"Este dato no tiene un plazo fijo":"Fecha desde la que se cuenta el plazo";
+    $("#rc-date").disabled=!!r.free;$("#rc-endw").hidden=!!r.free||!r.blk;
+    if(r.free){out.innerHTML=`<div class="rc-res"><div class="rc-top"><span class="pill warn">Sin plazo fijo</span><b>${r.n}</b></div><p>${r.free}</p><p class="small">Base: ${r.law}</p></div>`;return}
+    const v=$("#rc-date").value;if(!v){out.innerHTML=`<div class="result">Introduce una fecha para calcular el plazo.</div>`;return}
+    const p=v.split("-").map(Number),start=new Date(p[0],p[1]-1,p[2]),lim=addPeriod(start,r.y,r.m);
+    const t=new Date();const today=new Date(t.getFullYear(),t.getMonth(),t.getDate());
+    const days=Math.round((lim-today)/86400000);const plazo=r.y?`${r.y} años`:`${r.m} mes`;
+    const tot=Math.max(1,lim-start),pct=Math.max(0,Math.min(100,(today-start)/tot*100));
+    let st,cls,what;
+    if(today<start){st="Todavía no empieza el cómputo";cls="ok";what="La fecha indicada es futura: el plazo empezará a contar entonces."}
+    else if(days<=0){st="Suprimir";cls="bad";what=`El plazo terminó hace ${Math.abs(days)} días. Los datos deben suprimirse de forma segura: borrado en el sistema y destrucción certificada del papel.`}
+    else if(!r.blk){st="Conservar";cls="ok";what=`Quedan ${days} días como máximo. Si no se necesitan como prueba de un delito, se borran antes de esa fecha.`}
+    else if($("#rc-end").checked){st="Bloquear";cls="warn";what=`Quedan ${days} días de conservación. El dato no se usa ni se consulta: solo puede entregarse a jueces y tribunales, el Ministerio Fiscal o la Administración competente.`}
+    else{st="En uso";cls="ok";what=`La finalidad sigue activa, así que el dato se usa con normalidad. Cuando termine, se bloquea hasta completar el plazo (quedan ${days} días si termina hoy).`}
+    out.innerHTML=`<div class="rc-res"><div class="rc-top"><span class="pill ${cls}">${st}</span><b>${r.n}</b></div>
+    <div class="stats"><div class="stat"><b>${plazo}</b><span>plazo de conservación</span></div><div class="stat"><b>${fmtD(start)}</b><span>inicio del cómputo</span></div><div class="stat"><b>${fmtD(lim)}</b><span>conservar hasta</span></div><div class="stat"><b>${days>0?days:0}</b><span>días restantes</span></div></div>
+    <div class="rc-bar" aria-hidden="true"><i style="width:${pct}%"></i><span style="left:${pct}%"></span></div>
+    <div class="rc-scale"><span>Inicio</span><span>Hoy</span><span>Supresión</span></div>
+    <p>${what}</p>${r.note?`<p class="small">${r.note}</p>`:""}<p class="small">Base legal: ${r.law}</p></div>`;
+  }
+  el.querySelectorAll("select,input").forEach(i=>i.addEventListener("input",calc));el.querySelectorAll("select,input").forEach(i=>i.addEventListener("change",calc));calc();
+}
 const EX={
 ergo(zone){
   const box=exBox(zone,"Simulador","Evalúa tu puesto de trabajo","Mide tu puesto real (o el del aula) e introduce los valores. El simulador los contrasta con el RD 488/1997, el RD 486/1997 y la guía técnica del INSST.");
@@ -1061,6 +1216,31 @@ etica(zone){classify(zone,"et","Actuación correcta o incorrecta","Valora cada a
  ["Seguir guardando secreto sobre los datos después de dejar la empresa",0],
  ["Llevarte un lote en un USB para terminarlo en casa sin autorización",1]],
  "El deber de confidencialidad del artículo 5 de la LOPDGDD no termina con el contrato.")},
+plazos(zone){classify(zone,"pz","¿Cuánto tiempo se conserva?","Elige el plazo de conservación de cada documento (epígrafe 2.4.1). Puedes comprobarlo con la calculadora.",
+ ["1 mes","4 años","5 años","6 años","10 años","Hasta que retire el consentimiento"],[
+ ["Grabaciones de la cámara de la entrada",0],
+ ["Libro diario y facturas de la contabilidad",3],
+ ["Registro diario de jornada de la plantilla",1],
+ ["Documentación de prevención del blanqueo de capitales",4],
+ ["Contrato con un cliente, por posibles reclamaciones",2],
+ ["Correo de un suscriptor del boletín de ofertas",5],
+ ["Altas y bajas en la Seguridad Social",1],
+ ["Historia clínica tras el alta (mínimo)",2]],
+ "Recuerda que, si dos normas afectan al mismo documento, manda el plazo más largo.")},
+sensibles(zone){classify(zone,"sn","¿Es un dato sensible?","Clasifica cada dato como categoría especial del artículo 9 del RGPD, dato penal del artículo 10 o dato personal ordinario (epígrafe 2.4.2).",
+ ["Categoría especial","Dato penal","Dato personal ordinario"],[
+ ["Número de cuenta bancaria",2],
+ ["Diagnóstico que figura en un informe de baja",0],
+ ["Huella dactilar para fichar",0],
+ ["Cuota sindical descontada en la nómina",0],
+ ["Certificado de antecedentes penales de un candidato",1],
+ ["Dirección postal de un cliente",2],
+ ["Alergia al marisco anotada en una reserva",0],
+ ["Grado de discapacidad para adaptar un puesto",0],
+ ["Fotografía en la ficha del empleado",2],
+ ["Salario bruto anual",2],
+ ["Pertenencia a un partido político",0]],
+ "La foto solo pasa a ser dato biométrico si se trata técnicamente para identificar a la persona, como en el reconocimiento facial. La cuenta y el salario no son categoría especial, pero se protegen con el mismo cuidado.")},
 quiz2(zone){quiz(zone,"q2","Test de la unidad 2","Elige una respuesta por pregunta y pulsa Corregir.",[
  {q:"¿Por qué conviene que la verificación la haga una persona distinta de quien grabó?",o:["Para repartir el trabajo","Porque quien graba tiende a no ver sus propios errores","Porque lo exige el RD 488/1997"],a:1,w:"La lectura de lo propio está condicionada por lo que uno cree haber escrito. (2.1.1)"},
  {q:"Una instrucción oral te parece ambigua. ¿Qué haces?",o:["Interpretarla como mejor te parezca","Repetirla con tus palabras para confirmar y anotarla","Esperar a que otro la aplique y copiar"],a:1,w:"Confirmar y dejar por escrito evita errores en todo el lote. (2.1.1)"},
@@ -1071,7 +1251,10 @@ quiz2(zone){quiz(zone,"q2","Test de la unidad 2","Elige una respuesta por pregun
  {q:"Un retrabajo alto indica que…",o:["Los errores llegan al cliente y hay que corregir después de entregar","El equipo es muy rápido","Hay muchos documentos por grabar"],a:0,w:"El retrabajo mide la calidad que realmente sale del servicio. (2.3.1)"},
  {q:"En el ciclo PDCA, ¿qué se hace en la fase Verificar?",o:["Aplicar el cambio en todos los formularios","Medir si el cambio ha mejorado el resultado","Elegir el problema"],a:1,w:"Se comparan los datos antes y después de la prueba. (2.3.6)"},
  {q:"El principio de exactitud del RGPD implica que…",o:["Los datos deben ser correctos y estar actualizados","Hay que grabar todos los datos disponibles","Los datos se conservan para siempre"],a:0,w:"Grabar sin errores es también una obligación legal. (2.4)"},
- {q:"Descubres un error tuyo en un lote ya entregado que nadie ha detectado.",o:["Lo comunicas y propones la corrección","Esperas a ver si alguien lo nota","Lo corriges sin avisar"],a:0,w:"Responsabilidad e integridad: los cambios deben quedar registrados. (2.4)"}
+ {q:"Descubres un error tuyo en un lote ya entregado que nadie ha detectado.",o:["Lo comunicas y propones la corrección","Esperas a ver si alguien lo nota","Lo corriges sin avisar"],a:0,w:"Responsabilidad e integridad: los cambios deben quedar registrados. (2.4)"},
+ {q:"Un cliente se dio de baja hace un año, pero sus facturas deben guardarse 6 años. ¿Qué se hace con sus datos?",o:["Se borran ya","Se bloquean: no se usan y solo se ponen a disposición de jueces o Administración","Se siguen usando para enviarle ofertas"],a:1,w:"Artículo 32 de la LOPDGDD: bloqueo hasta que prescriben las responsabilidades, y después supresión. (2.4.1)"},
+ {q:"¿Cuál de estos datos es una categoría especial?",o:["El número de cuenta bancaria","Un diagnóstico médico","El DNI"],a:1,w:"Los datos de salud son categoría especial (art. 9 RGPD). La cuenta y el DNI son datos ordinarios, aunque delicados. (2.4.2)"},
+ {q:"¿Basta el consentimiento para crear un fichero de clientes según su religión?",o:["Sí, si lo firman","No, la LOPDGDD lo impide aunque haya consentimiento","Solo si son mayores de edad"],a:1,w:"Artículo 9.1 LOPDGDD: el solo consentimiento no levanta la prohibición cuando la finalidad principal es identificar religión, ideología, afiliación sindical, orientación sexual, creencias u origen. (2.4.2)"}
 ])}
 };
 
